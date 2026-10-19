@@ -1,0 +1,64 @@
+
+/* Jardim da Tiana: referência reinterpretada como carta real com elementos separados */
+.nova-carta-page{
+ background:linear-gradient(90deg,#0e241bde,#10281cba),url('../assets/images/fundo-tiana-naveen-hd.png') center/cover fixed!important;
+}
+.nova-carta-page:before{background:linear-gradient(180deg,#06190d77,#102c1a55 60%,#06180d88)!important}
+.nova-carta-intro h1{color:#fff7e7}
+.nova-carta-intro h1 em{color:#d6e6b8}
+.nova-letter{width:min(95vw,740px)!important}
+.nova-letter-inner.floral-letter-design{
+ position:relative;
+ min-height:960px!important;
+ padding:clamp(135px,20vw,190px) clamp(35px,9vw,90px) 250px!important;
+ background:linear-gradient(180deg,#fff 0%,#fff 85%,#fafcf8 100%)!important;
+ border:1px solid #e7e9e0!important;
+ border-radius:2px!important;
+ box-shadow:0 30px 65px #0009!important;
+ overflow:hidden!important;
+}
+.floral-letter-design .floral-content{position:relative;z-index:5}
+.floral-letter-design .floral-arc{
+ z-index:1;inset:11% 7% 8%;
+ border:2px solid #c7ad69!important;
+ border-radius:49% 49% 46% 46% / 35% 35% 37% 37%;
+ transform:rotate(-5deg);
+ opacity:.85;
+}
+.floral-letter-design .floral-arc:after{border-color:#d3bc8360!important}
+.floral-letter-design .floral-corner{display:none!important}
+.tiana-floral-top,.tiana-floral-bottom,.tiana-mini-corner{position:absolute;pointer-events:none;z-index:2;background-repeat:no-repeat}
+.tiana-floral-top{
+ top:0;left:0;right:0;height:265px;
+ background-image:url('../assets/images/florais-tiana-topo.png');
+ background-position:center top;background-size:100% 100%;
+ -webkit-mask-image:linear-gradient(#000 0%,#000 72%,transparent 100%);
+ mask-image:linear-gradient(#000 0%,#000 72%,transparent 100%);
+}
+.tiana-floral-bottom{
+ bottom:0;right:0;width:55%;height:300px;
+ background-image:url('../assets/images/florais-tiana-canto.png');
+ background-position:right bottom;background-size:100% 100%;
+ -webkit-mask-image:linear-gradient(90deg,transparent,#000 28%);
+ mask-image:linear-gradient(90deg,transparent,#000 28%);
+}
+.tiana-mini-corner{
+ bottom:5px;left:0;width:34%;height:335px;
+ background-image:url('../assets/images/tiana-mini-carta.png');
+ background-position:left bottom;background-size:contain;
+ mix-blend-mode:multiply;
+}
+.floral-letter-design .nova-letter-kicker{color:#6b845a!important}
+.floral-letter-design h2{color:#55724e!important}
+.floral-letter-design .nova-letter-text p{color:#374a35!important}
+.floral-letter-design .nova-signature{color:#56784e!important}
+.floral-letter-design .nova-close{position:absolute;top:22px;right:22px;z-index:8}
+@media(max-width:600px){
+ .nova-carta-page{background-attachment:scroll!important}
+ .nova-letter-inner.floral-letter-design{padding:125px 31px 215px!important;min-height:930px!important}
+ .tiana-floral-top{height:175px}
+ .tiana-floral-bottom{height:205px;width:55%}
+ .tiana-mini-corner{height:220px;width:42%}
+ .floral-letter-design .floral-arc{inset:9% 5% 7%}
+ .floral-letter-design h2{font-size:2.8rem!important}
+}

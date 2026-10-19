@@ -1,0 +1,49 @@
+/* Composição de lembranças: somente polaroids do Mural de carinho. */
+body.mural-carinho-page .carinho-floating-photos {position:absolute;inset:0;z-index:2;pointer-events:none;overflow:visible!important;}
+body.mural-carinho-page .carinho-polaroid {
+  box-sizing:border-box;width:clamp(115px,11.8vw,168px)!important;max-width:none;
+  margin:0;padding:9px 9px 24px!important;
+  background:#faf4e6;border:1px solid rgba(212,182,106,.85);
+  box-shadow:0 13px 32px rgba(0,16,13,.45),inset 0 0 0 2px rgba(255,255,255,.7);
+  opacity:.96!important;overflow:visible!important;pointer-events:none;
+  animation:carinho-float-gentle var(--duration,9s) ease-in-out infinite alternate!important;
+  will-change:transform;
+}
+body.mural-carinho-page .carinho-polaroid.photo-two,
+body.mural-carinho-page .carinho-polaroid.photo-four {width:clamp(132px,13.5vw,193px)!important;}
+body.mural-carinho-page .carinho-polaroid img {width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important;display:block;background:#ede6d7;}
+body.mural-carinho-page .carinho-polaroid::after {content:'✧';position:absolute;bottom:4px;right:12px;color:#aa8b52;font-size:15px;}
+body.mural-carinho-page .carinho-polaroid::before {content:'✦';position:absolute;top:-12px;right:-10px;color:#e9d6a1;font-size:12px;text-shadow:0 0 9px #f2dc99;}
+/* Laterais próximas ao conteúdo, em cinco alturas diferentes. */
+body.mural-carinho-page .photo-one {top:210px!important;left:max(14px,calc(50% - 600px))!important;right:auto!important;--tilt:-7deg;--duration:9.5s;}
+body.mural-carinho-page .photo-two {top:365px!important;right:max(14px,calc(50% - 610px))!important;left:auto!important;--tilt:6deg;--duration:10.7s;}
+body.mural-carinho-page .photo-three {top:785px!important;left:max(14px,calc(50% - 615px))!important;right:auto!important;--tilt:5deg;--duration:11.3s;}
+body.mural-carinho-page .photo-four {top:1060px!important;right:max(14px,calc(50% - 605px))!important;left:auto!important;--tilt:-6deg;--duration:10.2s;}
+body.mural-carinho-page .photo-five {top:1440px!important;left:max(14px,calc(50% - 610px))!important;right:auto!important;display:block!important;--tilt:-4deg;--duration:12s;}
+@keyframes carinho-float-gentle {from{transform:translate3d(0,0,0) rotate(var(--tilt,0deg))}to{transform:translate3d(0,-6px,0) rotate(calc(var(--tilt,0deg) + 1deg))}}
+/* Quando o espaço lateral encolhe, reduza as fotos antes de aproximá-las dos campos. */
+@media(max-width:1240px){
+ body.mural-carinho-page .carinho-polaroid {width:clamp(92px,10vw,125px)!important;padding:7px 7px 18px!important;}
+ body.mural-carinho-page .carinho-polaroid.photo-two,body.mural-carinho-page .carinho-polaroid.photo-four {width:clamp(106px,11.5vw,144px)!important;}
+ body.mural-carinho-page .photo-one,body.mural-carinho-page .photo-three,body.mural-carinho-page .photo-five {left:12px!important;}
+ body.mural-carinho-page .photo-two,body.mural-carinho-page .photo-four {right:12px!important;}
+}
+@media(max-width:850px){
+ body.mural-carinho-page .carinho-polaroid {width:78px!important;padding:5px 5px 14px!important;opacity:.86!important;}
+ body.mural-carinho-page .carinho-polaroid.photo-two,body.mural-carinho-page .carinho-polaroid.photo-four {width:90px!important;}
+ body.mural-carinho-page .photo-one {top:110px!important;left:10px!important;}
+ body.mural-carinho-page .photo-two {top:125px!important;right:10px!important;}
+ body.mural-carinho-page .photo-three {top:810px!important;left:8px!important;}
+ body.mural-carinho-page .photo-four {top:1210px!important;right:8px!important;}
+ body.mural-carinho-page .photo-five {top:1650px!important;left:8px!important;}
+}
+@media(max-width:540px){
+ body.mural-carinho-page .carinho-polaroid {width:clamp(54px,15vw,72px)!important;padding:4px 4px 12px!important;opacity:.88!important;}
+ body.mural-carinho-page .carinho-polaroid.photo-two,body.mural-carinho-page .carinho-polaroid.photo-four {width:clamp(62px,17vw,82px)!important;}
+ body.mural-carinho-page .photo-one {top:115px!important;left:8px!important;}
+ body.mural-carinho-page .photo-two {top:130px!important;right:8px!important;}
+ body.mural-carinho-page .photo-three {top:900px!important;left:8px!important;}
+ body.mural-carinho-page .photo-four {top:1320px!important;right:8px!important;}
+ body.mural-carinho-page .photo-five {top:1750px!important;left:8px!important;}
+}
+@media(prefers-reduced-motion:reduce){body.mural-carinho-page .carinho-polaroid {animation:none!important;will-change:auto;}}

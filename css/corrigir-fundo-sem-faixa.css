@@ -1,0 +1,28 @@
+
+/* Corrige a faixa verde: o cenário cobre a janela inteira, mesmo abaixo do conteúdo. */
+html:has(.nova-carta-page){min-height:100%;background:#061524}
+body:has(.nova-carta-page){
+ min-height:100vh;min-height:100dvh;margin:0!important;
+ background:#061524 url('../assets/images/fundo-sapos-luar-hd.png') center center / cover no-repeat fixed!important;
+ overflow-x:hidden;
+}
+body:has(.nova-carta-page)::before{
+ content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+ background:linear-gradient(180deg,rgba(2,15,24,.65),rgba(3,18,27,.42) 44%,rgba(2,12,20,.7)),
+ url('../assets/images/fundo-sapos-luar-hd.png') center center / cover no-repeat;
+}
+body:has(.nova-carta-page) .nova-carta-page{
+ min-height:100vh;min-height:100dvh;
+ box-sizing:border-box;
+ background:transparent!important;
+ background-image:none!important;
+ background-color:transparent!important;
+}
+body:has(.nova-carta-page) .nova-carta-page::before{background:transparent!important}
+body:has(.nova-carta-page) footer,
+body:has(.nova-carta-page) .footer,
+body:has(.nova-carta-page) .site-footer{display:none!important}
+@media(max-width:700px){
+ body:has(.nova-carta-page){background-attachment:scroll!important;background-position:43% center!important}
+ body:has(.nova-carta-page)::before{background-position:center,43% center}
+}

@@ -1,0 +1,33 @@
+/* Ajustes localizados: retrospectiva e links secundarios. */
+body.polaroid-retro .retro-continue{
+ display:flex!important;align-items:center;justify-content:center;gap:.45rem;
+ width:max-content;max-width:calc(100% - 24px);min-height:50px;
+ margin:30px auto 28px!important;padding:13px 26px!important;
+ border:1px solid rgba(197,235,245,.88)!important;border-radius:999px!important;
+ background:#bde7f1!important;color:#123c57!important;
+ font-size:clamp(14px,2.7vw,16px)!important;font-weight:650!important;
+ letter-spacing:normal!important;line-height:1.4;text-align:center;text-decoration:none!important;
+ box-shadow:0 4px 12px rgba(0,24,44,.18)!important;
+ transition:background-color .24s ease,box-shadow .24s ease,transform .24s ease!important;
+ position:relative;z-index:2;
+}
+body.polaroid-retro .retro-continue:hover,
+body.polaroid-retro .retro-continue:focus-visible{
+ background:#d5f0f7!important;color:#0c304b!important;
+ box-shadow:0 5px 15px rgba(0,24,44,.22)!important;transform:translateY(-1px)!important;
+}
+body.polaroid-retro .retro-continue .retro-arrow{display:inline-block;transition:transform .24s ease}
+body.polaroid-retro .retro-continue:hover .retro-arrow,
+body.polaroid-retro .retro-continue:focus-visible .retro-arrow{transform:translateX(4px)}
+body.polaroid-retro .retro-back{
+ display:inline-flex!important;align-items:center;min-height:42px;
+ padding:5px 1px!important;background:transparent!important;
+ border:0!important;border-bottom:1px solid rgba(244,250,255,.7)!important;
+ border-radius:0!important;color:#f4faff!important;
+ text-decoration:none!important;font-size:14px!important;line-height:1.5;
+ transition:color .2s ease,border-color .2s ease;
+}
+body.polaroid-retro .retro-back:hover,
+body.polaroid-retro .retro-back:focus-visible{color:#c8ecf5!important;border-bottom-color:#c8ecf5!important}
+@media(max-width:600px){body.polaroid-retro .retro-continue{width:fit-content;max-width:calc(100% - 24px);padding:14px 18px!important;min-height:50px}body.polaroid-retro .retro-back{min-height:44px}}
+@media(prefers-reduced-motion:reduce){body.polaroid-retro .retro-continue,body.polaroid-retro .retro-continue .retro-arrow{transition:none!important}}

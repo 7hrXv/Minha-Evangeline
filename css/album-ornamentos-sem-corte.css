@@ -1,0 +1,31 @@
+/* Ornamentos fora do painel e do carrossel: nenhuma mascara dos slides os afeta. */
+body.polaroid-retro { overflow-x: clip; }
+body.polaroid-retro .album-ornaments {
+  position:absolute; inset:0; width:100%; height:100%; overflow:visible;
+  pointer-events:none; z-index:2; isolation:isolate;
+}
+body.polaroid-retro .album-botanical-piece {
+  display:block; position:absolute; width:clamp(90px, 12vw, 164px);
+  height:auto; max-width:calc(50vw - 12px); object-fit:contain;
+  overflow:visible; opacity:.88; pointer-events:none;
+  filter:drop-shadow(0 8px 12px rgba(2,18,35,.58));
+}
+body.polaroid-retro .album-botanical-tl { top:22px; left:12px; }
+body.polaroid-retro .album-botanical-tr { top:48px; right:12px; }
+body.polaroid-retro .album-botanical-bl { bottom:28px; left:12px; transform:scaleY(-1); }
+body.polaroid-retro .album-botanical-br { bottom:34px; right:12px; transform:scaleY(-1); }
+/* Os antigos fundos repetidos e as miniaturas cortadas não são mais usados. */
+body.polaroid-retro .album-rail, body.polaroid-retro .album-corner { display:none!important; }
+/* Preservar a janela de recorte somente no álbum e no carrossel de fotos. */
+body.polaroid-retro .retro-scene { overflow:hidden; }
+body.polaroid-retro .retro-wrap { position:relative; z-index:3; }
+@media (max-width:950px) {
+ body.polaroid-retro .album-botanical-piece { width:clamp(64px, 10vw, 105px); opacity:.72; }
+}
+@media (max-width:680px) {
+ body.polaroid-retro .album-botanical-piece { width:clamp(42px, 12vw, 62px); opacity:.58; }
+ body.polaroid-retro .album-botanical-tl { top:48px; left:5px; }
+ body.polaroid-retro .album-botanical-tr { top:92px; right:5px; }
+ body.polaroid-retro .album-botanical-bl { bottom:45px; left:5px; }
+ body.polaroid-retro .album-botanical-br { bottom:45px; right:5px; }
+}

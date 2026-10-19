@@ -1,0 +1,11 @@
+
+/* Mesmo envelope da referência, agora em papel branco com textura */
+.antique-envelope-art{filter:drop-shadow(0 10px 16px #0007)!important}
+.nova-envelope{filter:drop-shadow(0 18px 16px #0006)!important}
+.nova-envelope-back,.nova-envelope-front,.nova-envelope-flap,.nova-envelope-note,.nova-envelope-seal{opacity:0!important}
+.nova-letter-inner{background:radial-gradient(ellipse at 45% 20%,#ffffff 0%,#fbfaf7 64%,#eeeae3 100%)!important;box-shadow:0 24px 48px #0008,inset 0 0 55px #b3a99a2c!important;border:1px solid #e2ddd5!important;min-height:auto!important;clip-path:none!important}
+.nova-letter-inner:before{border-color:#c9c4bf55!important}
+.nova-letter-text p{color:#4d4139!important}
+.nova-letter h2{color:#8f293b!important}
+.nova-letter-kicker,.nova-letter-ornament{color:#9b3847!important}
+.nova-close{background:#f7f5f0!important;color:#5a4240!important;border-color:#b7a9a0!important}

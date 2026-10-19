@@ -1,0 +1,75 @@
+/* Paleta esmeralda e fotos completas — exclusivo do Mural de carinho. */
+body.mural-carinho-page {--desk-paper:#123D32;--desk-green:#123D32;--desk-gold:#D4B66A;}
+/* A foto inteira deve caber na moldura, inclusive retratos horizontais. */
+body.mural-carinho-page .carinho-polaroid {background:#fff4d6;overflow:visible;}
+body.mural-carinho-page .carinho-polaroid img {
+  display:block;width:100%;height:auto;max-width:100%;aspect-ratio:auto!important;
+  object-fit:contain!important;object-position:center!important;
+  background:#e6ddc9;border:1px solid #cdbf9f;box-sizing:border-box;
+}
+/* Três folhas de papelaria em verdes diferentes. */
+body.mural-carinho-page .carinho-panel {
+  color:#FFF4D6;
+  background:repeating-linear-gradient(0deg,transparent 0 34px,#D4B66A13 35px 36px),
+    linear-gradient(135deg,#174d40 0%,#123D32 48%,#0e3029 100%)!important;
+  border:1px solid #D4B66A!important;
+  box-shadow:0 35px 75px #000b08a6,inset 0 0 0 7px #123D32,inset 0 0 0 8px #D4B66A99!important;
+}
+body.mural-carinho-page .desk-paper-back-one {background:#0b3029!important;border-color:#D4B66A88!important;}
+body.mural-carinho-page .desk-paper-back-two {background:#1d5545!important;border-color:#D4B66A88!important;}
+body.mural-carinho-page .carinho-panel-heading h2,
+body.mural-carinho-page .carinho-panel-heading::after,
+body.mural-carinho-page .carinho-panel label::before {color:#D4B66A!important;}
+body.mural-carinho-page .carinho-panel-heading p,
+body.mural-carinho-page .carinho-panel label,
+body.mural-carinho-page .carinho-counter,
+body.mural-carinho-page .carinho-storage,
+body.mural-carinho-page .carinho-edit-mode,
+body.mural-carinho-page .carinho-status {color:#FFF4D6!important;}
+body.mural-carinho-page .carinho-panel label {color:#FFF4D6!important;}
+body.mural-carinho-page .carinho-panel input,
+body.mural-carinho-page .carinho-panel textarea {
+  color:#FFF4D6!important;
+  background:repeating-linear-gradient(to bottom,#092b25 0px,#092b25 33px,#D4B66A38 34px,#092b25 35px)!important;
+  border:1px solid #D4B66A77!important;border-bottom:1px solid #D4B66A!important;
+  box-shadow:inset 0 1px 8px #0004!important;
+  caret-color:#FFF4D6;
+}
+body.mural-carinho-page .carinho-panel input::placeholder,
+body.mural-carinho-page .carinho-panel textarea::placeholder {color:#d9d4bcaa!important;opacity:1;}
+body.mural-carinho-page .carinho-panel input:focus-visible,
+body.mural-carinho-page .carinho-panel textarea:focus-visible {outline:2px solid #D4B66A;outline-offset:2px;}
+body.mural-carinho-page .carinho-save {
+  background:#D4B66A!important;color:#123D32!important;border:1px solid #f1db9f!important;
+  font-weight:700;box-shadow:0 5px 13px #0005!important;
+}
+body.mural-carinho-page .carinho-cancel {background:#123D32!important;color:#FFF4D6!important;border:1px solid #D4B66A!important;}
+body.mural-carinho-page .desk-seal {background:radial-gradient(circle at 30% 25%,#ebcf87,#a4823e 80%)!important;color:#123D32!important;box-shadow:0 3px 10px #0006,inset 0 0 0 3px #f1dca2,inset 0 0 0 5px #98783c!important;}
+body.mural-carinho-page .desk-crest svg text {fill:#123D32;}
+body.mural-carinho-page .desk-botanical {filter:drop-shadow(0 5px 5px #001d1670)!important;}
+/* Bilhetes de papelaria, sem perder a textura e a variação de inclinação. */
+body.mural-carinho-page .carinho-note,
+body.mural-carinho-page .carinho-note:nth-child(3n+2) {
+  color:#FFF4D6!important;
+  background:repeating-linear-gradient(0deg,transparent 0 29px,#D4B66A22 30px 31px),linear-gradient(130deg,#184f40,#123D32 60%,#0c3029)!important;
+  border:1px solid #D4B66A!important;
+  box-shadow:0 14px 22px #000c08a0,3px 5px 0 #27604b!important;
+}
+body.mural-carinho-page .carinho-note:nth-child(3n+2) {background:repeating-linear-gradient(0deg,transparent 0 29px,#D4B66A22 30px 31px),linear-gradient(130deg,#1c5948,#123D32)!important;}
+body.mural-carinho-page .carinho-note-name,
+body.mural-carinho-page .carinho-note::before,
+body.mural-carinho-page .carinho-note-stamp {color:#D4B66A!important;}
+body.mural-carinho-page .carinho-note-date,
+body.mural-carinho-page .carinho-note-text,
+body.mural-carinho-page .carinho-confirm-text {color:#FFF4D6!important;}
+body.mural-carinho-page .carinho-note-actions {border-top-color:#D4B66A77!important;}
+body.mural-carinho-page .carinho-note-actions button,
+body.mural-carinho-page .carinho-confirm button {background:#D4B66A!important;color:#123D32!important;border:1px solid #D4B66A!important;}
+body.mural-carinho-page .carinho-note-actions .carinho-delete,
+body.mural-carinho-page .carinho-confirm .carinho-confirm-no {background:transparent!important;color:#FFF4D6!important;border-color:#D4B66A!important;}
+body.mural-carinho-page .carinho-confirm {background:#0a2d25!important;border:1px solid #D4B66A!important;}
+body.mural-carinho-page .carinho-note-tape {background:linear-gradient(90deg,#c7b47ca8,#efe0adcc,#a99159b3)!important;}
+body.mural-carinho-page .carinho-note :focus-visible,
+body.mural-carinho-page .carinho-save:focus-visible,
+body.mural-carinho-page .carinho-cancel:focus-visible {outline:2px solid #FFF4D6;outline-offset:3px;}
+@media(max-width:540px){body.mural-carinho-page .carinho-polaroid img{height:auto!important;aspect-ratio:auto!important;object-fit:contain!important;}}

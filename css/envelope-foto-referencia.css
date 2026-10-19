@@ -1,0 +1,19 @@
+/* Envelope branco e lacre de cera: visual fiel à referência escolhida */
+.nova-carta-page{background:repeating-linear-gradient(91deg,#31180f 0,#482419 34px,#2d180f 68px)!important}
+.nova-carta-stage{min-height:620px!important;max-width:1050px!important;align-items:center!important}
+.nova-envelope-button{padding:0!important;width:min(95vw,950px)!important;gap:0!important;animation:none!important;filter:drop-shadow(0 20px 30px #0008)!important}
+.nova-envelope{display:block!important;position:relative!important;width:100%!important;height:auto!important;aspect-ratio:1536/1024!important;background:url('../assets/images/envelope-branco-referencia.webp') center/contain no-repeat!important;filter:none!important;transform:none!important;overflow:visible!important}
+.nova-envelope>*{display:none!important}
+.nova-open-caption{display:none!important}
+.mesa-vinil,.mesa-fotos,.mesa-rosa,.mesa-petalas,.nova-aurora{display:none!important}
+.nova-envelope-button:hover .nova-envelope{filter:brightness(1.055)!important}
+.nova-envelope-button:focus-visible{outline:3px solid #f4d9a9!important;outline-offset:3px!important}
+.nova-envelope-button.is-opening .nova-envelope{animation:foto-envelope-open .9s ease-in-out forwards!important}
+.nova-envelope-button.is-leaving{animation:foto-envelope-hide .45s ease forwards!important}
+@keyframes foto-envelope-open{0%{transform:scale(1);opacity:1}45%{transform:scale(1.045);opacity:1}100%{transform:scale(1.075) translateY(-12px);opacity:.4}}
+@keyframes foto-envelope-hide{to{opacity:0;transform:translateY(-35px) scale(.95)}}
+.nova-letter-inner{background:linear-gradient(145deg,#fffefa,#f7f4ed)!important;border:1px solid #e6e0d6!important;box-shadow:0 18px 50px #000a,inset 0 0 30px #a9978030!important;clip-path:none!important}
+.nova-letter h2{color:#902e3e!important}
+.nova-letter-text p{color:#4a3d34!important}
+@media(max-width:620px){.nova-carta-stage{min-height:300px!important}.nova-envelope-button{width:100%!important}.nova-carta-page{padding:34px 6px 65px!important}}
+@media(prefers-reduced-motion:reduce){.nova-envelope-button.is-opening .nova-envelope,.nova-envelope-button.is-leaving{animation:none!important}}

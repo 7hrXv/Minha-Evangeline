@@ -1,0 +1,23 @@
+/* Decoração independente dos recortes da roleta, ancorada às bordas da viewport. */
+body.pagina-roleta {overflow-x:clip; isolation:isolate}
+body.pagina-roleta .roleta-moldura-viva {display:block!important;position:fixed!important;inset:0!important;z-index:3!important;overflow:visible!important;pointer-events:none!important;isolation:auto!important}
+body.pagina-roleta .roleta-moldura-viva img {display:block!important;visibility:visible!important;position:absolute!important;pointer-events:none!important;object-fit:contain!important;max-width:none!important;filter:drop-shadow(0 8px 14px rgba(0,10,27,.65)) drop-shadow(0 0 13px rgba(87,184,193,.24));opacity:.96!important}
+body.pagina-roleta .moldura-canto {width:clamp(135px,15vw,205px)!important;height:auto!important}
+body.pagina-roleta .moldura-superior-esq {left:0!important;top:0!important;right:auto!important;bottom:auto!important}
+body.pagina-roleta .moldura-superior-dir {right:0!important;top:0!important;left:auto!important;bottom:auto!important}
+body.pagina-roleta .moldura-inferior-esq {left:0!important;bottom:0!important;top:auto!important;right:auto!important}
+body.pagina-roleta .moldura-inferior-dir {right:0!important;bottom:0!important;top:auto!important;left:auto!important}
+body.pagina-roleta .moldura-lateral {width:clamp(110px,13vw,175px)!important;height:min(62vh,560px)!important;top:23%!important}
+body.pagina-roleta .moldura-lateral-esq {left:0!important;right:auto!important}
+body.pagina-roleta .moldura-lateral-dir {right:0!important;left:auto!important}
+body.pagina-roleta .roleta-layout {position:relative;z-index:5!important}
+body.pagina-roleta .surpresa-overlay {z-index:1000!important}
+body.pagina-roleta .roleta-intro {position:relative}
+body.pagina-roleta .roleta-intro h1 {text-shadow:0 2px 20px rgba(2,17,39,.72)}
+body.pagina-roleta .roleta-intro::after {content:'✦  ─────────  ✧  ─────────  ✦';color:#d9d0ad;opacity:.85;letter-spacing:3px}
+body.pagina-roleta .roleta-painel .roleta-container {box-shadow:0 0 0 1px rgba(224,201,152,.3),0 0 0 7px rgba(5,40,58,.15),0 0 26px rgba(205,186,134,.19);border-radius:50%}
+body.pagina-roleta .roleta-resultado {border:1px solid rgba(189,218,225,.62);box-shadow:0 12px 35px rgba(1,13,29,.33),inset 0 0 0 1px rgba(235,216,169,.14)}
+body.pagina-roleta .roleta-resultado::before,body.pagina-roleta .roleta-resultado::after {content:'❧ ✧';color:#d9d2b5;opacity:.8;font:18px Georgia,serif;top:12px}
+@media(max-width:900px){body.pagina-roleta .moldura-canto{width:clamp(100px,18vw,155px)!important}body.pagina-roleta .moldura-lateral{width:clamp(80px,14vw,120px)!important;opacity:.82!important}}
+@media(max-width:600px){body.pagina-roleta .moldura-canto{width:clamp(76px,23vw,112px)!important;opacity:.85!important}body.pagina-roleta .moldura-lateral{width:clamp(56px,15vw,85px)!important;height:38vh!important;top:37%!important;opacity:.68!important}body.pagina-roleta .roleta-layout{padding-inline:19px!important}body.pagina-roleta .roleta-intro::after{font-size:10px;letter-spacing:1px}}
+@media(prefers-reduced-motion:reduce){body.pagina-roleta .roleta-moldura-viva *{animation:none!important}}

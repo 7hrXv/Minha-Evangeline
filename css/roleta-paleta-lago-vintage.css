@@ -1,0 +1,23 @@
+/* Harmonização vintage com o lago noturno: apenas cor, luz e sombra. */
+body.pagina-roleta {color:#f6eee2;}
+body.pagina-roleta .roleta-moldura-viva .moldura-canto,
+body.pagina-roleta .roleta-moldura-viva .moldura-lateral {filter:drop-shadow(0 8px 14px rgba(3,15,11,.42)) drop-shadow(0 0 6px rgba(178,151,91,.09)) !important;}
+body.pagina-roleta .roleta-intro h1,body.pagina-roleta .roleta-intro p,
+body.pagina-roleta .roleta-resultado h2,body.pagina-roleta .roleta-resultado p {color:#f6eee2;}
+body.pagina-roleta .roleta-intro h1 em,body.pagina-roleta .roleta-selo,
+body.pagina-roleta .resultado-selo,body.pagina-roleta .roleta-intro::after,
+body.pagina-roleta .roleta-resultado::before,body.pagina-roleta .roleta-resultado::after {color:#c3a66e !important;}
+body.pagina-roleta .roleta-resultado {background:rgba(12,33,27,.77) !important;border-color:rgba(183,155,102,.5) !important;box-shadow:0 10px 28px rgba(2,13,10,.28),inset 0 0 0 1px rgba(235,220,190,.06) !important;}
+body.pagina-roleta .roleta-container::after {border-color:rgba(191,160,103,.7) !important;box-shadow:0 0 0 5px rgba(163,138,85,.06),0 0 15px rgba(180,150,90,.17) !important;}
+body.pagina-roleta .roleta-botao {box-shadow:0 7px 19px rgba(5,17,13,.4),0 0 10px rgba(190,158,94,.08) !important;}
+body.pagina-roleta .roleta-resultado.vencedor {animation:roleta-premio-vintage .8s ease-out;}
+@keyframes roleta-premio-vintage {40%{box-shadow:0 0 23px rgba(186,153,91,.32);transform:scale(1.02)}}
+body.pagina-roleta .bayou-decor .firefly {background:#c6a66b !important;box-shadow:0 0 7px 2px rgba(195,159,91,.35) !important;}
+body.pagina-roleta .roleta-brilho {text-shadow:0 0 6px rgba(196,162,99,.34) !important;filter:saturate(.66);}
+body.pagina-roleta .surpresa-overlay {background:radial-gradient(ellipse at 50% 42%,#234639 0%,#102b26 50%,#071a18 100%) !important;color:#f5ecdf;}
+body.pagina-roleta .surpresa-estrela {filter:drop-shadow(0 0 12px rgba(195,164,104,.35)) !important;}
+body.pagina-roleta .surpresa-vagalumes span {background:#c7ab72 !important;box-shadow:0 0 8px 2px rgba(197,162,94,.4) !important;}
+body.pagina-roleta .surpresa-frase.segunda {color:#e5d6c7 !important;}
+body.pagina-roleta .surpresa-descobrir {background:linear-gradient(135deg,#b99b66,#e0c99d) !important;color:#203b30 !important;border-color:#e5d4b2 !important;}
+body.pagina-roleta .surpresa-pular {color:#efe6d8 !important;border-color:rgba(192,163,110,.55) !important;}
+@media(prefers-reduced-motion:reduce){body.pagina-roleta .roleta-resultado.vencedor{animation:none!important}}

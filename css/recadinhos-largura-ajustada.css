@@ -1,0 +1,20 @@
+/* Apenas largura da seção de recados; altura e conteúdo permanecem intactos. */
+body.mural-carinho-page .carinho-notes {
+  width: 75% !important;
+  max-width: 780px !important; /* 75% da largura anterior de 1040px */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+body.mural-carinho-page .carinho-empty,
+body.mural-carinho-page .carinho-list {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 700px) {
+  body.mural-carinho-page .carinho-notes {
+    width: calc(100% - 24px) !important;
+    max-width: 100% !important;
+  }
+}

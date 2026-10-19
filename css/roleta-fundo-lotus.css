@@ -1,0 +1,10 @@
+/* Fundo solicitado para a pagina da roleta. Mantem roleta, controles e ornamentos existentes. */
+body.pagina-roleta {
+ background-image:linear-gradient(180deg,rgba(3,19,17,.16),rgba(3,19,17,.34)),url('../assets/images/lago-lotus-roleta.png') !important;
+ background-position:center center !important;
+ background-size:cover !important;
+ background-repeat:no-repeat !important;
+ background-attachment:fixed !important;
+}
+body.pagina-roleta::before{background:transparent !important;pointer-events:none !important}
+@media(max-width:768px){body.pagina-roleta{background-attachment:scroll !important;background-position:center center !important}}

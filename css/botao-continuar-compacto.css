@@ -1,0 +1,14 @@
+/* Somente largura do botão de continuar da retrospectiva. */
+body.polaroid-retro a.retro-continue.ev-nav-forward {
+  box-sizing: border-box !important;
+  display: flex !important;
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: calc(100% - 24px) !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  flex: 0 0 auto !important;
+  font-size: 12px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

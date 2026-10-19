@@ -1,0 +1,27 @@
+/* Acabamento de joalheria e papelaria real no envelope fechado. */
+.nova-envelope-button .nova-envelope{
+ filter:drop-shadow(0 23px 22px rgba(0,0,0,.62)) drop-shadow(0 0 13px rgba(212,182,106,.18))!important;
+ outline:1px solid rgba(233,202,122,.78)!important;outline-offset:-1px!important;
+ box-shadow:0 0 0 3px rgba(8,35,29,.5),0 0 0 4px rgba(212,182,106,.28),inset 0 0 0 2px rgba(239,213,151,.38);
+ border-radius:5px;
+}
+.nova-envelope-button .nova-envelope-back{
+ background:radial-gradient(ellipse at 50% 10%,#397761 0%,#1e5646 48%,#0a2e27 100%)!important;
+ box-shadow:inset 0 0 0 2px #d4b66a,inset 0 0 0 5px #133e34,inset 0 0 0 6px #c7a55b,inset 0 0 28px #041c18b8!important;
+}
+.nova-envelope-button .nova-envelope-left{background:linear-gradient(145deg,#397966 0%,#286454 31%,#174d41 72%,#0d362e 100%)!important;filter:drop-shadow(1px 0 2px #071f1b99)!important}
+.nova-envelope-button .nova-envelope-right{background:linear-gradient(215deg,#34715f 0%,#20584a 48%,#0b322a 100%)!important;filter:drop-shadow(-1px 0 2px #071f1b99)!important}
+.nova-envelope-button .nova-envelope-front{background:linear-gradient(0deg,#0b3029 0%,#144438 36%,#26614f 72%,#36725b 100%)!important;filter:drop-shadow(0 -2px 2px #071f1b80)!important}
+.nova-envelope-button .nova-envelope-flap{background:linear-gradient(168deg,#377964 0%,#2c6855 32%,#205344 68%,#103a30 100%)!important;filter:drop-shadow(0 3px 2px #061d19b3)!important}
+.nova-envelope-button .ev-envelope-engraving{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;overflow:visible;filter:drop-shadow(0 0 1px #e3c77d50);transition:opacity .35s ease}
+.nova-envelope-button .nova-envelope-seal{
+ z-index:6!important;width:76px;height:76px;
+ background:radial-gradient(circle at 32% 22%,#e78e85 0%,#b54451 21%,#8b2038 52%,#490e25 95%)!important;
+ border:4px solid #c6a45b!important;
+ box-shadow:0 8px 12px #001a1588,0 0 0 2px #6d4b26,0 0 0 5px #e3c77e,inset 0 0 0 3px #f0b6a0,inset 0 0 0 7px #84253b,inset 0 2px 9px #fff5!important;
+}
+.nova-envelope-button .nova-envelope-seal span{color:#fff0cf!important;font-size:34px!important;text-shadow:0 1px 2px #380b1c,0 0 6px #ffedcc77}
+.nova-envelope-button:hover .nova-envelope{filter:drop-shadow(0 26px 23px #000a) drop-shadow(0 0 15px #d4b66a55)!important}
+.nova-envelope-button.is-opening .ev-envelope-engraving{opacity:0}
+@media(max-width:600px){.nova-envelope-button .nova-envelope-seal{width:61px;height:61px}.nova-envelope-button .nova-envelope-seal span{font-size:28px!important}}
+@media(prefers-reduced-motion:reduce){.nova-envelope-button .ev-envelope-engraving{transition:none}}

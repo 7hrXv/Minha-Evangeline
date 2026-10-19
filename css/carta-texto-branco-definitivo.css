@@ -1,0 +1,17 @@
+/* Correção exclusiva dos textos da carta principal aberta.
+   Abrange animação, estados finais, estilos herdados e text-fill do WebKit. */
+#loveLetter .floral-letter-design .floral-content,
+#loveLetter .floral-letter-design .floral-content :is(p, h2, strong, span, em, b, i, small, div),
+#loveLetter .floral-letter-design .nova-letter-kicker,
+#loveLetter .floral-letter-design .nova-letter-text,
+#loveLetter .floral-letter-design .nova-letter-text *,
+#loveLetter .floral-letter-design .nova-signature,
+#loveLetter .floral-letter-design .nova-signature * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+/* Não modificar o acabamento do botão de fechar. */
+#loveLetter .floral-letter-design .nova-close {
+  color: #D4B66A !important;
+  -webkit-text-fill-color: #D4B66A !important;
+}

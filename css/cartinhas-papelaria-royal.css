@@ -1,0 +1,30 @@
+
+/* Arte botânica externa: não interfere com o envelope nem com os controles */
+.nova-carta-page{position:relative;isolation:isolate;overflow-x:clip}
+.royal-rail{position:absolute;top:65px;width:clamp(95px,15vw,225px);height:calc(100% - 65px);z-index:1;pointer-events:none;overflow:visible;opacity:.95;filter:drop-shadow(0 3px 5px #061d1780)}
+.royal-rail svg{width:100%;height:100%;overflow:visible;display:block}
+.royal-rail-left{left:0}.royal-rail-right{right:0}
+.nova-carta-page > :not(.royal-rail){position:relative;z-index:2}
+.secret-section{position:relative;isolation:isolate;padding-bottom:105px!important;overflow:visible!important}
+.secret-heading,.secret-grid,.secret-lotus-frame{position:relative;z-index:3}
+.secret-heading{max-width:740px;margin-inline:auto}
+.secret-grid{align-items:stretch;gap:clamp(14px,2.4vw,28px)!important}
+.secret-card{position:relative;isolation:isolate;display:flex!important;flex-direction:column;align-items:center;justify-content:center;min-height:260px!important;height:100%;padding:40px 22px 25px!important;overflow:hidden;border:1px solid #d4b66a!important;border-radius:13px!important;background:radial-gradient(ellipse at 48% 2%,#28644e 0%,transparent 60%),repeating-linear-gradient(35deg,#ffffff05 0 1px,transparent 1px 6px),linear-gradient(140deg,#123d32,#0a3029)!important;box-shadow:inset 0 0 0 5px #0e352c,inset 0 0 0 6px #bda15b99,0 12px 27px #03191055!important;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease!important}
+.secret-card:before,.secret-card:after{content:'';position:absolute;width:46px;height:46px;border-color:#d4b66a88;border-style:double;pointer-events:none;z-index:0}
+.secret-card:before{top:13px;left:13px;border-width:3px 0 0 3px;border-radius:16px 0 0 0}
+.secret-card:after{bottom:13px;right:13px;border-width:0 3px 3px 0;border-radius:0 0 16px 0}
+.secret-card:hover,.secret-card:focus-visible{transform:translateY(-5px)!important;border-color:#f0d796!important;box-shadow:inset 0 0 0 5px #0e352c,inset 0 0 0 6px #e5c877,0 18px 35px #03191088,0 0 22px #d4b66a22!important}
+.secret-stationery-mark{position:absolute;top:13px;right:15px;width:29px;height:29px;opacity:.83;pointer-events:none}
+.secret-stationery-mark svg{display:block;width:100%;height:100%}
+.secret-card .secret-envelope{width:110px!important;height:90px!important;overflow:visible;filter:drop-shadow(0 4px 3px #03170f88);position:relative;z-index:1}
+.secret-card .secret-card-title{font-family:Georgia,serif!important;font-size:clamp(17px,1.65vw,21px)!important;line-height:1.35!important;letter-spacing:0!important;color:#fff4d6!important;max-width:25ch;margin-top:12px!important;text-wrap:balance}
+.secret-card .secret-card-hint{color:#d4b66a!important;letter-spacing:.025em!important;margin-top:12px!important}
+.secret-envelope-flap{transform-origin:48px 23px;transition:transform .4s ease}
+.secret-card:hover .secret-envelope-flap,.secret-card:focus-visible .secret-envelope-flap{transform:translateY(-5px) scaleY(.85)}
+.secret-lotus-frame{width:min(500px,80%)!important;height:auto!important;margin:16px auto 0!important;display:block!important;overflow:visible!important}
+.secret-lotus-frame svg{display:block;width:100%;height:auto;overflow:visible}
+.secret-corner{opacity:.9;pointer-events:none}
+.secret-section .secret-branches,.secret-section .secret-corner,.secret-section .secret-fireflies{pointer-events:none}
+@media(max-width:1050px){.royal-rail{width:clamp(55px,10vw,105px);opacity:.78}.secret-card{min-height:230px!important}}
+@media(max-width:650px){.royal-rail{width:42px;opacity:.65;top:125px}.royal-rail-left{left:-13px}.royal-rail-right{right:-13px}.secret-section{padding-bottom:65px!important}.secret-card{min-height:215px!important;padding:34px 22px 22px!important}.secret-grid{gap:16px!important}.secret-heading{padding-inline:18px}.secret-corner{max-width:110px;opacity:.55}}
+@media(prefers-reduced-motion:reduce){.secret-card,.secret-envelope-flap{transition:none!important}}

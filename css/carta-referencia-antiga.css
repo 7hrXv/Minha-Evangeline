@@ -1,0 +1,19 @@
+/* Papel artesanal e envelope de época, baseado na referência escolhida */
+.nova-carta-page{background:radial-gradient(ellipse at 50% 32%,#1c3021,#0e1c14 78%);min-height:calc(100vh - 120px)}
+.nova-carta-intro h1{color:#e6d0a2}.nova-carta-intro h1 em{color:#caa36a}.nova-eyebrow{color:#c6a16c}
+.nova-aurora{background:radial-gradient(ellipse,#b48a4622,transparent 70%)}
+.nova-envelope{width:min(85vw,550px);aspect-ratio:655/463;filter:drop-shadow(0 25px 25px #0009)}
+.antique-envelope-art{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:6;pointer-events:none;filter:sepia(.07) contrast(1.03)}
+.nova-envelope-back,.nova-envelope-front,.nova-envelope-flap,.nova-envelope-note,.nova-envelope-seal{opacity:0!important}
+.nova-envelope-button.is-opening .antique-envelope-art{animation:antique-open .95s ease-in-out forwards}
+@keyframes antique-open{0%{transform:scale(1);opacity:1}45%{transform:scale(1.08) rotate(-2deg);opacity:1}100%{transform:translateY(-75px) scale(.88);opacity:0}}
+.nova-open-caption{font-family:Georgia,serif;color:#d1ac72;font-size:1.08rem;font-style:italic;letter-spacing:.02em;border-top:1px solid #856a416b;border-bottom:1px solid #856a416b;padding:13px 38px}
+.nova-letter{width:min(96vw,760px)}
+.nova-letter-inner{background:#d9b67d url('../assets/images/pergaminho-artesanal.png') center / 100% 100% no-repeat!important;border:0!important;box-shadow:0 27px 55px #0009!important;clip-path:none!important;padding:clamp(65px,10vw,105px) clamp(50px,11vw,110px)!important;min-height:760px;transform:rotate(-.6deg);color:#35241a!important}
+.nova-letter h2{color:#402619!important;text-align:left!important;font-size:clamp(1.9rem,4vw,2.65rem)!important;margin:18px 0 29px!important}
+.nova-letter-text p{color:#352419!important;line-height:1.85!important;font-size:clamp(1rem,1.75vw,1.15rem)!important}
+.nova-letter-kicker{color:#624026!important;text-align:left!important;font:500 .85rem Georgia,serif!important;letter-spacing:.21em!important;margin:5px 0 10px!important}
+.nova-letter-ornament{text-align:left!important;letter-spacing:0!important;color:#64432a!important;font-size:1.3rem!important}
+.antique-rule{font-size:1.1rem;color:#805333;display:flex;align-items:center;gap:9px;margin-bottom:25px}.antique-rule:before,.antique-rule:after{content:'';height:1px;background:#79503270;flex:1}.antique-rule-bottom{max-width:240px;margin:25px auto 8px}
+.nova-signature{color:#50301d!important;font-size:1.16rem!important}.nova-close{background:#e0b77c!important;border:2px solid #734828!important;color:#4b291a!important;top:45px!important;right:50px!important}
+@media(max-width:600px){.nova-letter-inner{padding:72px 48px 78px!important;min-height:800px}.nova-letter-text p{font-size:.95rem!important;line-height:1.7!important}.nova-close{top:37px!important;right:37px!important}.nova-letter h2{font-size:1.75rem!important}.nova-envelope{width:90vw}}

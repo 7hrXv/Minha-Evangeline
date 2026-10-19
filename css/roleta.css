@@ -1,0 +1,105 @@
+*{box-sizing:border-box}body.pagina-roleta{margin:0;min-height:100vh;background:linear-gradient(90deg,rgba(2,18,12,.90),rgba(3,23,17,.75)),url("../assets/images/fundo-tiana-naveen-hd.png") center/cover fixed;color:#fff;font-family:Arial,sans-serif}.pagina-roleta:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 30%,transparent 5%,rgba(0,12,7,.38) 100%)}.roleta-layout{position:relative;z-index:1;max-width:1050px;margin:auto;padding:55px 24px 70px;text-align:center}.roleta-selo,.resultado-selo{font-size:11px;letter-spacing:3px;font-weight:700;color:#c4dfa1}.roleta-intro h1{font-family:Georgia,serif;font-size:clamp(40px,6vw,76px);line-height:1.04;margin:20px auto}.roleta-intro h1 em{font-style:normal;color:#c4dfa1}.roleta-intro p{max-width:610px;margin:0 auto 26px;line-height:1.7;color:#e4eadd}.roleta-painel{display:flex;flex-direction:column;align-items:center}.roleta-container{position:relative;width:min(80vw,470px);aspect-ratio:1;filter:drop-shadow(0 15px 30px #0009)}#roletaCanvas{width:100%;height:100%;display:block;transition:transform 5.2s cubic-bezier(.12,.74,.13,1);border-radius:50%}.roleta-seta{position:absolute;z-index:4;top:-12px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:17px solid transparent;border-right:17px solid transparent;border-top:35px solid #fff;filter:drop-shadow(0 3px 4px #000a)}.roleta-centro{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:55px;height:55px;border:5px solid #fff;border-radius:50%;background:#0b3021;font-size:27px;color:#d5e9b5}.roleta-botao{margin-top:23px;padding:16px 36px;border:0;border-radius:100px;background:#c4dfa1;color:#102b1b;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 6px 20px #0007}.roleta-botao:hover{background:#e0f4bd;transform:translateY(-2px)}.roleta-botao:disabled{opacity:.65;cursor:wait;transform:none}.roleta-dica{font-size:12px;color:#e2ebd9}.roleta-resultado{max-width:640px;margin:26px auto 18px;padding:24px 30px;background:rgba(5,29,19,.78);border:1px solid #b8d69d66;border-radius:24px;backdrop-filter:blur(9px)}.roleta-resultado h2{font:normal 32px Georgia,serif;margin:12px 0}.roleta-resultado p{line-height:1.6;margin:0;color:#e5eee3}.roleta-links{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:28px}.roleta-links a{color:#d7e9bf;text-decoration:none;border-bottom:1px solid #d7e9bf;padding-bottom:5px}@media(max-width:600px){.roleta-layout{padding-top:38px}.roleta-intro h1{font-size:42px}.roleta-resultado h2{font-size:26px}.roleta-container{width:min(86vw,390px)}}@media(prefers-reduced-motion:reduce){#roletaCanvas{transition-duration:.1s}}
+
+/* Cenário romântico do bayou — decoração da página Nossa História */
+body.pagina-roleta {
+  background:
+    linear-gradient(180deg,rgba(2,19,14,.43) 0%,rgba(2,19,14,.66) 55%,rgba(2,19,14,.84) 100%),
+    url("../assets/images/fundo-tiana-naveen-hd.png") center center / cover fixed no-repeat;
+}
+.pagina-roleta::before {background:radial-gradient(ellipse at 48% 30%,transparent 25%,rgba(0,10,6,.34) 100%)}
+.bayou-decor {position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.moon-glow {position:absolute;top:4%;right:12%;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,#c6e7a91f 0%,#a1d09b0d 35%,transparent 75%);filter:blur(10px)}
+.firefly {position:absolute;width:7px;height:7px;border-radius:50%;background:#f2f9aa;box-shadow:0 0 9px 4px #e1f89c9c,0 0 28px 9px #a9d57455;animation:bayouFloat 5s ease-in-out infinite alternate,bayouBlink 2.7s ease-in-out infinite alternate}
+.f1{left:8%;top:17%}.f2{left:19%;top:48%;animation-delay:-2s}.f3{left:82%;top:20%;animation-delay:-1s}.f4{left:91%;top:60%;animation-delay:-3s}.f5{left:12%;top:79%;animation-delay:-4s}.f6{left:75%;top:82%;animation-delay:-1.8s}.f7{left:64%;top:11%;animation-delay:-2.5s}.f8{left:34%;top:65%;animation-delay:-3.5s}
+.vine{position:absolute;color:#82a56d;font-size:clamp(100px,17vw,260px);opacity:.17;text-shadow:0 0 30px #001c10;transform:rotate(-28deg)}.vine-left{left:-55px;top:5%}.vine-right{right:-50px;bottom:3%;transform:rotate(145deg)}
+.lily{position:absolute;bottom:-34px;width:190px;height:95px;border-radius:50% 0 50% 50%;background:radial-gradient(ellipse at 40% 35%,#437a46 0%,#163e28 68%,#0c291d 100%);border:1px solid #8cb56b55;transform:rotate(-18deg);opacity:.85}.lily span{position:absolute;top:-32px;left:65px;font-size:90px;color:#d9f1d2;text-shadow:0 0 17px #f0f7b7aa}.lily-left{left:3%}.lily-right{right:2%;transform:rotate(24deg);width:155px;height:80px}.lily-right span{font-size:75px;left:52px}
+.roleta-painel{position:relative}.roleta-container{filter:drop-shadow(0 18px 35px #000c) drop-shadow(0 0 20px #b6d98a26)}
+.roleta-resultado{box-shadow:0 12px 45px #00120e80}
+@keyframes bayouFloat{to{transform:translate(12px,-28px)}}@keyframes bayouBlink{to{opacity:.25}}
+@media(max-width:600px){body.pagina-roleta{background-attachment:scroll}.vine{opacity:.11}.lily{transform:scale(.7);transform-origin:bottom left}.lily-right{transform:scale(.7);transform-origin:bottom right}}
+@media(prefers-reduced-motion:reduce){.firefly{animation:none}}
+
+/* Fundo Ray e coração: imagem enviada, ampliada para Full HD. */
+body.pagina-roleta {
+ background: linear-gradient(180deg,rgba(4,9,38,.30),rgba(3,11,40,.58)),url("../assets/images/ray-coracao-fundo-1920.jpg") center center / cover fixed no-repeat;
+}
+.pagina-roleta::before {background:linear-gradient(90deg,rgba(1,8,31,.38),transparent 65%)}
+.roleta-intro h1 em,.roleta-selo,.resultado-selo {color:#b6e6ff}
+.roleta-botao {background:#b4e9ff;color:#07253e}
+.roleta-botao:hover {background:#d8f4ff}
+.roleta-centro {background:#082b52;color:#d9f4ff}
+.roleta-resultado {background:rgba(5,17,49,.44);border-color:#9cdfff66}
+.roleta-links a {color:#c7efff;border-bottom-color:#c7efff}
+@media(max-width:600px){body.pagina-roleta{background-attachment:scroll;background-position:62% center}}
+
+/* Fundo Ray: versão com maior nitidez e contraste; sem filtro escuro excessivo. */
+body.pagina-roleta {
+ background-image: linear-gradient(180deg,rgba(3,9,34,.10),rgba(3,9,34,.20)),url("../assets/images/ray-coracao-fundo-melhorado.jpg");
+ background-position:center center; background-size:cover;
+}
+.pagina-roleta::before {background:none}
+@media(max-width:600px){body.pagina-roleta{background-position:60% center}}
+
+/* Arte IA em alta resolução escolhida para a página Nossa História. */
+body.pagina-roleta {
+  background-image: linear-gradient(180deg, rgba(3,9,34,.08), rgba(3,9,34,.22)), url('../assets/images/ray-coracao-ia-hd.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@media (max-width: 768px) {
+  body.pagina-roleta { background-attachment: scroll; background-position: 60% center; }
+}
+
+/* Escala compacta para a página da roleta */
+.roleta-layout{max-width:860px;padding:28px 18px 42px}
+.roleta-intro h1{font-size:clamp(32px,4.5vw,52px);margin:10px auto}
+.roleta-intro p{font-size:14px;line-height:1.5;margin-bottom:18px}
+.roleta-container{width:min(72vw,350px)}
+.roleta-seta{border-left-width:13px;border-right-width:13px;border-top-width:27px}
+.roleta-centro{width:45px;height:45px;font-size:21px}
+.roleta-botao{margin-top:17px;padding:12px 27px;font-size:13px}
+.roleta-resultado{max-width:530px;margin:17px auto 12px;padding:16px 22px}
+.roleta-resultado h2{font-size:25px}
+.roleta-links{margin-top:18px}
+@media(max-width:600px){.roleta-layout{padding:24px 12px 35px}.roleta-intro h1{font-size:35px}.roleta-container{width:min(83vw,320px)}}
+
+/* Paleta da roleta harmonizada com o céu azul do Ray */
+.roleta-centro{background:#082452;border-color:#d8f5ff;color:#e8faff;box-shadow:0 0 16px #60caff88}
+.roleta-seta{border-top-color:#d8f5ff}
+.roleta-container{filter:drop-shadow(0 12px 28px #001334bb) drop-shadow(0 0 16px #4ba9ed55)}
+.roleta-botao{background:linear-gradient(135deg,#8bd8ff,#c9f1ff);color:#09254a}
+.roleta-botao:hover{background:#e0f7ff}
+
+/* Romance sutil: corações, brilhos e revelação da surpresa */
+.romance-sky{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.romance-particle{position:absolute;bottom:-12vh;left:var(--x);font-size:var(--size);color:var(--color);opacity:0;text-shadow:0 0 14px #b6eaff;animation:romance-rise var(--duration) linear var(--delay) infinite}
+@keyframes romance-rise{0%{transform:translate3d(0,0,0) rotate(-10deg) scale(.75);opacity:0}15%{opacity:.58}75%{opacity:.42}100%{transform:translate3d(var(--drift),-120vh,0) rotate(18deg) scale(1.2);opacity:0}}
+.roleta-intro{animation:romance-appear 1.2s ease both}.roleta-painel{animation:romance-appear 1.2s .18s ease both}.roleta-resultado{animation:romance-appear 1.2s .3s ease both}
+@keyframes romance-appear{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.roleta-botao{transition:transform .25s ease,box-shadow .25s ease,background .25s ease;box-shadow:0 6px 22px #46bfff50}
+.roleta-botao:not(:disabled):hover{transform:translateY(-3px);box-shadow:0 9px 30px #9de6ff99}
+.roleta-resultado.romance-reveal{animation:romance-result .9s ease both}
+@keyframes romance-result{0%{transform:scale(.96);box-shadow:0 0 0 #ffe4a000}50%{transform:scale(1.02);box-shadow:0 0 40px #ffe4a066}100%{transform:scale(1);box-shadow:0 12px 45px #00120e80}}
+.romance-burst{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden}.romance-burst span{position:absolute;left:50%;top:48%;font-size:var(--size);color:var(--color);text-shadow:0 0 12px #e0f7ff;animation:romance-pop 1.8s ease-out forwards}
+@keyframes romance-pop{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}20%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.25)}}
+@media(prefers-reduced-motion:reduce){.romance-particle,.roleta-intro,.roleta-painel,.roleta-resultado,.romance-burst span{animation:none!important}.romance-particle,.romance-burst{display:none}}
+
+/* Roleta celestial premium — aro luminoso, vidro e detalhes dourados */
+.roleta-layout{max-width:900px;padding-top:36px}
+.roleta-intro{max-width:700px;margin:0 auto 20px;padding:18px 24px 5px;border-radius:24px;background:linear-gradient(180deg,rgba(4,19,55,.46),rgba(4,19,55,0));backdrop-filter:blur(2px)}
+.roleta-intro h1{font-size:clamp(30px,4.2vw,49px);text-shadow:0 3px 24px #00132b}
+.roleta-intro h1 em{color:#ffdfa1;text-shadow:0 0 20px #ffc96366}
+.roleta-selo,.resultado-selo{color:#ffdda1;letter-spacing:2.3px}
+.roleta-intro p{color:#e3f4ff;max-width:560px}
+.roleta-container{width:min(75vw,370px);filter:drop-shadow(0 13px 22px #000c) drop-shadow(0 0 23px #69c7ff66)}
+.roleta-container::after{content:'';position:absolute;inset:-9px;border:1px solid rgba(199,234,255,.25);border-radius:50%;pointer-events:none}
+.roleta-seta{top:-17px;border-left-width:13px;border-right-width:13px;border-top-width:27px;border-top-color:#ffe0a0;filter:drop-shadow(0 0 8px #ffc971)}
+.roleta-centro{width:53px;height:53px;background:radial-gradient(circle at 35% 25%,#2365a0,#071a3d);border:3px solid #f9e3af;color:#ffe6b0;box-shadow:0 0 17px #84d4ff, inset 0 0 11px #70b6ff77;font-size:26px}
+.roleta-botao{margin-top:25px;padding:13px 36px;border:1px solid #e5f7ff;background:linear-gradient(135deg,#b9eaff,#70c7f6 55%,#d2f1ff);color:#07244b;font-size:14px;letter-spacing:.2px;box-shadow:0 5px 20px #6bcaff77, inset 0 1px 0 #fff}
+.roleta-botao:hover{background:linear-gradient(135deg,#d6f4ff,#9bdbff);box-shadow:0 7px 28px #86d5ffbb}
+.roleta-dica{font-size:12px;color:#dcefff;margin-top:13px}
+.roleta-resultado{border:1px solid #b1ddff77;background:linear-gradient(145deg,rgba(6,27,69,.78),rgba(12,44,85,.54));box-shadow:0 10px 30px #0013308c, inset 0 1px 0 #ffffff22}
+.roleta-resultado h2{color:#fff2cb}
+@media(max-width:600px){.roleta-intro{padding:10px 8px 0}.roleta-container{width:min(83vw,335px)}.roleta-layout{padding-top:22px}}

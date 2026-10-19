@@ -1,0 +1,39 @@
+/* Ajustes de contraste exclusivos do Mural de carinho.
+   Carregado após as folhas de estilo anteriores para resolver a cascata. */
+body.mural-carinho-page .carinho-list .carinho-note .carinho-note-name,
+body.mural-carinho-page .carinho-list .carinho-note .carinho-note-date,
+body.mural-carinho-page .carinho-list .carinho-note .carinho-note-text {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+body.mural-carinho-page #carinhoForm #carinhoName,
+body.mural-carinho-page #carinhoForm #carinhoMessage {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  caret-color: #FFFFFF;
+  opacity: 1 !important;
+}
+body.mural-carinho-page #carinhoForm #carinhoName::placeholder,
+body.mural-carinho-page #carinhoForm #carinhoMessage::placeholder {
+  color: #E6EDE6 !important;
+  -webkit-text-fill-color: #E6EDE6 !important;
+  opacity: 1 !important;
+}
+body.mural-carinho-page .carinho-list .carinho-note .carinho-confirm .carinho-confirm-yes,
+body.mural-carinho-page .carinho-list .carinho-note .carinho-confirm .carinho-confirm-yes:hover,
+body.mural-carinho-page .carinho-list .carinho-note .carinho-confirm .carinho-confirm-yes:active,
+body.mural-carinho-page .carinho-list .carinho-note .carinho-confirm .carinho-confirm-yes:focus-visible {
+  background: #123D32 !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  border: 1px solid #D4B66A !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+body.mural-carinho-page .carinho-list .carinho-note .carinho-confirm .carinho-confirm-yes:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}

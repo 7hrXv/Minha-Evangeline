@@ -1,0 +1,165 @@
+
+.letter-page{min-height:calc(100vh - 130px);padding:50px 20px 95px;text-align:center;position:relative;overflow:hidden}
+.letter-intro{max-width:800px;margin:0 auto 20px}
+.letter-intro h1{font-family:Georgia,serif;font-size:clamp(2.1rem,5vw,4.2rem);color:#fff5d6;line-height:1.12;margin:14px 0 16px}
+.letter-intro p{color:#e0e9df;line-height:1.7}.letter-intro .letter-hint{font-size:.9rem;color:#d9d6ad}
+.envelope-stage{position:relative;display:grid;place-items:center;min-height:440px;max-width:960px;margin:0 auto}
+.envelope-button{position:relative;width:min(76vw,540px);height:min(48vw,340px);min-height:220px;border:0;background:none;cursor:pointer;filter:drop-shadow(0 25px 28px rgba(0,0,0,.35));transition:transform .45s ease;isolation:isolate}
+.envelope-button:hover{transform:translateY(-9px) rotate(-1deg)}
+.envelope-body,.envelope-fold,.envelope-flap,.envelope-shadow{position:absolute;inset:0;border-radius:12px}
+.envelope-body{background:linear-gradient(145deg,#f8e4bf,#d6b886);border:3px solid #ffe7bb}
+.envelope-fold{background:linear-gradient(145deg,#f6dfb8,#d4ad76);clip-path:polygon(0 0,50% 60%,100% 0,100% 100%,0 100%);z-index:2}
+.envelope-flap{background:linear-gradient(165deg,#ffeac6,#d7b07c);clip-path:polygon(0 0,100% 0,50% 64%);z-index:3;transform-origin:top;transition:transform .8s ease}
+.envelope-seal{position:absolute;left:50%;top:57%;transform:translate(-50%,-50%);width:66px;height:66px;display:grid;place-items:center;border-radius:50%;background:#9b3b50;color:#ffe5b7;font-size:32px;z-index:4;box-shadow:0 4px 12px #63334855}
+.envelope-instruction{position:absolute;left:0;right:0;bottom:-44px;color:#ffe9bc;font-family:Georgia,serif;font-style:italic;font-size:1.1rem}
+.envelope-button.opening .envelope-flap{transform:rotateX(175deg);z-index:0}
+.envelope-button.opening .envelope-seal{opacity:0;transition:opacity .3s}
+.love-letter{display:none;width:min(90vw,720px);position:relative;z-index:5;animation:letter-arrive .8s ease both}
+.love-letter.is-open{display:block}
+.letter-paper{position:relative;text-align:left;padding:clamp(25px,5vw,65px);background:linear-gradient(135deg,#fff9ed,#f4e6cd);color:#49382e;border-radius:10px;border:2px solid #ead1a4;box-shadow:0 28px 65px #0007,0 0 35px #ffe3a526}
+.letter-date{font-size:.86rem;letter-spacing:.12em;color:#9c6d61;text-transform:uppercase}
+.letter-paper h2{font-family:Georgia,serif;color:#884a53;font-size:clamp(1.7rem,3.6vw,2.6rem);margin:15px 0 22px}
+.letter-message p{font-family:Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);line-height:1.95;margin:0 0 19px;color:#513e35}
+.letter-signature{text-align:right;font-family:Georgia,serif;font-style:italic;font-size:1.1rem;margin-top:28px;color:#884a53}
+.letter-close{position:absolute;right:14px;top:12px;border:0;background:#e9d6ba;color:#724a4d;width:36px;height:36px;border-radius:50%;font-size:25px;cursor:pointer}
+@keyframes letter-arrive{from{opacity:0;transform:translateY(55px) scale(.85)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:600px){.letter-page{padding-top:35px}.envelope-stage{min-height:330px}.envelope-button{width:85vw;height:55vw;min-height:190px}.envelope-seal{width:52px;height:52px;font-size:26px}}
+@media(prefers-reduced-motion:reduce){.envelope-button,.envelope-flap,.love-letter{transition:none!important;animation:none!important}}
+
+/* Carta inspirada em uma convocação real: pergaminho, ornamentos e verde da Tiana */
+.letter-page{background:radial-gradient(ellipse at 50% 40%,rgba(185,155,70,.13),transparent 65%)}
+.envelope-stage{max-width:1080px}
+.love-letter{width:min(94vw,780px)}
+.royal-parchment{position:relative;isolation:isolate;overflow:hidden;padding:clamp(35px,6vw,76px) clamp(28px,7vw,82px) clamp(40px,6vw,72px);border:13px solid #a66a2e;border-radius:12px 12px 22px 22px;background:
+ radial-gradient(ellipse at 15% 4%,rgba(126,68,24,.26),transparent 32%),
+ radial-gradient(ellipse at 91% 95%,rgba(143,75,27,.22),transparent 32%),
+ radial-gradient(ellipse at 70% 35%,rgba(255,249,211,.8),transparent 50%),
+ repeating-linear-gradient(3deg,rgba(118,77,27,.025) 0 2px,transparent 2px 6px),
+ linear-gradient(110deg,#c68d43 0%,#e9bc74 3%,#f8dfa4 10%,#ffebbc 51%,#f5d394 89%,#c98d43 100%);
+box-shadow:inset 0 0 0 3px #efc984,inset 0 0 35px 9px rgba(126,63,21,.33),0 30px 75px rgba(0,0,0,.5),0 0 32px #f4d68d44;color:#4b3320}
+.royal-parchment::before,.royal-parchment::after{content:"❦";position:absolute;top:8px;font-size:56px;color:#86521f;opacity:.58;z-index:-1}
+.royal-parchment::before{left:14px;transform:rotate(-38deg)}
+.royal-parchment::after{right:14px;transform:scaleX(-1) rotate(-38deg)}
+.royal-crown{text-align:center;font-size:clamp(50px,8vw,76px);color:#276341;line-height:1;text-shadow:0 2px 1px #e7ce84;margin:2px auto 8px}
+.royal-ribbon{position:relative;text-align:center;margin:0 -12px 14px;padding:12px 10px;background:linear-gradient(180deg,#bb803a,#e1b66a 45%,#bd813c);border:1px solid #a9763c;box-shadow:0 6px 10px #75451d44;color:#3b512c;font-family:Georgia,serif;font-style:italic;font-weight:700;font-size:clamp(1.25rem,3vw,1.85rem)}
+.royal-flourish{text-align:center;font-size:22px;letter-spacing:.6em;color:#356547;margin-bottom:16px}
+.royal-parchment .letter-date{text-align:center;color:#48623b;font-weight:700;letter-spacing:.12em;font-size:.82rem}
+.royal-parchment h2{text-align:center;color:#255e3e;font-family:Georgia,serif;font-style:italic;font-size:clamp(1.9rem,4.5vw,3.1rem);text-shadow:0 1px #fff1bf;margin:14px 0 10px}
+.royal-divider{text-align:center;color:#987137;font-size:22px;letter-spacing:.35em;margin:5px auto 26px}
+.royal-divider-bottom{margin:24px auto 5px}
+.royal-parchment .letter-message p{color:#513922;font-family:Georgia,serif;font-size:clamp(1.05rem,2vw,1.22rem);line-height:1.95;text-align:center;margin-bottom:22px}
+.royal-parchment .letter-signature{color:#2e6547;font-size:1.25rem;text-align:right;margin:12px 0 0}
+.royal-parchment .letter-close{background:#376349;color:#fff5d7;border:2px solid #d2a65d;right:8px;top:8px;z-index:5}
+@media(max-width:600px){.royal-parchment{border-width:8px;padding:45px 22px 35px}.royal-ribbon{margin-left:-10px;margin-right:-10px}.royal-parchment .letter-message p{text-align:left}}
+
+/* Garrafa de mensagem antiga, inspirada em aventuras de piratas */
+.envelope-stage{min-height:610px}
+.envelope-button{width:min(78vw,370px);height:530px;min-height:0;filter:none;transform-origin:50% 75%;animation:bottle-bob 4.2s ease-in-out infinite}
+.envelope-button:hover{transform:scale(1.045) rotate(-3deg);animation-play-state:paused}
+.pirate-bottle{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 20px 24px rgba(0,0,0,.35)) drop-shadow(0 0 19px rgba(138,226,185,.2))}
+.bottle-glimmer{position:absolute;top:26%;right:13%;font-size:36px;color:#ffebad;text-shadow:0 0 15px #ffe9a0;animation:bottle-twinkle 2.3s ease-in-out infinite}
+.envelope-instruction{bottom:-12px;font-size:1.06rem;white-space:nowrap}
+.envelope-button.opening{animation:bottle-open .55s ease-in forwards}
+.envelope-button.opening .envelope-flap,.envelope-button.opening .envelope-seal{display:none}
+@keyframes bottle-bob{0%,100%{translate:0 0;rotate:-2deg}50%{translate:0 -13px;rotate:2deg}}
+@keyframes bottle-twinkle{0%,100%{opacity:.25;transform:scale(.6)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes bottle-open{to{opacity:0;transform:translateY(-25px) rotate(13deg) scale(.8)}}
+@media(max-width:600px){.envelope-stage{min-height:510px}.envelope-button{width:min(75vw,300px);height:450px}.envelope-instruction{font-size:.87rem}}
+@media(prefers-reduced-motion:reduce){.envelope-button,.bottle-glimmer{animation:none!important}}
+
+/* Papel floral enviado pelo usuário, mantendo o texto como HTML editável */
+.love-letter{width:min(92vw,590px)}
+.letter-paper.royal-parchment.floral-letter{
+ width:100%;box-sizing:border-box;min-height:0;aspect-ratio:736/1308;
+ background:#f0e0c8 url('../assets/images/carta-flores-mirella.jpg') center / 100% 100% no-repeat;
+ border:0;border-radius:3px;box-shadow:0 22px 65px #0008;
+ padding:20% 13% 15%;display:flex;flex-direction:column;justify-content:center;
+ overflow:visible;color:#493c2d;
+}
+.floral-letter::before,.floral-letter::after{display:none!important}
+.floral-letter .royal-crown,.floral-letter .royal-ribbon,.floral-letter .royal-flourish{display:none!important}
+.floral-letter .letter-date{font-size:clamp(.55rem,1.3vw,.78rem);letter-spacing:.08em;color:#59724a;margin:0 0 6px;text-align:center}
+.floral-letter h2{font-size:clamp(1.2rem,3vw,2rem);line-height:1.12;margin:0 0 7px;color:#456b42;text-align:center}
+.floral-letter .royal-divider{font-size:clamp(.8rem,1.8vw,1.1rem);margin:0 0 10px;color:#b3924b}
+.floral-letter .letter-message p{font-size:clamp(.78rem,1.55vw,1.02rem);line-height:1.55;text-align:center;margin:0 0 12px;color:#544636}
+.floral-letter .royal-divider-bottom{margin:5px 0}
+.floral-letter .letter-signature{font-size:clamp(.82rem,1.6vw,1.08rem);margin:4px 0 0;color:#4d7047}
+.floral-letter .letter-close{top:14%;right:7%;width:34px;height:34px;background:#557b54;color:#fff6e6;border:1px solid #e1c98f}
+@media(max-width:600px){
+ .love-letter{width:min(96vw,490px)}
+ .letter-paper.royal-parchment.floral-letter{padding:20% 12% 16%}
+ .floral-letter .letter-date{font-size:clamp(.52rem,2.1vw,.7rem)}
+ .floral-letter h2{font-size:clamp(1.05rem,4.2vw,1.65rem)}
+ .floral-letter .letter-message p{font-size:clamp(.67rem,2.45vw,.9rem);line-height:1.45;margin-bottom:8px}
+ .floral-letter .letter-signature{font-size:clamp(.7rem,2.6vw,.9rem)}
+}
+
+/* Pergaminho pirata interativo */
+.envelope-stage{min-height:590px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.envelope-button{display:block;position:relative;width:min(80vw,350px);height:465px;min-height:0;border:0;background:none;cursor:pointer;filter:none;animation:scroll-drift 5s ease-in-out infinite;transform-origin:center center}
+.envelope-button:hover{animation-play-state:paused;transform:rotate(-3deg) scale(1.05)}
+.envelope-button[hidden]{display:none!important}
+.scroll-art{position:absolute;inset:15px 34px 35px;display:block;transform:rotate(-13deg);filter:drop-shadow(14px 24px 18px #0007)}
+.scroll-parchment{position:absolute;inset:24px 17px;background:radial-gradient(ellipse at 40% 40%,#f5d7a0,#c68b4c 75%,#855021);border-radius:20px 27px 21px 23px;box-shadow:inset 15px 0 22px #75451d55,inset -14px 0 19px #643c1955;border:3px solid #a26b35}
+.scroll-parchment:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(160deg,transparent 0 18px,#79451d16 19px 20px);border-radius:inherit}
+.scroll-roll{position:absolute;left:0;right:0;height:57px;border:3px solid #8b5528;border-radius:50%;z-index:2;background:linear-gradient(180deg,#8d572c,#d49a58 28%,#f1cb8c 48%,#a96a34 80%,#70401d);box-shadow:0 8px 14px #5a331c55}
+.scroll-roll-top{top:0}.scroll-roll-bottom{bottom:0;transform:rotate(180deg)}
+.scroll-rope{position:absolute;left:4%;right:4%;height:15px;border-radius:12px;background:repeating-linear-gradient(115deg,#76512d 0 5px,#cba06b 6px 11px);z-index:4;box-shadow:0 3px 4px #42270f66}
+.scroll-rope-a{top:46%}.scroll-rope-b{top:53%}
+.scroll-seal{position:absolute;left:50%;top:51%;transform:translate(-50%,-50%);width:75px;height:75px;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#c6555b,#772b37 75%);border:5px double #e2a576;border-radius:50%;z-index:5;font-size:31px;color:#ffe5ad;box-shadow:0 6px 13px #361b1966}
+.scroll-ink{position:absolute;top:25%;left:0;right:0;text-align:center;font:italic 25px Georgia,serif;color:#68401d;opacity:.65;line-height:2}
+.scroll-ink strong{font-size:35px}
+.scroll-magic{position:absolute;top:12%;right:-2%;color:#ffe5a0;font-size:23px;text-shadow:0 0 14px #ffec9c;animation:scroll-sparkle 3s ease-in-out infinite}
+.envelope-instruction{position:absolute;bottom:-12px;left:-40px;right:-40px;white-space:normal;font-size:1.08rem;color:#ffe3a4}
+.envelope-button.opening{animation:scroll-unfurl 1.05s cubic-bezier(.24,.75,.3,1) forwards!important}
+.envelope-button.opening .scroll-rope,.envelope-button.opening .scroll-seal{animation:scroll-untie .5s ease-out forwards}
+.envelope-button.opening .scroll-parchment{animation:scroll-expand .95s ease-out forwards}
+@keyframes scroll-drift{0%,100%{translate:0 0;rotate:-2deg}50%{translate:0 -12px;rotate:2deg}}
+@keyframes scroll-sparkle{0%,100%{opacity:.3;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}}
+@keyframes scroll-untie{to{opacity:0;transform:translateY(35px) scale(.7)}}
+@keyframes scroll-expand{to{transform:scaleY(1.45) scaleX(1.3)}}
+@keyframes scroll-unfurl{0%{opacity:1;transform:scale(1) rotate(0)}65%{opacity:1;transform:scale(1.15,1.3) rotate(6deg)}100%{opacity:0;transform:scale(1.35,1.55) rotate(8deg)}}
+/* Papel rasgado, torto e balançando — preserva a imagem floral do usuário */
+.love-letter{width:min(94vw,760px);transform-origin:center 20%;animation:scroll-letter-arrive 1.25s cubic-bezier(.18,.8,.2,1) both}
+.love-letter.is-open{display:block;animation:scroll-letter-arrive 1.25s cubic-bezier(.18,.8,.2,1) both,scroll-letter-sway 7s ease-in-out 1.3s infinite}
+.letter-paper.floral-letter{position:relative;overflow:visible;border:0!important;border-radius:0!important;clip-path:polygon(2% 0%,8% 1%,14% 0%,22% 1.5%,31% .4%,39% 1.5%,48% 0%,58% 1%,67% 0%,76% 1.5%,85% 0%,94% 1%,100% 3%,98% 10%,100% 19%,98.7% 28%,100% 38%,98% 48%,100% 59%,98.6% 69%,100% 79%,98% 89%,100% 97%,95% 100%,87% 98.8%,78% 100%,68% 98.5%,59% 100%,48% 98.8%,39% 100%,28% 98.7%,19% 100%,9% 98.7%,1% 100%,2% 90%,0% 79%,2% 69%,0% 59%,2% 49%,0% 39%,2% 28%,0% 17%,2% 9%);filter:drop-shadow(0 20px 20px #0006);box-shadow:inset 0 0 35px 14px #81521b6b,0 25px 50px #0007!important;transform:rotate(-1.2deg)}
+.letter-paper.floral-letter:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 1% 1%,#7d491f88,transparent 24%),radial-gradient(ellipse at 99% 99%,#7b461e80,transparent 23%),linear-gradient(90deg,#7b431d38,transparent 11%,transparent 90%,#7b431d38);mix-blend-mode:multiply}
+@keyframes scroll-letter-arrive{0%{opacity:0;transform:scale(.28,.05) rotate(-17deg) translateY(-90px)}55%{opacity:1;transform:scale(1.03,.87) rotate(3deg)}100%{opacity:1;transform:scale(1) rotate(-1.5deg)}}
+@keyframes scroll-letter-sway{0%,100%{transform:rotate(-1.5deg) translateY(0)}50%{transform:rotate(1deg) translateY(-9px)}}
+@media(max-width:600px){.envelope-stage{min-height:485px}.envelope-button{width:min(78vw,290px);height:400px}.scroll-art{inset:15px 28px 38px}.scroll-seal{width:59px;height:59px}.scroll-ink{font-size:19px}.letter-paper.floral-letter{transform:rotate(-.6deg)}}
+@media(prefers-reduced-motion:reduce){.envelope-button,.envelope-button.opening,.love-letter.is-open,.scroll-magic{animation:none!important}}
+
+/* Novo papel escolhido: textura antiga e queimada nas bordas */
+.letter-paper.royal-parchment.floral-letter{background:#eac6a0 url('../assets/images/papel-pirata-envelhecido.png') center / 100% 100% no-repeat!important;aspect-ratio:320/403!important;min-height:610px!important;padding:15% 13% 13%!important;justify-content:center!important;clip-path:polygon(2% 0,8% 1%,16% 0,26% 1%,38% 0,48% 1%,60% 0,71% 1%,82% 0,93% 1%,100% 2%,99% 11%,100% 23%,99% 35%,100% 47%,99% 60%,100% 73%,99% 87%,100% 98%,93% 100%,83% 99%,72% 100%,61% 99%,49% 100%,37% 99%,25% 100%,13% 99%,1% 100%,2% 88%,0 76%,2% 65%,0 51%,2% 39%,0 27%,2% 14%)}
+.floral-letter .letter-date{color:#79522e!important}.floral-letter h2{color:#653e25!important}.floral-letter .royal-divider{color:#a57943!important}.floral-letter .letter-message p{color:#4e3020!important}.floral-letter .letter-signature{color:#684026!important}
+.floral-letter .letter-close{background:#75472e!important;border-color:#cfa36d!important;color:#fff1d6!important;top:6%!important;right:7%!important}
+.letter-paper.floral-letter:after{background:radial-gradient(ellipse at 0 0,#75421b44,transparent 23%),radial-gradient(ellipse at 100% 100%,#75421b44,transparent 23%)!important}
+@media(max-width:600px){.letter-paper.royal-parchment.floral-letter{min-height:480px!important;padding:15% 10% 12%!important}}
+
+/* Referências enviadas: envelope em aquarela e pergaminho desenrolado */
+.envelope-stage{min-height:560px}
+.envelope-button{width:min(86vw,520px);height:390px;min-height:0;animation:scroll-drift 5s ease-in-out infinite}
+.letter-envelope-image{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 22px 18px #0006)}
+.envelope-button:hover{transform:scale(1.045) rotate(-2deg)}
+.envelope-instruction{bottom:-20px}
+.envelope-button.opening{animation:reference-envelope-open 1s ease-in forwards!important}
+@keyframes reference-envelope-open{0%{opacity:1;transform:scale(1) rotate(0)}55%{opacity:1;transform:scale(1.12) rotate(-5deg)}100%{opacity:0;transform:scale(1.25) rotate(7deg)}}
+.letter-paper.reference-scroll{background:none!important;border:0!important;border-radius:0!important;clip-path:none!important;box-shadow:none!important;filter:none!important;padding:0!important;min-height:880px;transform:none!important;isolation:isolate}
+.letter-paper.reference-scroll::before,.letter-paper.reference-scroll::after{display:none!important}
+.letter-scroll-background{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:-1;pointer-events:none;filter:drop-shadow(0 22px 20px #0008)}
+.letter-scroll-content{position:relative;z-index:1;padding:clamp(100px,16vw,155px) clamp(65px,12vw,140px) clamp(110px,17vw,165px);color:#51371f}
+.reference-scroll .royal-crown,.reference-scroll .royal-ribbon,.reference-scroll .royal-flourish{display:none}
+.reference-scroll .letter-date{color:#6d4d2c}
+.reference-scroll h2{color:#66411e}
+.reference-scroll .letter-message p{color:#513820;text-align:left;font-size:clamp(.98rem,1.7vw,1.1rem);line-height:1.7}
+.reference-scroll .letter-signature{color:#694323}
+.reference-scroll .letter-close{top:75px;right:80px;z-index:4}
+.love-letter.is-open{animation:scroll-letter-arrive 1.25s cubic-bezier(.18,.8,.2,1) both,scroll-letter-sway 7s ease-in-out 1.3s infinite}
+@media(max-width:600px){
+.envelope-stage{min-height:400px}.envelope-button{width:90vw;height:275px}.envelope-instruction{bottom:-8px}
+.letter-paper.reference-scroll{min-height:700px}
+.letter-scroll-content{padding:95px 54px 105px}
+.reference-scroll .letter-message p{font-size:.84rem;line-height:1.5;margin-bottom:12px}
+.reference-scroll h2{font-size:1.5rem}
+.reference-scroll .letter-close{top:47px;right:45px}
+}

@@ -1,0 +1,46 @@
+/* Acabamento final — somente papel da carta aberta e diálogos secretos. */
+:root { --carta-verde:#123D32; --carta-ouro:#D4B66A; --carta-marfim:#FFF4D6; }
+.nova-letter .nova-letter-inner.floral-letter-design {
+  background:var(--carta-verde) !important;
+  background-image:none !important;
+  color:var(--carta-marfim) !important;
+  border-color:var(--carta-ouro) !important;
+}
+.nova-letter .floral-letter-design .floral-content,
+.nova-letter .floral-letter-design .nova-letter-text,
+.nova-letter .floral-letter-design .nova-letter-text p,
+.nova-letter .floral-letter-design .nova-letter-text span {
+  color:var(--carta-marfim) !important;
+  -webkit-text-fill-color:var(--carta-marfim) !important;
+}
+.nova-letter .floral-letter-design h2,
+.nova-letter .floral-letter-design .nova-signature,
+.nova-letter .floral-letter-design .nova-signature *,
+.nova-letter .floral-letter-design .nova-letter-kicker,
+.nova-letter .floral-letter-design .nova-letter-ornament,
+.nova-letter .floral-letter-design .antique-rule {
+  color:var(--carta-ouro) !important;
+  -webkit-text-fill-color:var(--carta-ouro) !important;
+}
+.nova-letter .floral-letter-design .floral-arc,
+.nova-letter .floral-letter-design .floral-arc::before,
+.nova-letter .floral-letter-design .floral-arc::after,
+.nova-letter .floral-letter-design::before,
+.nova-letter .floral-letter-design::after {
+  border-color:var(--carta-ouro) !important;
+}
+.nova-letter .floral-letter-design .nova-close,
+.secret-dialog .secret-close {
+  background:var(--carta-verde) !important;
+  color:var(--carta-ouro) !important;
+  border:1px solid var(--carta-ouro) !important;
+  border-radius:50% !important;
+}
+.nova-letter .floral-letter-design .nova-close:hover,
+.secret-dialog .secret-close:hover { background:#19534F !important; color:var(--carta-marfim) !important; }
+.secret-dialog { background:var(--carta-verde) !important; background-image:none !important; color:var(--carta-marfim) !important; border-color:var(--carta-ouro) !important; }
+.secret-dialog .secret-dialog-inner,
+.secret-dialog #secretDialogBody { color:var(--carta-marfim) !important; }
+.secret-dialog h3,
+.secret-dialog .secret-sign,
+.secret-dialog .secret-dialog-kicker { color:var(--carta-ouro) !important; }

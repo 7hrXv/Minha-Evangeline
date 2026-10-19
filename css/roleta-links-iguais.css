@@ -1,0 +1,9 @@
+/* Apenas navegação da página Roleta: os dois links têm a mesma aparência. */
+body.pagina-roleta .roleta-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 28px;max-width:100%;}
+body.pagina-roleta .roleta-links a.ev-nav-back,
+body.pagina-roleta .roleta-links a.ev-nav-forward{box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;width:auto!important;min-height:44px!important;padding:10px 6px!important;margin:0!important;background:transparent!important;background-image:none!important;border:0!important;border-bottom:1px solid rgba(245,247,244,.7)!important;border-radius:0!important;color:#f5f7f4!important;font:600 .91rem/1.3 inherit!important;font-family:inherit!important;font-size:.91rem!important;font-weight:600!important;line-height:1.3!important;letter-spacing:normal!important;text-transform:none!important;text-decoration:none!important;text-shadow:0 1px 5px rgba(0,15,22,.45)!important;box-shadow:none!important;filter:none!important;transform:none!important;transition:color .22s ease,border-color .22s ease!important;}
+body.pagina-roleta .roleta-links a.ev-nav-back:hover,
+body.pagina-roleta .roleta-links a.ev-nav-forward:hover,
+body.pagina-roleta .roleta-links a.ev-nav-back:focus-visible,
+body.pagina-roleta .roleta-links a.ev-nav-forward:focus-visible{color:#d4b66a!important;border-bottom-color:#d4b66a!important;background:transparent!important;box-shadow:none!important;transform:none!important;}
+@media(max-width:600px){body.pagina-roleta .roleta-links{gap:8px 18px;padding-inline:10px;}body.pagina-roleta .roleta-links a.ev-nav-back,body.pagina-roleta .roleta-links a.ev-nav-forward{font-size:.88rem!important;}}

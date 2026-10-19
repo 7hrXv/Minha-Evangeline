@@ -1,0 +1,27 @@
+
+/* Efeitos exclusivos por página */
+.ev-magic-layer{position:fixed!important;inset:0!important;z-index:999!important;pointer-events:none!important;overflow:hidden!important}
+.ev-magic-item{position:absolute;display:block;left:var(--left);top:var(--top);font-size:var(--size);line-height:1;color:var(--color);font-family:Georgia,serif;text-shadow:0 0 10px currentColor,0 0 22px currentColor;will-change:transform,opacity;opacity:0}
+.ev-effect-rise{animation:ev-rise var(--duration) linear var(--delay) infinite}
+.ev-effect-fall{animation:ev-fall var(--duration) linear var(--delay) infinite}
+.ev-effect-twinkle{animation:ev-twinkle var(--duration) ease-in-out var(--delay) infinite}
+.ev-effect-sway{animation:ev-sway var(--duration) ease-in-out var(--delay) infinite}
+.ev-effect-orbit{animation:ev-orbit var(--duration) ease-in-out var(--delay) infinite}
+.ev-effect-pulse{animation:ev-pulse var(--duration) ease-in-out var(--delay) infinite}
+.ev-effect-firefly{animation:ev-firefly var(--duration) ease-in-out var(--delay) infinite}
+.ev-effect-bubble{animation:ev-bubble var(--duration) linear var(--delay) infinite}
+.ev-effect-shoot{animation:ev-shoot var(--duration) ease-in var(--delay) infinite}
+@keyframes ev-rise{0%{transform:translate(0,15vh) rotate(-15deg) scale(.7);opacity:0}15%,75%{opacity:.8}100%{transform:translate(var(--drift),-115vh) rotate(20deg) scale(1.2);opacity:0}}
+@keyframes ev-fall{0%{transform:translate(0,-15vh) rotate(-20deg);opacity:0}15%,80%{opacity:.85}100%{transform:translate(var(--drift),115vh) rotate(75deg);opacity:0}}
+@keyframes ev-twinkle{0%,100%{opacity:.08;transform:scale(.45) rotate(0)}45%{opacity:.95;transform:scale(1.35) rotate(40deg)}}
+@keyframes ev-sway{0%,100%{opacity:.2;transform:translate(-18px,8px) rotate(-12deg)}50%{opacity:.9;transform:translate(24px,-22px) rotate(12deg)}}
+@keyframes ev-orbit{0%,100%{opacity:.1;transform:translate(0,0) scale(.6)}25%{opacity:.8;transform:translate(32px,-26px) scale(1.1)}50%{opacity:.95;transform:translate(0,-54px) scale(1.3)}75%{opacity:.65;transform:translate(-32px,-26px) scale(.9)}}
+@keyframes ev-pulse{0%,100%{opacity:.1;transform:scale(.55)}50%{opacity:.85;transform:scale(1.25)}}
+@keyframes ev-firefly{0%,100%{opacity:.08;transform:translate(0,0) scale(.7)}20%{opacity:1;transform:translate(20px,-35px) scale(1.1)}50%{opacity:.35;transform:translate(-25px,-65px) scale(.8)}75%{opacity:.95;transform:translate(15px,-95px) scale(1.2)}}
+@keyframes ev-bubble{0%{opacity:0;transform:translate(0,25vh) scale(.55)}20%,75%{opacity:.7}100%{opacity:0;transform:translate(var(--drift),-115vh) scale(1.3)}}
+@keyframes ev-shoot{0%,65%{opacity:0;transform:translate(0,0) rotate(-25deg)}70%{opacity:1}92%{opacity:0;transform:translate(-120px,95px) rotate(-25deg)}100%{opacity:0}}
+.ev-reveal{animation:ev-appear .9s ease-out both}
+@keyframes ev-appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.ev-romance-spark{position:fixed;pointer-events:none;z-index:1001;color:var(--spark-color,#ffe6a5);font-size:23px;text-shadow:0 0 10px currentColor;animation:ev-click-spark 1s ease-out forwards}
+@keyframes ev-click-spark{from{opacity:1;transform:translate(-50%,-50%) scale(.5)}to{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.4)}}
+@media(prefers-reduced-motion:reduce){.ev-magic-item,.ev-romance-spark{display:none!important;animation:none!important}.ev-reveal{animation:none!important}}

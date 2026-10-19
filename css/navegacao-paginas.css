@@ -1,0 +1,6 @@
+/* Navegação consistente entre páginas */
+.ev-page-navigation{position:relative;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:920px;width:calc(100% - 32px);margin:38px auto 35px;clear:both;pointer-events:auto}
+.ev-page-navigation a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border:1px solid #d6c39b8c;border-radius:11px;background:#112c28d9;color:#f1e6c9;text-decoration:none;font:500 14px Arial,sans-serif;transition:background .2s,border-color .2s;white-space:nowrap}
+.ev-page-navigation a:hover,.ev-page-navigation a:focus-visible{background:#25493e;border-color:#e5d3a8}
+.ev-page-navigation .ev-next{margin-left:auto}
+@media(max-width:540px){.ev-page-navigation{margin:25px auto;gap:9px}.ev-page-navigation a{font-size:13px;min-height:46px;padding:10px 12px}}

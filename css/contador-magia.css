@@ -1,0 +1,22 @@
+/* Exclusivo de contador.html */
+.contador-particles{position:fixed;inset:0;z-index:3;pointer-events:none;overflow:clip;contain:layout style}
+.contador-particle{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:var(--size);display:block;opacity:var(--alpha);pointer-events:none;will-change:transform,opacity}
+.contador-particle.star{background:#fff8e6;clip-path:polygon(50% 0,59% 40%,100% 50%,59% 59%,50% 100%,41% 59%,0 50%,41% 40%);filter:drop-shadow(0 0 3px #d4b66a);animation:counterTwinkle var(--duration) ease-in-out var(--delay) infinite alternate}
+.contador-particle.star:nth-child(3n){background:#d4b66a}
+.contador-particle.firefly{border-radius:50%;background:#e8cb7b;box-shadow:0 0 9px 2px #e8cb7b77;animation:counterFloat var(--duration) ease-in-out var(--delay) infinite alternate}
+.contador-particle.petal{background:linear-gradient(135deg,#fffefa,#cce0d3);border-radius:85% 0 85% 12%;box-shadow:0 0 4px #ffffff33;animation:counterFall var(--duration) linear var(--delay) infinite}
+@keyframes counterTwinkle{from{opacity:.12;transform:scale(.65)}to{opacity:var(--alpha);transform:scale(1.18)}}
+@keyframes counterFloat{from{transform:translate(-12px,10px);opacity:.2}to{transform:translate(18px,-18px);opacity:var(--alpha)}}
+@keyframes counterFall{from{transform:translate(0,-115vh) rotate(0)}to{transform:translate(var(--sway),110vh) rotate(320deg)}}
+.ev-counter-intro{position:fixed;inset:0;z-index:9999;background:radial-gradient(ellipse at center,#174c3f 0%,#061e22 75%);color:#fff4d6;display:flex;justify-content:center;align-items:center;padding:20px;text-align:center;transition:opacity .6s,visibility .6s}
+.ev-counter-intro.dismissed{opacity:0;visibility:hidden;pointer-events:none}
+.ev-counter-intro .ev-intro-inner{max-width:650px}
+.ev-counter-intro .ev-line{font:clamp(24px,4vw,42px)/1.3 Georgia,serif;margin:25px auto;animation:counterReveal 1s both}
+.ev-counter-intro .ev-line:nth-of-type(2){animation-delay:.7s}
+.ev-counter-intro .ev-intro-actions{animation:counterReveal .8s 1.4s both}
+.ev-counter-intro button{cursor:pointer;padding:14px 24px;border:1px solid #d4b66a;border-radius:30px;background:#d4b66a;color:#123d32;font-weight:700;font-size:16px}
+.ev-counter-intro .ev-skip{display:block;margin:20px auto 0;background:transparent;color:#fff4d6;border:0;text-decoration:underline;font-size:14px}
+.ev-counter-star{font:70px Georgia,serif;color:#d4b66a;text-shadow:0 0 25px #d4b66a88;animation:counterTwinkle 4s ease-in-out infinite alternate}
+@keyframes counterReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(max-width:640px){.ev-counter-intro .ev-line{margin:18px auto}}
+@media(prefers-reduced-motion:reduce){.contador-particle,.ev-counter-star,.ev-counter-intro .ev-line,.ev-counter-intro .ev-intro-actions{animation:none!important}.ev-counter-intro{transition:none}}

@@ -1,0 +1,46 @@
+/* Papelaria romântica: aplicado exclusivamente a bau.html. */
+body.mural-carinho-page .carinho-panel {
+  position:relative; isolation:isolate; overflow:visible;
+  max-width:760px; padding:clamp(30px,4.5vw,58px);
+  color:#183d30; border:1px solid #54715a; border-radius:9px;
+  background:repeating-linear-gradient(0deg,transparent 0 29px,rgba(115,92,55,.028) 30px 31px),linear-gradient(125deg,rgba(255,252,240,.98),rgba(240,229,202,.98));
+  box-shadow:0 24px 75px rgba(5,16,12,.64),inset 0 0 0 5px #f7f0dd,inset 0 0 0 6px rgba(165,132,75,.76),inset 0 0 0 10px rgba(255,253,243,.8);
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+}
+body.mural-carinho-page .carinho-panel::before,body.mural-carinho-page .carinho-panel::after {
+  content:'';position:absolute;width:112px;height:130px;pointer-events:none;z-index:0;background:url('../assets/mural-lotus-papelaria.svg') center/contain no-repeat;opacity:.87;
+}
+body.mural-carinho-page .carinho-panel::before {top:-23px;left:-28px;transform:rotate(-17deg)}
+body.mural-carinho-page .carinho-panel::after {right:-24px;bottom:-22px;transform:rotate(165deg)}
+body.mural-carinho-page .carinho-panel > * {position:relative;z-index:1}
+body.mural-carinho-page .carinho-panel-heading {text-align:center;margin-bottom:25px}
+body.mural-carinho-page .carinho-panel-heading::before {content:'M';display:grid;place-items:center;width:45px;height:45px;margin:0 auto 14px;border:1px solid #ad8c58;border-radius:50%;font:italic 27px Georgia,serif;color:#315d44;background:#faf5e7}
+body.mural-carinho-page .carinho-panel-heading::after {content:'✦';display:block;margin:15px auto 0;color:#a88b5a;font-size:12px;letter-spacing:8px;border-top:1px solid rgba(169,135,76,.52);width:140px;padding-top:8px}
+body.mural-carinho-page .carinho-panel-heading .carinho-flourish {display:none}
+body.mural-carinho-page .carinho-panel h2 {color:#204c37;font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(32px,4vw,46px);text-shadow:none}
+body.mural-carinho-page .carinho-panel-heading p {color:#526b55;font-size:15px}
+body.mural-carinho-page .carinho-panel label {color:#254735;font-weight:650;font-size:15px}
+body.mural-carinho-page .carinho-panel input,body.mural-carinho-page .carinho-panel textarea {box-sizing:border-box;width:100%;color:#203f30!important;-webkit-text-fill-color:#203f30!important;background:rgba(255,255,252,.88)!important;border:1px solid #c5b99a!important;border-radius:7px;box-shadow:inset 0 1px 3px rgba(40,40,20,.07);font-size:16px;line-height:1.6;padding:15px 17px}
+body.mural-carinho-page .carinho-panel input::placeholder,body.mural-carinho-page .carinho-panel textarea::placeholder {color:#819083!important;-webkit-text-fill-color:#819083!important}
+body.mural-carinho-page .carinho-panel textarea {min-height:210px;resize:vertical}
+body.mural-carinho-page .carinho-panel :is(input,textarea):focus-visible {outline:2px solid #47785c;outline-offset:2px}
+body.mural-carinho-page .carinho-counter {color:#617365;min-height:23px;font-size:13px;align-items:center}
+body.mural-carinho-page #carinhoError {color:#a03430}
+body.mural-carinho-page .carinho-form-actions {display:flex;flex-direction:row;justify-content:flex-end;align-items:center;flex-wrap:wrap;gap:12px}
+body.mural-carinho-page .carinho-save {flex:0 0 auto;width:auto;max-width:100%;padding:14px 25px;font-size:15px;border-radius:7px;border:1px solid #b79a60;background:linear-gradient(120deg,#1d6246,#124b37);color:#fff8e8;box-shadow:0 5px 15px #173c2b33;cursor:pointer}
+body.mural-carinho-page .carinho-save:hover {background:linear-gradient(120deg,#287456,#16553d)}
+body.mural-carinho-page .carinho-cancel {background:transparent;color:#28503b;border:1px solid #9aab96}
+body.mural-carinho-page .carinho-status {min-height:24px;margin-top:10px;color:#276346;font-size:14px}
+body.mural-carinho-page .carinho-edit-mode {color:#476d51}
+body.mural-carinho-page .carinho-storage {color:#647663;font-size:12px}
+/* Fotos maiores, mas sempre atrás da área interativa. */
+body.mural-carinho-page .carinho-polaroid {width:clamp(135px,13vw,190px);padding:10px 10px 28px;box-shadow:0 15px 36px #010b08aa,0 0 0 2px #fff6dd44}
+body.mural-carinho-page .photo-one {left:max(10px,calc(50% - 745px))}
+body.mural-carinho-page .photo-two {right:max(10px,calc(50% - 745px))}
+body.mural-carinho-page .photo-three {left:max(10px,calc(50% - 755px))}
+body.mural-carinho-page .photo-four {right:max(10px,calc(50% - 755px))}
+body.mural-carinho-page .photo-five {left:max(10px,calc(50% - 755px))}
+@media(max-width:1180px) {body.mural-carinho-page .carinho-polaroid {width:110px}body.mural-carinho-page .carinho-panel {max-width:min(690px,calc(100% - 165px))}}
+@media(max-width:800px) {body.mural-carinho-page .carinho-panel {max-width: min(650px,100%)}body.mural-carinho-page .carinho-polaroid {width:84px;opacity:.7}}
+@media(max-width:540px) {body.mural-carinho-page .carinho-panel {max-width:100%;padding:35px 23px}body.mural-carinho-page .carinho-panel::before,body.mural-carinho-page .carinho-panel::after {width:70px;height:85px}body.mural-carinho-page .carinho-panel::before {left:-8px;top:-10px}body.mural-carinho-page .carinho-panel::after {right:-7px;bottom:-10px}body.mural-carinho-page .carinho-polaroid {width:72px;opacity:.6}body.mural-carinho-page .carinho-panel textarea {min-height:190px}body.mural-carinho-page .carinho-save {font-size:14px;padding:13px 18px}}
+@media(prefers-reduced-motion:reduce) {body.mural-carinho-page .carinho-polaroid {animation:none}}

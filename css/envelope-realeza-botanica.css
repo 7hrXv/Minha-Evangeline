@@ -1,0 +1,23 @@
+/* Papelaria real: camadas ornamentais vinculadas ao envelope, sem alterar suas dimensões. */
+.nova-envelope-button .nova-envelope{isolation:isolate;overflow:visible;}
+.nova-envelope-button .nova-envelope-back,.nova-envelope-button .nova-envelope-left,.nova-envelope-button .nova-envelope-right,.nova-envelope-button .nova-envelope-front,.nova-envelope-button .nova-envelope-flap{background-blend-mode:soft-light,normal!important;}
+.nova-envelope-button .nova-envelope-back{background-image:repeating-linear-gradient(33deg,transparent 0 2px,#f7ebba09 2px 3px,transparent 3px 6px),radial-gradient(ellipse at 50% 10%,#407e69,#1b5547 55%,#092c26)!important;}
+.nova-envelope-button .nova-envelope-left{background-image:repeating-linear-gradient(48deg,#e3d7a009 0 1px,transparent 1px 5px),linear-gradient(145deg,#448370,#286453 43%,#103a31)!important;}
+.nova-envelope-button .nova-envelope-right{background-image:repeating-linear-gradient(125deg,#e3d7a009 0 1px,transparent 1px 5px),linear-gradient(210deg,#347866,#225749 45%,#0c3029)!important;}
+.nova-envelope-button .nova-envelope-front{background-image:repeating-linear-gradient(30deg,#e3d7a00a 0 1px,transparent 1px 6px),linear-gradient(0deg,#0c3129,#1a4d3f 55%,#377764)!important;box-shadow:inset 0 -9px 17px #041f1970!important;}
+.nova-envelope-button .nova-envelope-flap{background-image:repeating-linear-gradient(24deg,#e9dca40a 0 1px,transparent 1px 5px),linear-gradient(168deg,#44816b,#2a6654 43%,#10392f)!important;box-shadow:inset 0 3px 6px #a3c2a023!important;}
+.nova-envelope-button .royal-flap-art{position:absolute;inset:0;display:block;clip-path:polygon(0 0,100% 0,50% 54%);pointer-events:none;}
+.nova-envelope-button .royal-flap-art svg{width:100%;height:100%;display:block;}
+.nova-envelope-button .royal-botanical{position:absolute;inset:0;width:100%;height:100%;z-index:5;overflow:visible;pointer-events:none;filter:drop-shadow(0 1px 1px #081f19a0);transition:opacity .3s ease;}
+.nova-envelope-button .ev-envelope-engraving{z-index:5!important;opacity:.62;}
+.nova-envelope-button .nova-envelope-seal{z-index:7!important;background:radial-gradient(circle at 34% 24%,#36745c 0%,#1b5745 29%,#0c362c 65%,#05241f 100%)!important;border:4px ridge #d4b66a!important;border-radius:49% 52% 47% 53% / 53% 46% 54% 47%!important;box-shadow:0 7px 12px #001a1588,0 0 0 2px #725325,0 0 0 5px #e3c77e,inset 0 0 0 3px #bfa15b,inset 0 0 0 7px #174638,inset 0 2px 8px #fff4!important;transition:opacity .35s ease,filter .3s ease,scale .3s ease!important;}
+.nova-envelope-button .nova-envelope-seal span{color:#fff5d8!important;text-shadow:0 1px 3px #0b261e!important;}
+.nova-envelope-button:not(.is-opening):hover .nova-envelope-seal{scale:1.07;filter:drop-shadow(0 0 8px #e9ca77aa);}
+.nova-envelope-button .royal-border-lights{position:absolute;inset:0;z-index:6;pointer-events:none;}
+.nova-envelope-button .royal-border-lights i{position:absolute;width:3px;height:3px;border-radius:50%;background:#f6df9a;box-shadow:0 0 7px 2px #e8be6380;animation:royalTwinkle 5s ease-in-out infinite alternate;}
+.nova-envelope-button .royal-border-lights i:nth-child(1){left:12%;top:11%}.nova-envelope-button .royal-border-lights i:nth-child(2){left:87%;top:13%;animation-delay:-2s}.nova-envelope-button .royal-border-lights i:nth-child(3){left:9%;top:78%;animation-delay:-3s}.nova-envelope-button .royal-border-lights i:nth-child(4){left:90%;top:78%;animation-delay:-1s}.nova-envelope-button .royal-border-lights i:nth-child(5){left:27%;top:93%;animation-delay:-4s}.nova-envelope-button .royal-border-lights i:nth-child(6){left:74%;top:92%;animation-delay:-2.5s}
+@keyframes royalTwinkle{0%,30%{opacity:.25;transform:scale(.75)}70%,100%{opacity:.9;transform:scale(1.15)}}
+.nova-envelope-button.is-opening .royal-botanical,.nova-envelope-button.is-opening .royal-border-lights{opacity:0;transition:opacity .28s ease;}
+.nova-envelope-button.is-opening .royal-flap-art{opacity:1;}
+@media(max-width:600px){.nova-envelope-button .royal-botanical{filter:none}.nova-envelope-button .nova-envelope-seal{width:61px;height:61px}}
+@media(prefers-reduced-motion:reduce){.nova-envelope-button .royal-border-lights i{animation:none}}

@@ -1,0 +1,53 @@
+/* Polaroids: restauro fiel da primeira versão flutuante. Apenas estas fotos. */
+body.mural-carinho-page .carinho-polaroid {
+  width:clamp(100px,11vw,155px) !important;
+  padding:8px 8px 22px !important;
+  max-width:calc(100vw - 24px);
+  box-sizing:border-box;
+  transform-origin:center;
+}
+/* Duas polaroids verticais em destaque, 15% maiores que a base. */
+body.mural-carinho-page .carinho-polaroid.photo-two,
+body.mural-carinho-page .carinho-polaroid.photo-four {
+  width:clamp(115px,12.65vw,178.25px) !important;
+}
+body.mural-carinho-page .carinho-polaroid img {
+  display:block; width:100%; height:auto !important;
+  aspect-ratio:auto !important; object-fit:contain !important;
+  object-position:center !important;
+}
+/* Coordenadas da primeira implementação, relativas à área do mural. */
+body.mural-carinho-page .photo-one {top:175px !important;left:max(12px,calc(50% - 660px)) !important;right:auto !important;}
+body.mural-carinho-page .photo-two {top:410px !important;right:max(12px,calc(50% - 670px)) !important;left:auto !important;}
+body.mural-carinho-page .photo-three {top:770px !important;left:max(15px,calc(50% - 670px)) !important;right:auto !important;}
+body.mural-carinho-page .photo-four {top:1100px !important;right:max(15px,calc(50% - 670px)) !important;left:auto !important;}
+body.mural-carinho-page .photo-five {top:1480px !important;left:max(12px,calc(50% - 680px)) !important;right:auto !important;}
+@media(max-width:1180px) {
+ body.mural-carinho-page .carinho-polaroid {width:105px !important;}
+ body.mural-carinho-page .carinho-polaroid.photo-two,
+ body.mural-carinho-page .carinho-polaroid.photo-four {width:120.75px !important;}
+ body.mural-carinho-page .photo-one,body.mural-carinho-page .photo-three,body.mural-carinho-page .photo-five {left:8px !important;}
+ body.mural-carinho-page .photo-two,body.mural-carinho-page .photo-four {right:8px !important;}
+}
+@media(max-width:800px) {
+ body.mural-carinho-page .carinho-polaroid {width:80px !important;}
+ body.mural-carinho-page .carinho-polaroid.photo-two,
+ body.mural-carinho-page .carinho-polaroid.photo-four {width:92px !important;}
+ body.mural-carinho-page .photo-one {top:155px !important;left:3px !important;}
+ body.mural-carinho-page .photo-two {top:180px !important;right:3px !important;}
+ body.mural-carinho-page .photo-three {top:880px !important;left:2px !important;}
+ body.mural-carinho-page .photo-four {top:1400px !important;right:2px !important;}
+ body.mural-carinho-page .photo-five {display:none !important;}
+}
+@media(max-width:540px) {
+ body.mural-carinho-page .carinho-polaroid {width:65px !important;padding:5px 5px 13px !important;}
+ body.mural-carinho-page .carinho-polaroid.photo-two,
+ body.mural-carinho-page .carinho-polaroid.photo-four {width:74.75px !important;}
+ body.mural-carinho-page .photo-one {top:170px !important;left:0 !important;}
+ body.mural-carinho-page .photo-two {top:180px !important;right:0 !important;}
+ body.mural-carinho-page .photo-three {top:950px !important;left:0 !important;}
+ body.mural-carinho-page .photo-four {top:1480px !important;right:0 !important;}
+}
+@media(prefers-reduced-motion:reduce) {
+ body.mural-carinho-page .carinho-polaroid {animation:none !important;}
+}

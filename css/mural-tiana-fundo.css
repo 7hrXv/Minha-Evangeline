@@ -1,0 +1,69 @@
+/* Exclusivo da página Mural de carinho: imagem original da Tiana, sem distorção. */
+body.mural-carinho-page {
+  position: relative;
+  min-height: 100vh;
+  background: #15251b;
+  overflow-x: clip;
+  isolation: isolate;
+}
+/* Camada fixa cobre também o espaço criado por novos recados, sem emendas. */
+body.mural-carinho-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: url('../assets/tiana-mural-fundo-original.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+body.mural-carinho-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(9,28,21,.54), rgba(9,30,23,.35) 50%, rgba(9,28,21,.54)), rgba(8,27,21,.12);
+}
+body.mural-carinho-page .carinho-main {
+  background: transparent;
+  min-height: 100vh;
+  overflow: visible;
+}
+body.mural-carinho-page .carinho-main::before {
+  background: linear-gradient(180deg, rgba(8,26,21,.20), rgba(8,29,22,.12) 52%, rgba(8,26,21,.38));
+  z-index: 0;
+}
+body.mural-carinho-page .carinho-panel {
+  background: linear-gradient(145deg, rgba(18,56,43,.88), rgba(10,40,31,.91));
+  border: 1px solid rgba(221,189,121,.68);
+  box-shadow: 0 22px 65px rgba(9,18,12,.62), inset 0 0 0 4px rgba(222,187,114,.08);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+body.mural-carinho-page .carinho-note {
+  background: linear-gradient(150deg, rgba(24,65,49,.90), rgba(13,46,36,.91));
+  border-color: rgba(218,183,112,.55);
+  backdrop-filter: blur(6px);
+}
+body.mural-carinho-page .carinho-empty {background: rgba(12,44,34,.82)}
+body.mural-carinho-page .carinho-intro h1,
+body.mural-carinho-page .carinho-notes h2 {color: #fff6e7; text-shadow: 0 3px 16px rgba(0,16,12,.7)}
+body.mural-carinho-page .carinho-intro h1 em {color: #e9c993}
+body.mural-carinho-page .carinho-save {background: linear-gradient(115deg,#f0dfb4,#c9a96d);color:#163b2e}
+body.mural-carinho-page .carinho-intro > p,
+body.mural-carinho-page .carinho-kicker {text-shadow:0 2px 9px rgba(0,15,10,.9)}
+/* A arte da imagem já tem flores e folhas; evitar que os SVGs antigos a escondam. */
+body.mural-carinho-page .carinho-decor {opacity:.24}
+body.mural-carinho-page .carinho-stars {opacity:.18}
+@media (max-width: 800px) {
+  body.mural-carinho-page::before {background-position: 69% center}
+  body.mural-carinho-page::after {background: rgba(7,27,20,.42)}
+  body.mural-carinho-page .carinho-panel {backdrop-filter: blur(6px);-webkit-backdrop-filter:blur(6px)}
+}
+@media (max-width: 480px) {
+  body.mural-carinho-page::before {background-position: 73% center}
+  body.mural-carinho-page .carinho-main {padding-bottom: 72px}
+  body.mural-carinho-page .carinho-decor {opacity:.13}
+}

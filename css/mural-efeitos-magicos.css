@@ -1,0 +1,14 @@
+/* Efeitos exclusivos do Mural de carinho; nunca interferem nos controles. */
+body.mural-carinho-page .mural-magic-layer{position:fixed;inset:0;z-index:3;overflow:hidden;pointer-events:none;contain:layout paint;isolation:isolate}
+body.mural-carinho-page .mural-magic-layer .magic-particle{position:absolute;display:block;pointer-events:none;will-change:transform,opacity}
+body.mural-carinho-page .magic-star{width:var(--size);height:var(--size);left:var(--x);top:var(--y);opacity:0;filter:drop-shadow(0 0 4px var(--glow));animation:magic-twinkle var(--dur) ease-in-out var(--delay) infinite}
+body.mural-carinho-page .magic-star:before,body.mural-carinho-page .magic-star:after{content:'';position:absolute;left:50%;top:50%;background:var(--tone);transform:translate(-50%,-50%);border-radius:90%}
+body.mural-carinho-page .magic-star:before{width:15%;height:100%}
+body.mural-carinho-page .magic-star:after{width:100%;height:15%}
+body.mural-carinho-page .magic-petal{left:var(--x);top:-12vh;width:var(--size);height:calc(var(--size) * 1.5);background:linear-gradient(130deg,#fffdf2 6%,var(--tone) 70%,#8aa98a 100%);border-radius:85% 12% 80% 18%;box-shadow:inset 1px 1px 3px #fff9,0 0 5px #d1e1b044;opacity:0;animation:magic-fall var(--dur) linear var(--delay) infinite}
+body.mural-carinho-page .magic-firefly{left:var(--x);top:var(--y);width:var(--size);height:var(--size);border-radius:50%;background:#f8db86;box-shadow:0 0 7px 2px #e9c56a77,0 0 18px 5px #d8ae4e33;opacity:0;animation:magic-fly var(--dur) ease-in-out var(--delay) infinite}
+@keyframes magic-twinkle{0%,100%{opacity:.06;transform:scale(.55) rotate(0deg)}45%{opacity:var(--alpha);transform:scale(1.1) rotate(20deg)}65%{opacity:calc(var(--alpha) * .55);transform:scale(.8) rotate(38deg)}}
+@keyframes magic-fall{0%{opacity:0;transform:translate3d(0,-8vh,0) rotate(0deg)}8%{opacity:var(--alpha)}86%{opacity:var(--alpha)}100%{opacity:0;transform:translate3d(var(--drift),118vh,0) rotate(var(--spin))}}
+@keyframes magic-fly{0%,100%{opacity:.05;transform:translate3d(0,8px,0) scale(.75)}45%{opacity:var(--alpha);transform:translate3d(var(--drift),-18px,0) scale(1.05)}75%{opacity:calc(var(--alpha) * .6);transform:translate3d(calc(var(--drift) * -.3),-5px,0) scale(.8)}}
+@media(max-width:700px){body.mural-carinho-page .mural-magic-layer .magic-star{filter:none}body.mural-carinho-page .magic-petal{box-shadow:none}}
+@media(prefers-reduced-motion:reduce){body.mural-carinho-page .magic-petal,body.mural-carinho-page .magic-firefly{display:none!important}body.mural-carinho-page .magic-star{animation:none!important;opacity:.23!important;transform:none!important}}

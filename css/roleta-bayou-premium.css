@@ -1,0 +1,27 @@
+/* Roleta integrada ao céu do Ray, sem neon */
+.pagina-roleta .roleta-layout{max-width:790px;padding:28px 18px 42px}
+.pagina-roleta .roleta-intro{position:relative;z-index:2}
+.pagina-roleta .roleta-container{width:min(76vw,360px);filter:drop-shadow(0 12px 18px #000a) drop-shadow(0 0 14px #d5b96b38);isolation:isolate}
+.pagina-roleta .roleta-container:before{content:"";position:absolute;inset:-8px;border:1px solid #c4a466a3;border-radius:50%;pointer-events:none;box-shadow:0 0 18px #d7b56829,inset 0 0 8px #c8ad6340}
+.pagina-roleta .roleta-container:after{content:"✦";position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);font:18px Georgia,serif;color:#d8bc78;text-shadow:0 0 8px #edce80;pointer-events:none}
+.pagina-roleta #roletaCanvas{filter:none!important;box-shadow:none!important}
+.pagina-roleta .roleta-centro{z-index:3;width:53px;height:53px;background:radial-gradient(circle,#245548,#0c322c);border:2px solid #cfb46e;box-shadow:0 0 0 4px #082f31a8,0 2px 9px #0008;color:#e3c882}
+.pagina-roleta .roleta-centro svg{width:36px;height:36px;fill:#d4b66f;stroke:#f1db9f;stroke-width:1.5}
+.pagina-roleta .roleta-seta{z-index:5;top:-17px;border-left:13px solid transparent;border-right:13px solid transparent;border-top:27px solid #d6b66c;filter:drop-shadow(0 2px 2px #000a)}
+.pagina-roleta .roleta-seta:before{content:"";position:absolute;top:-32px;left:-7px;width:14px;height:8px;border-radius:50%;background:#f3d88e;box-shadow:0 0 0 2px #6c582e}
+.pagina-roleta .roleta-legenda{max-width:620px;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 24px;margin-top:24px;position:relative;z-index:2}
+.pagina-roleta .roleta-legenda li{font-size:15px;line-height:1.55;padding:5px 8px;color:#f4f0e2;background:#041e2890;border-radius:6px;text-shadow:0 1px 2px #000}
+.pagina-roleta .roleta-legenda li:before{color:#e8c878;font-size:16px;margin-right:5px}
+.pagina-roleta .roleta-legenda li.selecionado{background:#205448e0;outline:1px solid #c6a96c80}
+.pagina-roleta .roleta-botao{margin-top:19px;background:#123f34!important;color:#f8f2df!important;border:1px solid #d1b474!important;border-radius:9px;padding:12px 39px;font-size:16px;box-shadow:0 4px 13px #0008!important}
+.pagina-roleta .roleta-botao:hover{background:#1c5949!important}
+.pagina-roleta .roleta-resultado{margin:14px auto 6px;padding:10px 16px;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;transition:opacity .45s ease,transform .45s ease}
+.pagina-roleta .roleta-resultado.revelado{animation:bayouResult .7s ease both}
+.pagina-roleta .roleta-resultado h2{color:#f5e8bf;font-size:clamp(1.25rem,3vw,1.7rem);text-shadow:0 2px 5px #0018}
+.pagina-roleta .roleta-resultado p{color:#f0eee2;font-size:15px}
+.pagina-roleta .romance-sky{opacity:.12!important}
+.pagina-roleta .ev-glitter-layer{opacity:.2!important}
+.pagina-roleta .bayou-decor .firefly{opacity:.25!important}
+@keyframes bayouResult{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:950px){.pagina-roleta .roleta-layout{margin-left:auto;margin-right:7%;}}
+@media(max-width:600px){.pagina-roleta .roleta-layout{padding:28px 13px 36px}.pagina-roleta .roleta-container{width:min(79vw,330px)}.pagina-roleta .roleta-legenda{grid-template-columns:1fr;gap:4px;max-width:350px}.pagina-roleta .roleta-legenda li{font-size:14px;padding:5px 9px}.pagina-roleta .roleta-container:after{bottom:-17px}}

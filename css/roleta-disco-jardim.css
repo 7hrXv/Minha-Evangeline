@@ -1,0 +1,7 @@
+/* Só o acabamento do disco: layout, textos, botões e links originais preservados */
+.roleta-container{filter:drop-shadow(0 12px 24px #000b) drop-shadow(0 0 13px #bca26744)!important}
+.roleta-container::after{border:1px solid #d8bd7b55!important;inset:-5px!important}
+.roleta-seta{border-top-color:#e6c478!important;filter:drop-shadow(0 2px 4px #0009)!important}
+.roleta-centro{background:transparent!important;border:0!important;box-shadow:none!important;color:transparent!important;text-shadow:none!important;pointer-events:none!important}
+.roleta-painel,.roleta-layout{margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+@media(max-width:600px){.roleta-container{max-width:calc(100vw - 35px)}}

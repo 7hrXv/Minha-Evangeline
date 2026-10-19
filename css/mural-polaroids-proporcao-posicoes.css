@@ -1,0 +1,69 @@
+/* Somente polaroids: dimensões conforme a orientação ORIGINAL das fotografias.
+   Paisagem: photo-one/photo-three. Retrato: photo-two/photo-four/photo-five. */
+body.mural-carinho-page .carinho-polaroid.photo-one,
+body.mural-carinho-page .carinho-polaroid.photo-three {
+  width:clamp(135px,13vw,190px) !important;
+}
+body.mural-carinho-page .carinho-polaroid.photo-two,
+body.mural-carinho-page .carinho-polaroid.photo-four,
+body.mural-carinho-page .carinho-polaroid.photo-five {
+  width:clamp(175px,17vw,240px) !important;
+}
+body.mural-carinho-page .carinho-polaroid {
+  padding:8px 8px 22px !important;
+  max-width:calc(100vw - 28px);
+  transform-origin:center center;
+}
+body.mural-carinho-page .carinho-polaroid img {
+  display:block;width:100%;height:auto!important;aspect-ratio:auto!important;
+  object-fit:contain!important;object-position:center!important;
+}
+/* Aproximar das laterais do conteúdo central, não dos cantos da viewport. */
+@media(min-width:1350px) {
+ body.mural-carinho-page .photo-one {left:calc(50% - 640px)!important;top:190px;}
+ body.mural-carinho-page .photo-two {right:calc(50% - 660px)!important;top:430px;}
+ body.mural-carinho-page .photo-three {left:calc(50% - 640px)!important;top:820px;}
+ body.mural-carinho-page .photo-four {right:calc(50% - 660px)!important;top:1150px;}
+ body.mural-carinho-page .photo-five {left:calc(50% - 660px)!important;top:1570px;}
+}
+@media(min-width:1100px) and (max-width:1349px) {
+ body.mural-carinho-page .carinho-polaroid.photo-one,
+ body.mural-carinho-page .carinho-polaroid.photo-three {width:145px!important;}
+ body.mural-carinho-page .carinho-polaroid.photo-two,
+ body.mural-carinho-page .carinho-polaroid.photo-four,
+ body.mural-carinho-page .carinho-polaroid.photo-five {width:175px!important;}
+ body.mural-carinho-page .photo-one,body.mural-carinho-page .photo-three,body.mural-carinho-page .photo-five {left:max(10px,calc(50% - 570px))!important;}
+ body.mural-carinho-page .photo-two,body.mural-carinho-page .photo-four {right:max(10px,calc(50% - 570px))!important;}
+}
+@media(min-width:801px) and (max-width:1099px) {
+ body.mural-carinho-page .carinho-polaroid.photo-one,
+ body.mural-carinho-page .carinho-polaroid.photo-three {width:105px!important;}
+ body.mural-carinho-page .carinho-polaroid.photo-two,
+ body.mural-carinho-page .carinho-polaroid.photo-four,
+ body.mural-carinho-page .carinho-polaroid.photo-five {width:135px!important;}
+ body.mural-carinho-page .photo-one,body.mural-carinho-page .photo-three,body.mural-carinho-page .photo-five {left:8px!important;}
+ body.mural-carinho-page .photo-two,body.mural-carinho-page .photo-four {right:8px!important;}
+}
+@media(max-width:800px) {
+ body.mural-carinho-page .carinho-polaroid.photo-one,
+ body.mural-carinho-page .carinho-polaroid.photo-three {width:78px!important;}
+ body.mural-carinho-page .carinho-polaroid.photo-two,
+ body.mural-carinho-page .carinho-polaroid.photo-four,
+ body.mural-carinho-page .carinho-polaroid.photo-five {width:96px!important;}
+ body.mural-carinho-page .photo-one,body.mural-carinho-page .photo-three,body.mural-carinho-page .photo-five {left:5px!important;}
+ body.mural-carinho-page .photo-two,body.mural-carinho-page .photo-four {right:5px!important;}
+ body.mural-carinho-page .carinho-polaroid {padding:5px 5px 13px!important;}
+}
+@media(max-width:540px) {
+ body.mural-carinho-page .carinho-polaroid.photo-one,
+ body.mural-carinho-page .carinho-polaroid.photo-three {width:62px!important;}
+ body.mural-carinho-page .carinho-polaroid.photo-two,
+ body.mural-carinho-page .carinho-polaroid.photo-four,
+ body.mural-carinho-page .carinho-polaroid.photo-five {width:79px!important;}
+ body.mural-carinho-page .photo-one {top:175px;left:5px!important;}
+ body.mural-carinho-page .photo-two {top:190px;right:5px!important;}
+ body.mural-carinho-page .photo-three {top:1000px;left:5px!important;}
+ body.mural-carinho-page .photo-four {top:1510px;right:5px!important;}
+ body.mural-carinho-page .photo-five {display:none;}
+}
+@media(prefers-reduced-motion:reduce){body.mural-carinho-page .carinho-polaroid{animation:none!important;}}

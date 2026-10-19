@@ -1,0 +1,18 @@
+/* Alteração EXCLUSIVA da primeira polaroid no canto superior esquerdo. */
+body.mural-carinho-page .carinho-polaroid.photo-one {
+ width:clamp(115px,12.65vw,178px)!important;
+ aspect-ratio:3/4.3!important;
+ height:auto!important;
+ box-sizing:border-box;
+ display:flex!important;
+ flex-direction:column;
+ padding:8px 8px 22px!important;
+}
+body.mural-carinho-page .carinho-polaroid.photo-one img {
+ display:block;width:100%!important;height:100%!important;min-height:0;
+ flex:1 1 auto;object-fit:contain!important;object-position:center!important;
+ background:#eae5d7;
+}
+@media(max-width:1180px){body.mural-carinho-page .carinho-polaroid.photo-one{width:121px!important}}
+@media(max-width:800px){body.mural-carinho-page .carinho-polaroid.photo-one{width:92px!important}}
+@media(max-width:540px){body.mural-carinho-page .carinho-polaroid.photo-one{width:75px!important;padding:5px 5px 13px!important}}

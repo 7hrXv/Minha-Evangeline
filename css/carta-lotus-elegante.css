@@ -1,0 +1,22 @@
+
+/* Somente a carta aberta: decorações SVG transparentes, sem imagens de fundo. */
+.nova-letter-inner.floral-letter-design{position:relative;overflow:hidden!important;background:#fffefa!important;padding:112px clamp(37px,9vw,91px) 126px!important;min-height:770px!important}
+.floral-letter-design .tiana-floral-top,.floral-letter-design .tiana-floral-bottom,.floral-letter-design .tiana-mini-corner,.floral-letter-design .floral-corner{display:none!important}
+.floral-letter-design .floral-arc{inset:8% 6% 8%!important;z-index:0!important;opacity:.7!important}
+.floral-letter-design .floral-content{position:relative;z-index:2}
+.letter-ornaments{position:absolute;inset:0;z-index:1;pointer-events:none!important;overflow:hidden}
+.letter-ornaments *{pointer-events:none!important}
+.letter-crown{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:67px;height:51px;filter:drop-shadow(0 2px 2px #b7a87966)}
+.letter-evangeline{position:absolute;right:15px;top:17px;width:54px;height:54px;filter:drop-shadow(0 0 9px #e7c975);animation:letterStarGlow 4s ease-in-out infinite}
+.letter-lotus{position:absolute;width:clamp(110px,25%,170px);height:auto;bottom:2px;filter:drop-shadow(0 4px 4px #b4c6aa44)}
+.letter-lotus-left{left:-14px;transform:rotate(-9deg)}.letter-lotus-right{right:-14px;transform:scaleX(-1) rotate(-9deg)}
+.letter-gold-dots{position:absolute;inset:0;background-image:radial-gradient(circle,#c8a65c 1px,transparent 1.8px),radial-gradient(circle,#d6bb79 .8px,transparent 1.6px);background-size:110px 137px,161px 173px;background-position:9px 42px,72px 93px;opacity:.45;mask-image:linear-gradient(90deg,#000,transparent 20%,transparent 80%,#000)}
+.letter-fireflies{position:absolute;inset:0}
+.letter-fireflies i{position:absolute;width:4px;height:4px;background:#ffdfa1;border-radius:50%;box-shadow:0 0 6px 2px #f7db90a8;animation:letterFirefly 4s ease-in-out infinite}
+.letter-fireflies i:nth-child(1){top:17%;left:5%;animation-delay:-1s}.letter-fireflies i:nth-child(2){top:29%;right:5%;animation-delay:-3s}.letter-fireflies i:nth-child(3){top:48%;left:4%;animation-delay:-2s}.letter-fireflies i:nth-child(4){top:60%;right:5%;animation-delay:-.5s}.letter-fireflies i:nth-child(5){top:77%;left:8%;animation-delay:-3.4s}.letter-fireflies i:nth-child(6){top:86%;right:8%;animation-delay:-2.7s}.letter-fireflies i:nth-child(7){top:9%;left:22%;animation-delay:-1.9s}.letter-fireflies i:nth-child(8){top:12%;right:21%;animation-delay:-.7s}.letter-fireflies i:nth-child(9){bottom:8%;left:29%;animation-delay:-2.2s}.letter-fireflies i:nth-child(10){bottom:9%;right:30%;animation-delay:-3.1s}
+.floral-letter-design .nova-letter-ornament{margin-top:3px}
+.floral-letter-design .nova-close{position:absolute;top:18px;right:18px;z-index:9!important;pointer-events:auto!important}
+@keyframes letterFirefly{0%,100%{opacity:.1;transform:translateY(0) scale(.6)}50%{opacity:.9;transform:translateY(-9px) scale(1.25)}}
+@keyframes letterStarGlow{0%,100%{opacity:.7;filter:drop-shadow(0 0 3px #d5b65c)}50%{opacity:1;filter:drop-shadow(0 0 13px #e6c67e)}}
+@media(max-width:600px){.nova-letter-inner.floral-letter-design{padding:102px 33px 105px!important;min-height:700px!important}.letter-crown{width:55px;top:12px}.letter-evangeline{width:38px;top:16px;right:10px}.letter-lotus{width:106px;bottom:-4px}.floral-letter-design .floral-arc{inset:7% 4% 8%!important}}
+@media(prefers-reduced-motion:reduce){.letter-evangeline,.letter-fireflies i{animation:none!important}}

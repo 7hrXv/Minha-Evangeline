@@ -1,0 +1,58 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+/* Envelope recriado com camadas CSS — nenhuma fotografia do envelope */
+.nova-carta-page{min-height:calc(100vh - 120px);position:relative;overflow:hidden;padding:45px 16px 95px;background:repeating-linear-gradient(90deg,#392015 0,#4d2a1c 34px,#432416 72px,#2d1b13 105px);isolation:isolate}
+.nova-carta-page:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,#0000 10%,#130c08a8 100%);pointer-events:none;z-index:-1}
+.nova-carta-intro{text-align:center;max-width:750px;margin:auto}
+.nova-eyebrow{font:700 .75rem Georgia,serif;letter-spacing:.19em;color:#f3d7b4}
+.nova-carta-intro h1{font:400 clamp(2.5rem,5.5vw,4.2rem) 'Playfair Display',Georgia,serif;color:#fff1df;margin:13px 0}
+.nova-carta-intro h1 em{color:#f4c3bd}
+.nova-carta-intro>p{color:#f3e1ce}
+.nova-carta-stage{position:relative;min-height:540px;display:flex;align-items:center;justify-content:center;max-width:960px;margin:10px auto}
+.mesa-vinil{position:absolute;left:-100px;top:3px;width:245px;height:245px;border-radius:50%;background:repeating-radial-gradient(circle,#171717 0 3px,#292727 4px 6px,#151515 7px 9px);box-shadow:0 8px 20px #0008;transform:rotate(-15deg)}
+.mesa-vinil span{position:absolute;inset:35%;border-radius:50%;background:radial-gradient(circle,#1c1a19 0 14%,#d6bd9a 15% 65%,#9b7d57 66%)}
+.mesa-fotos{position:absolute;right:2%;top:-10px;width:170px;height:170px;transform:rotate(12deg)}
+.mesa-fotos i{position:absolute;width:104px;height:130px;background:linear-gradient(130deg,#84664c,#e5c59e,#6a5543);border:8px solid #f4f0e9;border-bottom-width:24px;box-shadow:0 5px 12px #0007}
+.mesa-fotos i:nth-child(1){left:0;transform:rotate(-18deg)}.mesa-fotos i:nth-child(2){left:24px;transform:rotate(4deg)}.mesa-fotos i:nth-child(3){left:46px;transform:rotate(19deg)}
+.mesa-rosa{position:absolute;z-index:3;pointer-events:none;font-size:110px;line-height:1;color:#db9298;text-shadow:5px 5px #ad5761,9px 12px 12px #0008}
+.mesa-rosa-left{left:-65px;bottom:10px}.mesa-rosa-right{right:-40px;bottom:10px;color:#ba5b67;font-size:80px}
+.mesa-petalas{position:absolute;inset:0;pointer-events:none}.mesa-petalas span{position:absolute;color:#e6a9a7}.mesa-petalas span:nth-child(1){top:8%;left:30%}.mesa-petalas span:nth-child(2){bottom:16%;right:22%}.mesa-petalas span:nth-child(3){top:29%;right:11%}
+.nova-envelope-button{border:0;background:none;padding:25px 10px;display:flex;flex-direction:column;align-items:center;gap:27px;cursor:pointer;position:relative;z-index:2;animation:envelopeFloat 5s ease-in-out infinite}
+.nova-envelope-button:focus-visible{outline:3px solid #edb9a0;outline-offset:9px;border-radius:8px}
+.nova-envelope{width:min(83vw,475px);aspect-ratio:1.52;position:relative;display:block;filter:drop-shadow(0 22px 17px #0009);transform:rotate(-3deg);perspective:1000px}
+.nova-envelope-back{position:absolute;inset:0;background:#f4f2ed;border-radius:4px;box-shadow:inset 0 0 0 1px #d9d5cd,inset 0 0 30px #aaa39b28}
+.nova-envelope-note{position:absolute;inset:10% 11% 7%;background:#fffefa;z-index:1;padding:15px 20px;color:#783e42;display:flex;flex-direction:column;gap:10px;box-shadow:0 2px 8px #0002;transition:transform .8s ease;overflow:hidden}
+.mesa-note-title{font:38px 'Great Vibes','Brush Script MT',cursive;color:#9b263b}
+.mesa-note-body{font:italic 15px/1.6 Georgia,serif;color:#574740}
+.mesa-note-sign{font:24px 'Great Vibes',cursive;align-self:flex-end;color:#99293d}
+.nova-envelope-left,.nova-envelope-right{position:absolute;inset:0;z-index:2;pointer-events:none}
+.nova-envelope-left{background:linear-gradient(145deg,#fffefa,#eae7e0);clip-path:polygon(0 0,52% 53%,0 100%);filter:drop-shadow(1px 0 1px #b9b3ab)}
+.nova-envelope-right{background:linear-gradient(215deg,#fffefa,#e9e6df);clip-path:polygon(100% 0,48% 53%,100% 100%)}
+.nova-envelope-front{position:absolute;inset:0;z-index:3;background:linear-gradient(0deg,#eae8e2 0%,#f9f8f5 78%);clip-path:polygon(0 100%,50% 43%,100% 100%);border-radius:3px}
+.nova-envelope-flap{position:absolute;inset:0;z-index:4;background:linear-gradient(170deg,#fffefa,#f3f1ec 82%,#e1ddd6);clip-path:polygon(0 0,100% 0,50% 54%);transform-origin:50% 0%;backface-visibility:hidden;transition:transform .85s ease}
+.nova-envelope-seal{position:absolute;z-index:5;top:53%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 34% 27%,#d35c62 0%,#941e31 43%,#610c1b 83%);border:6px ridge #9b2831;box-shadow:0 5px 9px #0005,inset 0 0 0 3px #cc6c69,inset 0 0 0 7px #650d1e;transition:opacity .35s}
+.nova-envelope-seal span{color:#f8d5bc;font:35px Georgia,serif;text-shadow:0 1px 2px #2e0609}
+.nova-open-caption{font:italic 17px Georgia,serif;color:#f3d4ac;text-shadow:0 2px 7px #0008}
+.nova-envelope-button.is-opening{animation:none}
+.nova-envelope-button.is-opening .nova-envelope-flap{transform:rotateX(177deg);z-index:1}
+.nova-envelope-button.is-opening .nova-envelope-note{transform:translateY(-38%)}
+.nova-envelope-button.is-opening .nova-envelope-seal{opacity:0}
+.nova-envelope-button.is-leaving{animation:envelopeLeave .65s ease-in forwards}
+.nova-envelope-button[hidden]{display:none!important}
+.nova-letter{display:none;width:min(94vw,690px);z-index:4;position:relative}
+.nova-letter.is-open{display:block;animation:letterAppear .9s ease both}
+.nova-letter-inner{position:relative;background:radial-gradient(ellipse at 45% 25%,#fff,#faf9f6 80%,#eeeae4);border:1px solid #ddd6cc;box-shadow:0 25px 50px #0009,inset 0 0 30px #b7a99b19;padding:clamp(40px,7vw,75px);color:#554239;transform:rotate(-.5deg)}
+.nova-letter-inner:before{content:"";position:absolute;inset:12px;border:1px solid #bfb1a54d;pointer-events:none}
+.nova-letter-ornament,.nova-letter-kicker{text-align:center;color:#a23d4b}
+.nova-letter-ornament{font-size:21px}
+.nova-letter-kicker{letter-spacing:.18em;font:700 .75rem Georgia,serif;margin:12px 0}
+.antique-rule{text-align:center;color:#ae8e7a}
+.nova-letter h2{text-align:center;font:400 clamp(2.4rem,6vw,3.7rem) 'Great Vibes','Brush Script MT',cursive;color:#922a3c;margin:18px 0 27px}
+.nova-letter-text p{font:italic clamp(1rem,1.8vw,1.13rem)/1.85 Georgia,serif;margin:0 0 19px;color:#55463f}
+.nova-signature{text-align:right;font:26px/1.45 'Great Vibes','Brush Script MT',cursive;color:#a12e43}
+.nova-close{position:absolute;top:17px;right:19px;border:1px solid #d1c2b5;border-radius:50%;width:38px;height:38px;background:#fff;color:#8a3c44;font-size:24px;cursor:pointer;z-index:6}
+@keyframes envelopeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes envelopeLeave{to{opacity:0;transform:translateY(-35px) scale(.92)}}
+@keyframes letterAppear{from{opacity:0;transform:translateY(35px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:600px){.nova-carta-page{padding:35px 12px 70px}.nova-carta-stage{min-height:410px}.mesa-vinil{left:-125px;width:200px;height:200px}.mesa-fotos{right:-40px;transform:scale(.65) rotate(12deg);transform-origin:top right}.mesa-rosa-left{font-size:65px;left:-24px}.mesa-rosa-right{font-size:50px;right:-18px}.nova-envelope{width:min(90vw,420px)}.nova-envelope-seal{width:63px;height:63px}.nova-envelope-seal span{font-size:27px}.nova-envelope-note{padding:8px 12px}.mesa-note-title{font-size:29px}.mesa-note-body{font-size:11px}.mesa-note-sign{font-size:18px}.nova-letter-inner{padding:52px 29px 40px}}
+@media(prefers-reduced-motion:reduce){.nova-envelope-button,.nova-envelope-button.is-leaving,.nova-letter.is-open{animation:none!important}.nova-envelope-flap,.nova-envelope-note{transition:none!important}}

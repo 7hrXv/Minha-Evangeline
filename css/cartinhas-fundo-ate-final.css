@@ -1,0 +1,34 @@
+/* Apenas memorias.html: o cenário termina naturalmente no jardim verde. */
+body:has(.nova-carta-page) { margin: 0 !important; overflow-x: clip; }
+body:has(.nova-carta-page) .nova-carta-page {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  min-height: 100dvh;
+  height: auto !important;
+  max-height: none !important;
+  overflow-y: visible !important;
+  /* Base contínua por trás do painel, sem faixa da fotografia no rodapé. */
+  background: linear-gradient(to bottom, transparent 0%, transparent 58%, #092b25 100%) !important;
+}
+body:has(.nova-carta-page) .secret-section {
+  position: relative;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: clamp(52px, 7vw, 96px) !important;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, rgba(6,29,30,0) 0%, rgba(8,39,36,.72) 14%, #092c27 34%, #092b25 100%) !important;
+  /* Se houver espaço após o painel, mantenha o mesmo verde até o limite da página. */
+  box-shadow: 0 100vh 0 0 #092b25;
+}
+body:has(.nova-carta-page) .secret-section::before,
+body:has(.nova-carta-page) .secret-section::after { pointer-events: none; }
+body:has(.nova-carta-page) .secret-section .ev-page-navigation {
+  position: relative !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+@media (max-width: 600px) {
+  body:has(.nova-carta-page) .secret-section { padding-bottom: 64px !important; }
+}

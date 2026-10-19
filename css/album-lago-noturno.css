@@ -1,0 +1,24 @@
+/* Paleta lago noturno — aplicada exclusivamente à retrospectiva. */
+body.polaroid-retro{--album-gold:#c8d8dc;--album-ivory:#f4faff;--lake-blue:#0c293d;--lake-teal:#123f50;--lake-light:#b5e5f4}
+.polaroid-retro .retro-header span{color:#d5e7e9!important;letter-spacing:2px}
+.polaroid-retro .retro-header h1{color:#f4faff!important;text-shadow:0 2px 16px #041522a8!important}
+.polaroid-retro .retro-header h1 em{color:#b6e7fa!important;text-shadow:0 0 15px #80c8e45c!important}
+.polaroid-retro .retro-header p{color:#e2f0f5!important}
+.polaroid-retro .album-divider{color:#c8d7d5!important}
+.polaroid-retro .album-divider span{background:linear-gradient(90deg,transparent,#93c3ce)!important}
+.polaroid-retro .album-divider svg{fill:#e0d6b6!important;filter:drop-shadow(0 0 6px #addded77)!important}
+.polaroid-retro .retro-scene{background:linear-gradient(135deg,rgba(8,31,51,.84),rgba(13,56,68,.78) 55%,rgba(9,32,54,.83))!important;border:1px solid #8db9c6aa!important;box-shadow:inset 0 0 0 3px #d8eff30b,inset 0 0 0 4px #bad5da2b,0 20px 55px #03132185!important}
+.polaroid-retro .album-rail{background-image:url('../assets/album-botanical-lake.svg')!important;filter:drop-shadow(0 9px 11px #051a2c99) drop-shadow(0 0 12px #2c839020)!important;opacity:.89}
+.polaroid-retro .album-rail-right{background-image:url('../assets/album-botanical-lake-right.svg')!important;background-position:center 115px!important}
+.polaroid-retro .album-corner{background-image:url('../assets/album-botanical-lake.svg')!important;opacity:.62!important}
+.polaroid-retro .retro-chapter span{color:#c8dce4!important}
+.polaroid-retro .retro-chapter h2{color:#f4faff!important}
+.polaroid-retro .retro-chapter p{color:#e7f4f8!important}
+.polaroid-retro .retro-dots button{background:#82b6c255!important;border-color:#badce288!important}
+.polaroid-retro .retro-dots button.active{background:#b6e7fa!important;box-shadow:0 0 0 3px #b6e7fa30!important}
+.polaroid-retro .retro-continue,.polaroid-retro .retro-controls .ev-nav-forward{background:#c0e9f5!important;color:#15394e!important;-webkit-text-fill-color:#15394e!important;border-color:#c7e5ed!important;box-shadow:0 4px 13px #031a2a44!important}
+.polaroid-retro .retro-continue:hover,.polaroid-retro .retro-controls .ev-nav-forward:hover{background:#d5f1f8!important;color:#123348!important;-webkit-text-fill-color:#123348!important}
+.polaroid-retro .retro-back,.polaroid-retro .retro-controls .ev-nav-back{color:#f0faff!important;-webkit-text-fill-color:#f0faff!important}
+.polaroid-retro .clip{background:linear-gradient(90deg,#54727d,#b0c7cc 35%,#e0e5e2 52%,#688692)!important;border-color:#6b919a!important}
+.polaroid-retro .string-line{background:linear-gradient(90deg,#476c7c,#c3dfe2,#476c7c)!important}
+@media(max-width:680px){.polaroid-retro .album-rail{opacity:.42!important;width:48px!important}.polaroid-retro .album-corner{opacity:.35!important}}

@@ -1,0 +1,63 @@
+/* Paleta exclusiva da carta aberta e das seis cartinhas secretas.
+   Não altera o envelope fechado, cenário, dimensões ou animações. */
+.nova-letter-inner.floral-letter-design {
+  background: #123D32 !important;
+  color: #FFF4D6 !important;
+  border-color: #D4B66A !important;
+}
+.nova-letter-inner.floral-letter-design::before,
+.nova-letter-inner.floral-letter-design::after {
+  border-color: rgba(212,182,106,.65) !important;
+}
+.floral-letter-design .floral-arc,
+.floral-letter-design .floral-arc::before,
+.floral-letter-design .floral-arc::after {
+  border-color: #D4B66A !important;
+  box-shadow: none !important;
+}
+.floral-letter-design .floral-content,
+.floral-letter-design .nova-letter-text,
+.floral-letter-design .nova-letter-text p {
+  color: #FFF4D6 !important;
+}
+.floral-letter-design h2,
+.floral-letter-design .nova-signature,
+.floral-letter-design .nova-signature strong,
+.floral-letter-design .nova-letter-kicker,
+.floral-letter-design .nova-letter-ornament,
+.floral-letter-design .antique-rule {
+  color: #D4B66A !important;
+}
+.floral-letter-design .nova-close {
+  background: #123D32 !important;
+  color: #D4B66A !important;
+  border: 1px solid #D4B66A !important;
+  border-radius: 50% !important;
+  box-shadow: 0 3px 12px rgba(0,0,0,.18) !important;
+  transition: background .25s ease, color .25s ease, border-color .25s ease !important;
+}
+.floral-letter-design .nova-close:hover,
+.floral-letter-design .nova-close:focus-visible {
+  background: #19534F !important;
+  color: #FFF4D6 !important;
+}
+/* As seis cartas abertas usam o mesmo acabamento, sem afetar seus cartões. */
+.secret-dialog {
+  background: #123D32 !important;
+  color: #FFF4D6 !important;
+  border: 1px solid #D4B66A !important;
+}
+.secret-dialog .secret-dialog-inner {color:#FFF4D6 !important}
+.secret-dialog h3,
+.secret-dialog .secret-sign,
+.secret-dialog .secret-dialog-kicker {color:#D4B66A !important}
+.secret-dialog #secretDialogBody {color:#FFF4D6 !important}
+.secret-dialog .secret-close {
+  background: #123D32 !important;
+  color: #D4B66A !important;
+  border: 1px solid #D4B66A !important;
+  border-radius: 50% !important;
+  transition: background .25s ease, color .25s ease !important;
+}
+.secret-dialog .secret-close:hover,
+.secret-dialog .secret-close:focus-visible {background:#19534F !important;color:#FFF4D6 !important}

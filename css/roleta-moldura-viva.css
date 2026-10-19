@@ -1,0 +1,13 @@
+/* Moldura botânica independente do painel e do recorte do disco. */
+body.pagina-roleta{overflow-x:clip}
+.roleta-botanica{display:none!important}
+.roleta-moldura-viva{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:clip;isolation:isolate}
+.roleta-moldura-viva .moldura-canto{position:absolute;width:clamp(135px,19vw,285px);height:auto;max-width:32vw;object-fit:contain;opacity:.92;filter:drop-shadow(0 10px 15px rgba(0,15,30,.58)) drop-shadow(0 0 10px rgba(91,170,171,.18))}
+.moldura-superior-esq{top:0;left:0}.moldura-superior-dir{top:0;right:0}.moldura-inferior-esq{bottom:0;left:0}.moldura-inferior-dir{bottom:0;right:0}
+.roleta-layout{position:relative;z-index:2}
+.roleta-intro::after{content:'✧  ───────  ✦  ───────  ✧';display:block;margin:14px auto 0;color:#b9d5d9;letter-spacing:3px;font-size:12px;opacity:.72}
+.roleta-resultado{position:relative;border:1px solid rgba(176,212,222,.55);box-shadow:inset 0 0 0 1px rgba(225,232,213,.08),0 12px 32px rgba(0,12,31,.18)}
+.roleta-resultado::before,.roleta-resultado::after{content:'✧';position:absolute;color:#d8d5b9;font-size:16px;opacity:.65;top:9px}.roleta-resultado::before{left:13px}.roleta-resultado::after{right:13px}
+@media(max-width:900px){.roleta-moldura-viva .moldura-canto{width:clamp(105px,22vw,190px);opacity:.72}}
+@media(max-width:600px){.roleta-moldura-viva .moldura-canto{width:clamp(85px,28vw,140px);max-width:30vw;opacity:.68}.moldura-superior-esq,.moldura-superior-dir{top:0}.moldura-inferior-esq,.moldura-inferior-dir{bottom:0}.roleta-intro::after{letter-spacing:1px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.roleta-moldura-viva *{animation:none!important}}

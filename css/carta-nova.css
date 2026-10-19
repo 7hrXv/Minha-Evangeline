@@ -1,0 +1,43 @@
+
+/* Design original — envelope esmeralda e carta artesanal, criado do zero */
+.nova-carta-page{min-height:calc(100vh - 120px);padding:65px 18px 110px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 35%,#3b563b55,transparent 62%)}
+.nova-carta-intro{text-align:center;max-width:730px;margin:0 auto 28px;position:relative;z-index:1}
+.nova-eyebrow{font-size:.73rem;font-weight:700;letter-spacing:.23em;color:#dec78b}
+.nova-carta-intro h1{font-family:Georgia,serif;font-size:clamp(2.6rem,6vw,5rem);font-weight:500;color:#f7eed8;line-height:1.12;margin:18px 0 14px}
+.nova-carta-intro h1 em{color:#e7c889;font-weight:400}
+.nova-carta-intro>p{color:#d9e3d7;font-size:1rem}
+.nova-carta-stage{position:relative;display:flex;justify-content:center;align-items:center;min-height:440px;max-width:940px;margin:auto}
+.nova-aurora{position:absolute;width:min(80vw,640px);height:320px;border-radius:50%;background:radial-gradient(ellipse,#dbbd6c27,transparent 70%);filter:blur(25px);pointer-events:none}
+.nova-envelope-button{border:0;background:transparent;cursor:pointer;position:relative;display:flex;flex-direction:column;align-items:center;gap:35px;padding:32px 0 5px;z-index:1;animation:nova-float 5s ease-in-out infinite}
+.nova-envelope-button:focus-visible{outline:3px solid #e9c77d;outline-offset:12px;border-radius:15px}
+.nova-envelope{display:block;position:relative;width:min(78vw,460px);aspect-ratio:1.62;filter:drop-shadow(0 26px 23px #0007);perspective:900px}
+.nova-envelope-back{position:absolute;inset:0;background:linear-gradient(130deg,#e3c894,#f4dfb3 45%,#c6a66b);border-radius:9px;box-shadow:inset 0 0 0 2px #9c774a}
+.nova-envelope-note{position:absolute;top:12%;left:12%;width:76%;height:75%;padding-top:24px;text-align:center;background:#fbefce;border-radius:4px;color:#704c37;font:italic clamp(13px,2vw,19px) Georgia,serif;transition:transform .7s;box-shadow:0 3px 9px #55351a55}
+.nova-envelope-front{position:absolute;inset:0;z-index:2;background:linear-gradient(160deg,#e8cfa0,#c6a36c);clip-path:polygon(0 0,50% 59%,100% 0,100% 100%,0 100%);border-radius:9px}
+.nova-envelope-flap{position:absolute;inset:0;z-index:3;background:linear-gradient(160deg,#f7e4bd,#d9b67f);clip-path:polygon(0 0,100% 0,50% 62%);transform-origin:50% 0%;transition:transform .85s ease;backface-visibility:hidden}
+.nova-envelope-seal{position:absolute;left:50%;top:57%;transform:translate(-50%,-50%);width:68px;height:68px;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle at 32% 27%,#b65b65,#74313f 78%);border:3px double #e5ac89;color:#fff1d6;font-size:35px;z-index:4;box-shadow:0 5px 13px #52262c70;transition:opacity .3s}
+.nova-open-caption{color:#f0dbac;font:italic 1.05rem Georgia,serif;text-shadow:0 2px 9px #0008}
+.nova-open-caption span{color:#f9e3a7}
+.nova-envelope-button:hover .nova-envelope{filter:drop-shadow(0 30px 30px #0008) drop-shadow(0 0 18px #d6b77845)}
+.nova-envelope-button.is-opening{animation:none}
+.nova-envelope-button.is-opening .nova-envelope-flap{transform:rotateX(175deg);z-index:1}
+.nova-envelope-button.is-opening .nova-envelope-seal{opacity:0}
+.nova-envelope-button.is-opening .nova-envelope-note{transform:translateY(-48%)}
+.nova-envelope-button.is-leaving{animation:nova-vanish .65s ease-in forwards}
+.nova-envelope-button[hidden]{display:none!important}
+.nova-letter{display:none;position:relative;width:min(94vw,720px);z-index:2}
+.nova-letter.is-open{display:block;animation:nova-unfold .95s cubic-bezier(.2,.8,.2,1) both}
+.nova-letter-inner{position:relative;padding:clamp(38px,7vw,80px);color:#4b3928;text-align:left;background:radial-gradient(ellipse at 50% 38%,#fff4d8,#f3dfb5 70%,#d7b883);border:1px solid #a98451;box-shadow:inset 0 0 45px #8b5a2a30,0 28px 65px #0008;clip-path:polygon(0 1%,5% 0,13% 1%,22% 0,34% 1%,44% 0,56% 1%,67% 0,79% 1%,90% 0,100% 1%,99% 17%,100% 33%,99% 50%,100% 66%,99% 83%,100% 99%,90% 100%,79% 99%,67% 100%,56% 99%,44% 100%,34% 99%,22% 100%,13% 99%,5% 100%,0 99%,1% 83%,0 66%,1% 50%,0 33%,1% 17%);transform:rotate(-.7deg)}
+.nova-letter-ornament{text-align:center;color:#9d7140;letter-spacing:.7em;font-size:1.35rem}
+.nova-letter-kicker{text-align:center;color:#946c45;font-size:.72rem;letter-spacing:.18em;margin:16px 0}
+.nova-letter h2{font:italic clamp(1.7rem,3.8vw,2.6rem) Georgia,serif;color:#6b4930;text-align:center;margin:16px 0 32px}
+.nova-letter-text p{font:clamp(1rem,1.7vw,1.15rem)/1.9 Georgia,serif;color:#4d3928;margin:0 0 19px}
+.nova-signature{text-align:right;color:#80533b;font:italic 1.1rem/1.7 Georgia,serif;margin:26px 0 0}
+.nova-letter-bottom{text-align:center;color:#a98250;font-size:34px;margin-top:15px}
+.nova-close{position:absolute;top:18px;right:20px;width:37px;height:37px;border:1px solid #b78e65;background:#e5c89b;color:#6d4435;border-radius:50%;font-size:25px;cursor:pointer;z-index:5}
+.nova-close:hover{background:#d6b47d}
+@keyframes nova-float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1deg)}}
+@keyframes nova-vanish{to{opacity:0;transform:translateY(-55px) scale(.88)}}
+@keyframes nova-unfold{0%{opacity:0;transform:scaleY(.1) scaleX(.75) translateY(-80px)}70%{opacity:1;transform:scaleY(1.04) scaleX(1)}100%{opacity:1;transform:scale(1)}}
+@media(max-width:600px){.nova-carta-page{padding:42px 12px 70px}.nova-carta-stage{min-height:340px}.nova-envelope-button{gap:23px}.nova-envelope-seal{width:55px;height:55px;font-size:28px}.nova-letter-inner{padding:52px 30px 40px}.nova-letter-text p{font-size:.97rem;line-height:1.75}.nova-letter h2{margin-bottom:20px}}
+@media(prefers-reduced-motion:reduce){.nova-envelope-button,.nova-envelope-button.is-leaving,.nova-letter.is-open{animation:none!important}.nova-envelope-flap,.nova-envelope-note{transition:none!important}}

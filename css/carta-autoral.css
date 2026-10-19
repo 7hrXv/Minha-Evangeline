@@ -1,0 +1,41 @@
+
+/* Minha Evangeline — carta de amor em aquarela, acabamento autoral */
+.letter-page{background:radial-gradient(ellipse at 50% 37%,rgba(218,183,101,.09),transparent 60%);padding-top:42px}
+.letter-intro{max-width:720px}
+.letter-intro .kicker{color:#e3ca8e;letter-spacing:.23em;font-size:.74rem}
+.letter-intro h1{font-family:Georgia,serif;max-width:680px;margin:14px auto 17px;font-size:clamp(2.2rem,4.5vw,3.9rem);line-height:1.08;letter-spacing:-.035em;color:#f5e5bc;text-shadow:0 4px 22px #0006}
+.letter-intro>p:not(.kicker){font-size:1rem;color:#d8e4d6}
+.letter-intro .letter-hint{opacity:.8;font-style:italic}
+.envelope-stage{min-height:540px;padding-bottom:30px}
+.envelope-button{width:min(84vw,490px);height:345px;animation:ev-envelope-hover 5.8s ease-in-out infinite;transition:filter .35s ease}
+.envelope-button:hover{filter:brightness(1.07);animation-play-state:paused;transform:translateY(-8px) rotate(-2deg)}
+.letter-envelope-image{filter:drop-shadow(0 25px 22px rgba(0,0,0,.42));object-fit:contain}
+.envelope-instruction{bottom:-23px;color:#f5dca6;letter-spacing:.035em;text-shadow:0 2px 7px #0008}
+.scroll-magic{font-size:26px;right:6%;top:9%;color:#ffe7a0}
+@keyframes ev-envelope-hover{0%,100%{transform:translateY(0) rotate(-1.2deg)}50%{transform:translateY(-13px) rotate(1.1deg)}}
+.love-letter{width:min(95vw,770px);max-width:770px}
+.letter-paper.reference-scroll{min-height:920px}
+.letter-scroll-background{object-fit:fill;filter:drop-shadow(0 28px 24px rgba(0,0,0,.5))}
+.letter-scroll-content{padding:clamp(118px,17vw,165px) clamp(65px,12vw,135px) 140px}
+.letter-crest{text-align:center;font-size:1.15rem;color:#7c542d;letter-spacing:.7em;margin:0 0 14px}
+.reference-scroll .letter-date{text-align:center;color:#77532f;letter-spacing:.14em;font-size:.72rem;font-weight:700}
+.reference-scroll h2{font-family:Georgia,serif;text-align:center;font-style:italic;color:#65401e;font-size:clamp(1.8rem,3.7vw,2.6rem);margin:14px 0}
+.reference-scroll .royal-divider{color:#a4773d;margin:12px auto 25px}
+.reference-scroll .letter-message p{font-family:Georgia,serif;color:#4a321e;font-size:clamp(1rem,1.75vw,1.14rem);line-height:1.75;text-align:left;margin-bottom:18px}
+.reference-scroll .letter-signature{font-family:Georgia,serif;color:#6e4728}
+.reference-scroll .letter-close{position:absolute;top:72px;right:75px;background:#774634;color:#fff0d3;border:2px solid #c89b61;box-shadow:0 4px 12px #0004;transition:transform .2s,background .2s}
+.reference-scroll .letter-close:hover{transform:scale(1.1);background:#934c47}
+.love-letter.is-open{animation:scroll-letter-arrive 1.15s cubic-bezier(.18,.8,.2,1) both,scroll-letter-sway 8s ease-in-out 1.2s infinite}
+@media(max-width:600px){
+.letter-page{padding:32px 12px 70px}
+.letter-intro h1{font-size:clamp(2rem,8vw,2.9rem)}
+.envelope-stage{min-height:370px}
+.envelope-button{width:min(90vw,390px);height:260px}
+.letter-paper.reference-scroll{min-height:760px}
+.letter-scroll-content{padding:108px 55px 110px}
+.reference-scroll .letter-message p{font-size:.89rem;line-height:1.57;margin-bottom:12px}
+.reference-scroll h2{font-size:1.55rem}
+.reference-scroll .letter-close{top:52px;right:48px}
+.letter-crest{font-size:.9rem}
+}
+@media(prefers-reduced-motion:reduce){.envelope-button,.love-letter.is-open{animation:none!important}}

@@ -1,0 +1,64 @@
+/* Ajustes finais do mural: polaroids ampliadas e campos sem linhas sobre texto. */
+body.mural-carinho-page .carinho-polaroid {
+  width:clamp(240px, 19vw, 280px) !important;
+  padding:10px 10px 25px !important;
+  box-sizing:border-box;
+  background:#fff4d6;
+  max-width:calc(100vw - 24px);
+}
+body.mural-carinho-page .carinho-polaroid img {
+  display:block; width:100%; height:auto !important; aspect-ratio:auto !important;
+  object-fit:contain !important; object-position:center !important;
+  background:#e6ddc9;
+}
+/* Distribuição dos retratos nas laterais, sem interferir nos campos. */
+@media (min-width:1500px) {
+  body.mural-carinho-page .photo-one, body.mural-carinho-page .photo-three, body.mural-carinho-page .photo-five {left:clamp(8px, 2vw, 34px) !important;}
+  body.mural-carinho-page .photo-two, body.mural-carinho-page .photo-four {right:clamp(8px, 2vw, 34px) !important;}
+}
+@media (min-width:1100px) and (max-width:1499px) {
+  body.mural-carinho-page .carinho-polaroid {width:clamp(175px, 17vw, 245px) !important;}
+  body.mural-carinho-page .photo-one, body.mural-carinho-page .photo-three, body.mural-carinho-page .photo-five {left:5px !important;}
+  body.mural-carinho-page .photo-two, body.mural-carinho-page .photo-four {right:5px !important;}
+}
+@media (min-width:801px) and (max-width:1099px) {
+  body.mural-carinho-page .carinho-polaroid {width:clamp(120px, 15vw, 170px) !important;}
+  body.mural-carinho-page .photo-one, body.mural-carinho-page .photo-three, body.mural-carinho-page .photo-five {left:3px !important;}
+  body.mural-carinho-page .photo-two, body.mural-carinho-page .photo-four {right:3px !important;}
+}
+@media (max-width:800px) {
+  body.mural-carinho-page .carinho-polaroid {width:clamp(84px, 16vw, 124px) !important;padding:5px 5px 13px !important;}
+}
+@media (max-width:540px) {
+  body.mural-carinho-page .carinho-polaroid {width:clamp(70px, 20vw, 96px) !important;}
+  body.mural-carinho-page .photo-one,body.mural-carinho-page .photo-three {left:0 !important;}
+  body.mural-carinho-page .photo-two,body.mural-carinho-page .photo-four {right:0 !important;}
+}
+/* Sem pautas internas: impede colisão com placeholders, texto digitado,
+   quebra de linhas e scroll da textarea em qualquer tamanho de tela. */
+body.mural-carinho-page .carinho-panel input#carinhoName,
+body.mural-carinho-page .carinho-panel textarea#carinhoMessage {
+  background:#092b25 !important;
+  background-image:none !important;
+  color:#FFF4D6 !important;
+  border:1px solid #D4B66A77 !important;
+  border-bottom:1px solid #D4B66A !important;
+  line-height:1.65 !important;
+  padding:14px 17px !important;
+  box-sizing:border-box;
+}
+body.mural-carinho-page .carinho-panel input#carinhoName {
+  border-top-color:transparent !important;
+  border-left-color:transparent !important;
+  border-right-color:transparent !important;
+  border-radius:0 !important;
+}
+body.mural-carinho-page .carinho-panel textarea#carinhoMessage {min-height:185px;}
+body.mural-carinho-page .carinho-panel input#carinhoName::placeholder,
+body.mural-carinho-page .carinho-panel textarea#carinhoMessage::placeholder {
+  color:#e6dfc8 !important;
+  opacity:1 !important;
+}
+@media (prefers-reduced-motion:reduce) {
+  body.mural-carinho-page .carinho-polaroid {animation:none !important;}
+}

@@ -1,0 +1,49 @@
+/* Direção de arte: somente memorias.html. Nenhum conteúdo é reposicionado. */
+:root{--royal-forest:#123d32;--royal-gold:#d4b66a;--royal-ivory:#fff4d6}
+body:has(.nova-carta-page){overflow-x:clip}
+.nova-carta-page{overflow:visible;max-width:100%}
+.nova-carta-intro{position:relative;text-align:center;padding-inline:20px}
+.nova-carta-intro h1{font-family:Georgia,'Times New Roman',serif;letter-spacing:.012em;text-shadow:0 2px 13px #061e21a8}
+.nova-carta-intro p{color:var(--royal-ivory);line-height:1.65;text-shadow:0 1px 5px #031917}
+.royal-subtitle-rule{display:flex;align-items:center;justify-content:center;gap:13px;margin:12px auto 0;width:min(240px,70vw);pointer-events:none}
+.royal-subtitle-rule span{height:1px;flex:1;background:linear-gradient(90deg,transparent,#d4b66ab8)}
+.royal-subtitle-rule span:last-child{transform:scaleX(-1)}.royal-subtitle-rule svg{width:16px;height:16px;filter:drop-shadow(0 0 5px #d4b66a55)}
+.nova-carta-stage{position:relative;isolation:isolate;overflow:visible}
+.ev-crown{filter:drop-shadow(0 5px 5px #071f20aa) drop-shadow(0 0 7px #d4b66a55)!important;opacity:.94}
+.ev-evangeline{filter:drop-shadow(0 0 9px #f6e6aa8c)!important;opacity:.87}
+.ev-lotus{filter:drop-shadow(0 8px 7px #041c1aa8)!important;opacity:.94}
+.ev-lotus svg,.ev-crown svg,.ev-evangeline svg{overflow:visible}
+.royal-scenery{position:absolute;inset:0;pointer-events:none!important;z-index:0;overflow:hidden}
+.royal-vine{position:absolute;top:18%;width:clamp(58px,11vw,145px);height:58%;opacity:.72;background-repeat:no-repeat;background-position:center;background-size:contain;filter:drop-shadow(0 3px 5px #001a1a80)}
+.royal-vine-left{left:0;background-image:url('../assets/royal-vine.svg')}.royal-vine-right{right:0;transform:scaleX(-1);background-image:url('../assets/royal-vine.svg')}
+.nova-envelope-button{isolation:isolate;filter:drop-shadow(0 17px 18px #001d1b77)}
+.nova-envelope-button .nova-envelope{isolation:isolate}
+.nova-envelope-button .nova-envelope-back{background-image:repeating-linear-gradient(102deg,transparent 0 3px,#fff9db0a 3px 4px,transparent 4px 8px),radial-gradient(ellipse at 30% 12%,#3c7863,#174638 65%,#092c25)!important}
+.nova-envelope-button .nova-envelope-front{box-shadow:inset 0 1px 0 #e8d18a30,inset 0 -11px 15px #031a1973,0 -2px 5px #041c1b44!important}
+.nova-envelope-button .nova-envelope-flap{filter:drop-shadow(0 3px 2px #051b1760);transform-style:preserve-3d}
+.nova-envelope-button .royal-flap-art{transform:translateZ(1px);backface-visibility:hidden}
+.nova-envelope-button .royal-botanical,.nova-envelope-button .ev-envelope-engraving{pointer-events:none!important}
+.nova-envelope-button .royal-botanical{opacity:.88;filter:drop-shadow(0 1px 1px #081f1966)}
+.nova-envelope-button .nova-envelope-seal{box-shadow:0 7px 10px #001a1590,0 0 0 2px #73582d,0 0 0 5px #e5c77e,inset 0 0 0 3px #bfa15b,inset 0 0 0 7px #174638,inset 0 2px 8px #ffffff20!important}
+.nova-envelope-button:not(.is-opening):hover .nova-envelope-seal{filter:drop-shadow(0 0 8px #e5c77e7d)}
+.nova-envelope-button .royal-border-lights i{width:2px;height:2px;box-shadow:0 0 5px 1px #e8be6366}
+.nova-envelope-button.is-opening .royal-botanical,.nova-envelope-button.is-opening .ev-envelope-engraving,.nova-envelope-button.is-opening .royal-border-lights{opacity:0;transition:opacity .28s ease}
+.nova-open-caption{color:#fff4d6!important;text-shadow:0 2px 5px #061b18!important}
+/* Contraste da carta aberta e rolagem do texto em telas baixas. */
+.nova-letter.is-open{max-width:min(95vw,800px);margin-inline:auto}
+.nova-letter-inner.floral-letter-design{background:#123d32!important;color:#fff4d6!important;border-color:#d4b66a!important;box-shadow:0 16px 45px #001915a3,inset 0 0 0 1px #d4b66a70!important}
+.floral-letter-design .floral-content,.floral-letter-design .nova-letter-text,.floral-letter-design .nova-letter-text p{color:#fff4d6!important}
+.floral-letter-design h2,.floral-letter-design .nova-signature,.floral-letter-design .nova-signature strong,.floral-letter-design .nova-letter-kicker{color:#d4b66a!important}
+.floral-letter-design .nova-close{background:#174c3c!important;color:#fff4d6!important;border:1px solid #d4b66a!important;z-index:12!important;pointer-events:auto!important}
+.royal-glitter{position:fixed;inset:0;z-index:39;overflow:hidden;pointer-events:none!important;contain:layout style}
+.royal-glitter-dot{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);background:var(--c);border-radius:50%;opacity:.35;box-shadow:0 0 5px 1px var(--glow);animation:royal-drift var(--dur) ease-in-out var(--delay) infinite alternate}
+.royal-glitter-dot.star{border-radius:0;background:transparent;box-shadow:none}
+.royal-glitter-dot.star::before,.royal-glitter-dot.star::after{content:'';position:absolute;background:var(--c);border-radius:100%;filter:drop-shadow(0 0 3px var(--glow))}
+.royal-glitter-dot.star::before{left:45%;width:10%;height:100%}.royal-glitter-dot.star::after{top:45%;height:10%;width:100%}
+@keyframes royal-drift{from{opacity:.14;transform:translate3d(0,2px,0) scale(.8)}to{opacity:.7;transform:translate3d(3px,-7px,0) scale(1.12)}}
+.royal-burst{position:fixed;left:var(--x);top:var(--y);z-index:70;width:3px;height:3px;background:var(--c);border-radius:50%;pointer-events:none;box-shadow:0 0 6px var(--c);animation:royal-burst .95s ease-out both}
+@keyframes royal-burst{to{transform:translate(var(--dx),var(--dy)) scale(.25);opacity:0}}
+body:has(.nova-carta-page) .ev-romance-spark,body:has(.nova-carta-page) .ev-magic-layer,body:has(.nova-carta-page) .ev-glitter-layer{display:none!important}
+@media(max-width:700px){.royal-vine{width:65px;opacity:.42;top:24%;height:43%}.nova-carta-intro{padding-inline:18px}.ev-crown{left:1%;top:0}.ev-evangeline{right:1%;top:0}.ev-lotus{width:clamp(90px,23vw,130px)}.nova-letter.is-open{max-width:96vw}.royal-glitter-dot:nth-child(n+65){display:none}}
+@media(max-width:430px){.royal-vine{display:none}.ev-crown{width:62px}.ev-evangeline{width:75px}.ev-lotus{width:93px}.nova-carta-stage{max-width:100vw}}
+@media(prefers-reduced-motion:reduce){.royal-glitter-dot,.royal-burst,.ev-crown,.ev-evangeline{animation:none!important}.royal-glitter-dot{opacity:.35}.royal-burst{display:none}}

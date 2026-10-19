@@ -1,0 +1,19 @@
+/* Restaura composição vertical centralizada sem alterar a paleta da roleta. */
+html,body.pagina-roleta{width:100%;max-width:100%;overflow-x:clip}
+body.pagina-roleta .roleta-layout{
+ width:min(100% - 32px,790px)!important;max-width:790px!important;
+ margin:0 auto!important;padding:32px 0 54px!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ text-align:center!important;position:relative;left:auto!important;right:auto!important;
+ transform:none!important;float:none!important;grid-template-columns:none!important;
+}
+body.pagina-roleta .roleta-intro{width:100%;max-width:700px;margin:0 auto 16px!important;padding:0 8px!important;text-align:center!important;position:relative;z-index:3}
+body.pagina-roleta .roleta-intro h1{margin:7px auto 13px!important}
+body.pagina-roleta .roleta-intro p{margin:0 auto 12px!important}
+body.pagina-roleta .roleta-painel{width:100%!important;max-width:700px!important;margin:0 auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;position:relative;z-index:3;transform:none!important}
+body.pagina-roleta .roleta-container{width:min(75vw,365px)!important;margin:5px auto 0!important;flex:0 0 auto;position:relative;left:auto!important;right:auto!important;transform:none!important}
+body.pagina-roleta .roleta-legenda{width:min(100%,630px)!important;max-width:630px!important;margin:26px auto 4px!important;padding:0 6px!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px 18px!important;text-align:left!important;position:relative;z-index:3}
+body.pagina-roleta .roleta-botao{align-self:center!important;margin:20px auto 0!important}
+body.pagina-roleta .roleta-resultado{width:min(100%,570px)!important;max-width:570px!important;margin:14px auto 0!important;padding:10px 12px!important;align-self:center!important;text-align:center!important;position:relative;z-index:3;transform:none}
+body.pagina-roleta .roleta-container:after{content:'✦';inset:auto;left:50%;bottom:-18px;transform:translateX(-50%);border:0;box-shadow:none}
+@media(max-width:600px){body.pagina-roleta .roleta-layout{width:calc(100% - 24px)!important;padding:24px 0 35px!important}body.pagina-roleta .roleta-container{width:min(81vw,335px)!important}body.pagina-roleta .roleta-legenda{grid-template-columns:1fr!important;max-width:380px!important;gap:5px!important}body.pagina-roleta .roleta-legenda li{font-size:14px!important}}

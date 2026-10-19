@@ -1,0 +1,13 @@
+/* Envelope fechado: tons do pântano encantado, sem alterar a carta aberta. */
+.nova-envelope-button .nova-envelope{filter:drop-shadow(0 19px 16px rgba(0,0,0,.53)) drop-shadow(0 0 9px rgba(212,182,106,.17))!important}
+.nova-envelope-button .nova-envelope-back{background:linear-gradient(135deg,#215b4c,#123d32 75%)!important;box-shadow:inset 0 0 0 2px #d4b66a,inset 0 0 22px #051e1a99!important}
+.nova-envelope-button .nova-envelope-left{background:linear-gradient(145deg,#286956,#164738 67%,#0e3029)!important;filter:none!important}
+.nova-envelope-button .nova-envelope-right{background:linear-gradient(215deg,#245b4d,#164638 68%,#0d3029)!important}
+.nova-envelope-button .nova-envelope-front{background:linear-gradient(0deg,#10382e 0%,#1c5445 74%,#2a6754 100%)!important;filter:drop-shadow(0 -1px 1px #d4b66a55)}
+.nova-envelope-button .nova-envelope-flap{background:linear-gradient(170deg,#2e715b 0%,#1b5142 52%,#123d32 100%)!important;filter:drop-shadow(0 2px 1px #d4b66a99)}
+.nova-envelope-button .nova-envelope-note{background:#123d32!important;color:#fff4d6!important;border:1px solid #d4b66a!important}
+.nova-envelope-button .nova-envelope{outline:1px solid rgba(212,182,106,.55);outline-offset:-1px;border-radius:4px}
+.nova-envelope-button .nova-envelope-seal{background:radial-gradient(circle at 34% 27%,#c75a60 0%,#8e2033 50%,#510e21 92%)!important;border-color:#d4b66a!important;box-shadow:0 5px 9px #0006,inset 0 0 0 3px #e0a2a0,inset 0 0 0 7px #6b1227,0 0 0 2px #d4b66a99!important}
+.nova-envelope-button .nova-envelope-seal span{color:#fff4d6!important}
+.nova-envelope-button:focus-visible{outline-color:#d4b66a!important}
+@media(max-width:600px){.nova-envelope-button .nova-envelope{outline-offset:-1px}}

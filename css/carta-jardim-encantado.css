@@ -1,0 +1,42 @@
+
+/* Carta floral em CSS: inspiração botânica verde, flores brancas e aro dourado.
+   Não utiliza a imagem de referência nem imagem de fundo. */
+.nova-letter{width:min(94vw,730px)}
+.nova-letter-inner.floral-letter-design{
+  background:radial-gradient(ellipse at 50% 43%,#fff 0%,#fff 55%,#f7f9f3 100%)!important;
+  border:1px solid #e9e8df!important;border-radius:2px!important;
+  padding:clamp(82px,12vw,125px) clamp(34px,9vw,95px) clamp(95px,12vw,130px)!important;
+  overflow:hidden;min-height:780px;box-shadow:0 22px 45px #0008!important;
+}
+.floral-letter-design:before{display:none!important}
+.floral-content{position:relative;z-index:3}
+.floral-arc{position:absolute;inset:10% 9%;border:1.5px solid #b9a477;border-radius:48% 48% 47% 47% / 35% 35% 42% 42%;transform:rotate(-5deg);pointer-events:none;opacity:.8}
+.floral-arc:after{content:"";position:absolute;inset:8px;border:1px solid #cbb78577;border-radius:inherit}
+.floral-corner{position:absolute;z-index:2;width:230px;height:210px;pointer-events:none;color:#6e9568}
+.floral-top-left{top:-30px;left:-45px;transform:rotate(-20deg)}
+.floral-top-right{top:-40px;right:-55px;transform:scaleX(-1) rotate(-17deg)}
+.floral-bottom-left{bottom:-40px;left:-45px;transform:rotate(180deg) scaleX(-1)}
+.floral-bottom-right{bottom:-48px;right:-40px;transform:rotate(180deg)}
+.floral-branch{position:absolute;top:0;left:0;font:210px/1 Georgia,serif;color:#6e9064;opacity:.76;transform:rotate(-18deg)}
+.floral-leaf{position:absolute;top:23px;left:96px;font:105px/1 Georgia,serif;color:#9eaf7b;transform:rotate(30deg);opacity:.9}
+.floral-bloom{position:absolute;top:50px;left:48px;font:116px/1 Georgia,serif;color:#fffdf0;text-shadow:1px 2px 0 #d6d8bc,0 0 1px #b8c29e,0 0 0 #fff}
+.floral-bloom:after{content:"✦";position:absolute;top:41px;left:45px;font:21px Georgia,serif;color:#d8bc70}
+.floral-bloom.small{font-size:66px;top:6px;left:142px;opacity:.92}
+.floral-bloom.small:after{top:22px;left:25px;font-size:12px}
+.floral-letter-design .nova-letter-ornament{color:#8aab7d;font-size:21px}
+.floral-letter-design .nova-letter-kicker{color:#647c5e;letter-spacing:.24em;font-size:.73rem}
+.floral-letter-design .antique-rule{color:#b8a777}
+.floral-letter-design h2{color:#597853!important;font:400 clamp(2.8rem,6vw,4.2rem) 'Great Vibes','Brush Script MT',cursive!important;margin:24px 0 34px}
+.floral-letter-design .nova-letter-text p{color:#465342!important;font:normal clamp(1.02rem,1.8vw,1.14rem)/1.85 Georgia,serif!important}
+.floral-letter-design .nova-signature{color:#597853!important}
+.floral-letter-design .nova-close{top:18px;right:18px;border-color:#c6d2b7;color:#607957;background:#fff}
+@media(max-width:600px){
+ .nova-letter-inner.floral-letter-design{min-height:740px;padding:95px 34px 115px!important}
+ .floral-corner{transform-origin:top left;scale:.65}
+ .floral-top-left{top:-20px;left:-25px}
+ .floral-top-right{top:-20px;right:-140px}
+ .floral-bottom-left{bottom:-105px;left:-20px}
+ .floral-bottom-right{bottom:-100px;right:-135px}
+ .floral-arc{inset:8% 5%}
+ .floral-letter-design .nova-letter-text p{font-size:.98rem!important;line-height:1.72!important}
+}

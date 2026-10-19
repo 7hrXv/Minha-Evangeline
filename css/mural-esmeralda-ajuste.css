@@ -1,0 +1,26 @@
+/* Ajustes exclusivos do Mural de carinho — versão fornecida pelo usuário. */
+body.mural-carinho-page {--desk-paper:#123D32;--desk-green:#123D32;--desk-gold:#D4B66A;}
+body.mural-carinho-page .carinho-panel {color:#FFF4D6;background:repeating-linear-gradient(0deg,transparent 0 35px,#D4B66A0b 36px 37px),linear-gradient(135deg,#174d3e,#123D32 58%,#0b2c26)!important;border:1px solid #D4B66A!important;box-shadow:0 35px 75px #000b08a6,inset 0 0 0 7px #123D32,inset 0 0 0 8px #D4B66A80!important;}
+body.mural-carinho-page .desk-paper-back-one {background:#0e3029!important;border-color:#b89a59!important}
+body.mural-carinho-page .desk-paper-back-two {background:#1b5745!important;border-color:#D4B66A!important}
+body.mural-carinho-page .carinho-panel-heading h2,body.mural-carinho-page .carinho-panel h2 {color:#D4B66A!important;text-shadow:0 2px 12px #071a15!important}
+body.mural-carinho-page .carinho-panel-heading p,body.mural-carinho-page .carinho-panel label,body.mural-carinho-page .carinho-storage,body.mural-carinho-page .carinho-counter,body.mural-carinho-page .carinho-edit-mode {color:#FFF4D6!important}
+body.mural-carinho-page .carinho-panel label::before,body.mural-carinho-page .carinho-panel-heading::after {color:#D4B66A!important;border-color:#D4B66A80!important}
+body.mural-carinho-page .carinho-panel input,body.mural-carinho-page .carinho-panel textarea {background:#0b2e27!important;border:1px solid #D4B66A88!important;border-bottom:1px solid #D4B66A!important;box-shadow:inset 0 1px 7px #061c17!important;color:#FFF4D6!important;-webkit-text-fill-color:#FFF4D6!important;line-height:1.65!important;}
+body.mural-carinho-page .carinho-panel :is(input,textarea)::placeholder {color:#e5d8b7!important;-webkit-text-fill-color:#e5d8b7!important;opacity:1}
+body.mural-carinho-page .carinho-save,body.mural-carinho-page .carinho-note-actions button {background:#D4B66A!important;color:#123D32!important;border:1px solid #ead29a!important;box-shadow:0 4px 12px #061c1740!important}
+body.mural-carinho-page .carinho-cancel {background:#174d3e!important;color:#FFF4D6!important;border:1px solid #D4B66A!important}
+body.mural-carinho-page .carinho-status {color:#FFF4D6!important}
+body.mural-carinho-page .carinho-notes::before {background:linear-gradient(135deg,#0b3027d9,#174d3fca)!important;border-color:#D4B66A88!important}
+body.mural-carinho-page .carinho-note,body.mural-carinho-page .carinho-note:nth-child(3n+2) {background:repeating-linear-gradient(0deg,transparent 0 29px,#D4B66A12 30px 31px),linear-gradient(135deg,#174d3d,#0d3028)!important;border-color:#D4B66A!important;color:#FFF4D6!important;box-shadow:0 14px 22px #000c08a0,3px 5px 0 #235746!important}
+body.mural-carinho-page .carinho-note :is(.carinho-note-name,.carinho-note-date,.carinho-note-text,.carinho-confirm-text) {color:#FFF4D6!important}
+body.mural-carinho-page .carinho-note :is(.carinho-note-stamp,.carinho-note-tape) {border-color:#D4B66A!important}
+body.mural-carinho-page .carinho-confirm {background:#0b3028!important;border-color:#D4B66A!important}
+body.mural-carinho-page .carinho-confirm .carinho-confirm-no {background:#194c3b!important;color:#FFF4D6!important}
+body.mural-carinho-page .desk-seal {color:#FFF4D6!important;border:1px solid #D4B66A}
+/* Apenas a polaroid superior esquerda: retrato, ~15% maior e sem recorte. */
+body.mural-carinho-page .carinho-polaroid.photo-one {width:clamp(155px,14.95vw,218px)!important;aspect-ratio:3/4.2;box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-start;left:max(22px,calc(50% - 745px))!important;}
+body.mural-carinho-page .carinho-polaroid.photo-one img {width:100%;height:auto;max-height:calc(100% - 3px);flex:1 1 auto;min-height:0;object-fit:contain!important;object-position:center center;background:#eae5d7;aspect-ratio:auto!important;}
+@media(max-width:1180px){body.mural-carinho-page .carinho-polaroid.photo-one {width:126px!important;left:12px!important}}
+@media(max-width:800px){body.mural-carinho-page .carinho-polaroid.photo-one {width:97px!important;left:7px!important}}
+@media(max-width:540px){body.mural-carinho-page .carinho-polaroid.photo-one {width:83px!important;left:5px!important;padding:5px 5px 13px!important}}

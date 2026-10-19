@@ -1,0 +1,90 @@
+/* Ajustes exclusivos do Mural de carinho — preserva scripts e demais páginas. */
+body.mural-carinho-page { --desk-paper:#123D32; --desk-green:#123D32; --desk-gold:#D4B66A; }
+body.mural-carinho-page .carinho-panel {
+ background:repeating-linear-gradient(0deg,transparent 0 34px,#d4b66a0c 35px 36px),linear-gradient(145deg,#194e3e 0%,#123D32 52%,#0b3028 100%) !important;
+ border:1px solid #d4b66a !important;
+ box-shadow:0 35px 75px #000b08a6,inset 0 0 0 7px #0e3329,inset 0 0 0 8px #d4b66a91 !important;
+ color:#FFF4D6 !important;
+}
+body.mural-carinho-page .desk-paper-back-one {background:#0d3229!important;border-color:#d4b66a9c!important}
+body.mural-carinho-page .desk-paper-back-two {background:#215540!important;border-color:#d4b66a91!important}
+body.mural-carinho-page .carinho-panel-heading h2,
+body.mural-carinho-page .carinho-panel label,
+body.mural-carinho-page .carinho-panel-heading p,
+body.mural-carinho-page .carinho-storage,
+body.mural-carinho-page .carinho-counter,
+body.mural-carinho-page .carinho-status,
+body.mural-carinho-page .carinho-edit-mode {color:#FFF4D6!important}
+body.mural-carinho-page .carinho-panel-heading::after {color:#D4B66A!important;border-color:#d4b66a!important}
+body.mural-carinho-page .carinho-panel input,
+body.mural-carinho-page .carinho-panel textarea {
+ background:#082b24!important;color:#FFF4D6!important;
+ border:0!important;border-bottom:1px solid #D4B66A!important;
+ box-shadow:inset 0 1px 5px #001b1577!important;
+}
+body.mural-carinho-page .carinho-panel input::placeholder,
+body.mural-carinho-page .carinho-panel textarea::placeholder {color:#d6d6bf!important;opacity:1}
+body.mural-carinho-page .carinho-save,
+body.mural-carinho-page .carinho-save:hover {background:linear-gradient(120deg,#e2cb91,#D4B66A)!important;color:#123D32!important;border:1px solid #e9d59f!important}
+body.mural-carinho-page .carinho-cancel {color:#FFF4D6!important;border-color:#D4B66A!important;background:#0c3027!important}
+body.mural-carinho-page .desk-seal {color:#FFF4D6!important;border-color:#D4B66A!important}
+body.mural-carinho-page .carinho-notes {margin-top:78px!important;padding:22px clamp(12px,3vw,32px) 25px!important}
+body.mural-carinho-page .carinho-notes-heading {margin-bottom:20px!important;gap:14px!important}
+body.mural-carinho-page .carinho-notes-heading h2 {font-size:clamp(31px,4.2vw,46px)!important}
+body.mural-carinho-page .carinho-empty {padding:20px 15px 21px!important;gap:8px!important;min-height:0!important}
+body.mural-carinho-page .empty-envelope {width:120px!important;height:82px!important;margin:8px auto 2px!important}
+body.mural-carinho-page .empty-envelope::before {height:56px!important}
+body.mural-carinho-page .envelope-seal {width:25px!important;height:25px!important;left:calc(50% - 12px)!important;bottom:10px!important;font-size:15px!important}
+body.mural-carinho-page .envelope-letter {font-size:19px!important}
+body.mural-carinho-page .carinho-empty p {font-size:15px!important;line-height:1.5!important}
+body.mural-carinho-page .carinho-empty .empty-detail {font-size:12px!important}
+/* A lista continua sem altura fixa e cresce com quantos recados existirem. */
+body.mural-carinho-page .carinho-list {height:auto!important;max-height:none!important}
+body.mural-carinho-page .carinho-note,
+body.mural-carinho-page .carinho-note:nth-child(3n+2) {
+ background:repeating-linear-gradient(0deg,transparent 0 29px,#d4b66a13 30px 31px),linear-gradient(135deg,#1a503f,#0e342b)!important;
+ border:1px solid #D4B66A!important;color:#FFF4D6!important;
+ box-shadow:0 14px 22px #000c08a0,3px 5px 0 #0b2b23!important;
+}
+body.mural-carinho-page .carinho-note-name,
+body.mural-carinho-page .carinho-note-date,
+body.mural-carinho-page .carinho-note-text,
+body.mural-carinho-page .carinho-confirm-text {color:#FFF4D6!important}
+body.mural-carinho-page .carinho-note-actions {border-top-color:#D4B66A80!important}
+body.mural-carinho-page .carinho-note-actions button {color:#D4B66A!important;border-color:#D4B66A!important;background:#10382d!important}
+body.mural-carinho-page .carinho-confirm {background:#0c3027!important;border-color:#D4B66A!important}
+body.mural-carinho-page .carinho-confirm button {color:#FFF4D6!important}
+/* A primeira foto original é horizontal. Ela aparece INTEIRA sobre um fundo
+   difuso da própria foto, evitando faixas vazias na moldura vertical. */
+body.mural-carinho-page .carinho-polaroid.photo-one {
+ width:clamp(115px,12.65vw,178px)!important;
+ aspect-ratio:3 / 4.15!important;
+ height:auto!important;
+ display:flex!important;
+ flex-direction:column!important;
+ box-sizing:border-box!important;
+ padding:7px 7px 20px!important;
+ background:#fff9eb!important;
+ overflow:visible;
+}
+body.mural-carinho-page .carinho-polaroid.photo-one::before {
+ content:'';display:block;position:absolute;inset:7px 7px 20px;
+ background:linear-gradient(#153e3345,#153e3345),url('../assets/images/nos-dois.webp') center/cover no-repeat;
+ filter:blur(2px);pointer-events:none;
+}
+body.mural-carinho-page .carinho-polaroid.photo-one img {
+ position:relative;z-index:1;display:block;
+ width:100%!important;height:100%!important;min-height:0!important;
+ flex:1 1 auto;aspect-ratio:auto!important;
+ object-fit:contain!important;object-position:center!important;
+ background:transparent!important;
+}
+@media(max-width:1180px) {body.mural-carinho-page .carinho-polaroid.photo-one {width:121px!important}}
+@media(max-width:800px) {body.mural-carinho-page .carinho-polaroid.photo-one {width:92px!important}}
+@media(max-width:540px) {
+ body.mural-carinho-page .carinho-polaroid.photo-one {width:75px!important;padding:5px 5px 13px!important}
+ body.mural-carinho-page .carinho-polaroid.photo-one::before {inset:5px 5px 13px}
+ body.mural-carinho-page .carinho-notes {margin-top:65px!important;padding:18px 12px 22px!important}
+ body.mural-carinho-page .carinho-empty {padding:15px 12px 17px!important}
+ body.mural-carinho-page .empty-envelope {width:104px!important;height:72px!important}
+}
