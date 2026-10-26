@@ -1,0 +1,55 @@
+/* Uma edição de lembranças: dimensões vêm do conteúdo, nunca de uma tela vazia. */
+.chapter .welcome-album{height:auto;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 22px;align-items:center;padding:16px 5px 5px}
+.chapter .welcome-album .welcome-memory{position:relative;inset:auto;width:100%;margin:0;max-width:none}
+.chapter .welcome-album .memory-b{--lean:4deg!important}.chapter .welcome-album .memory-c{--lean:-3deg!important}.chapter .welcome-album .memory-d{--lean:2deg;--phase:-4s;--drift:11s}
+.chapter .welcome-album .album-keepsake{position:static;grid-column:1/-1;rotate:0;font-size:21px;text-align:center;margin:0}
+.chapter .welcome-scene{min-height:0;align-items:center;padding-bottom:0}.chapter .welcome-memory .photo-frame{width:100%;max-width:none;margin:0}
+.chapter .album-grid{height:auto;min-height:0;padding:12px 10px 0;overflow:visible;column-gap:27px}
+.chapter .album-grid.masonry-ready{position:relative;display:block;columns:auto;margin-bottom:0}
+.chapter .album-grid.masonry-ready>.album-photo{position:absolute;left:var(--photo-x);top:var(--photo-y);width:var(--photo-width);max-width:none;margin:0!important;min-height:0}
+.chapter-2 .chapter-navigation{margin-top:28px}.chapter .album-photo{transition:scale .25s,box-shadow .25s}
+.chapter .photo-frame.crop-portrait{position:relative;aspect-ratio:704/932;overflow:hidden;container-type:normal}
+.chapter .photo-frame.crop-portrait img,.chapter .viewer-frame.crop-portrait img{position:absolute;inset:auto;left:-1.13636%;top:-18.66953%;width:102.27273%;height:137.33906%;max-height:none;object-fit:fill;transform:none;border-radius:0}
+.chapter .viewer-frame.crop-portrait{position:relative;aspect-ratio:704/932;width:auto;height:min(75svh,105.9vw);margin:auto;overflow:hidden;container-type:normal}
+/* Dobras do envelope: três camadas, papel extraível e lacre. */
+.chapter .small-letters-grid{gap:30px 25px;align-items:start}.chapter .small-letters details{border:0;background:transparent;box-shadow:none;border-radius:5px;perspective:800px;overflow:visible}
+.chapter .small-letters details:before{display:none}
+.chapter .small-letters summary{height:238px;min-height:238px;isolation:auto;overflow:visible;padding:0;border:0;display:block;list-style:none;background:none!important;position:relative;perspective:800px;box-shadow:0 14px 22px #06190f40;border-radius:5px;color:#415238}
+.chapter .small-letters summary:before,.chapter .small-letters summary:after{display:none!important}
+.mini-envelope-back,.mini-envelope-front,.mini-envelope-flap,.mini-envelope-insert{position:absolute;inset:0;border-radius:5px;pointer-events:none}
+.mini-envelope-back{background:linear-gradient(135deg,#babf9d,#e0dfc2);border:1px solid #a6a17c}
+.mini-envelope-insert{inset:15px 16px 25px;background:url('../assets/images/papel-discreto.svg'),#eee5ce;border:1px solid #c1b389;padding:17px;text-align:center;font:22px Evangeline;color:#6f7654;transition:transform .65s;z-index:1}
+.mini-envelope-front{z-index:2;background:linear-gradient(33deg,transparent 49.6%,#9c9f784d 50%,transparent 50.4%),linear-gradient(-33deg,transparent 49.6%,#9c9f784d 50%,transparent 50.4%),url('../assets/images/papel-discreto.svg'),linear-gradient(145deg,#d8d9b9,#bbc39e);clip-path:polygon(0 10%,50% 52%,100% 10%,100% 100%,0 100%);border:1px solid #a6a17c}
+.mini-envelope-flap{z-index:3;background:linear-gradient(150deg,#e9e6cc,#c1c7a4);clip-path:polygon(0 0,100% 0,50% 57%);transform-origin:top;transition:transform .6s cubic-bezier(.3,.1,.2,1);backface-visibility:visible;border-top:1px solid #969d73}
+.mini-wax{position:absolute;top:40%;left:calc(50% - 23px);z-index:4;display:grid;place-items:center;width:46px;height:46px;border:2px solid #b3a06c;border-radius:47% 53% 44% 56%;background:radial-gradient(circle at 30% 25%,#5b7950,#234632 75%);box-shadow:0 3px 6px #24332155,inset 0 0 0 3px #baab7330;font:19px Evangeline;color:#d6c491;transition:opacity .2s,transform .3s;pointer-events:none}
+.mini-letter-title{position:absolute;z-index:4;left:24px;right:24px;top:154px;min-height:45px;display:grid;place-items:center;font:15px/1.4 Georgia;color:#344b36;pointer-events:none;text-align:center}
+.mini-open-hint{position:absolute;z-index:4;bottom:15px;left:0;right:0;font:8px Georgia;letter-spacing:.13em;text-transform:uppercase;color:#66744e;text-align:center;pointer-events:none}
+.mini-flower{position:absolute;right:8px;bottom:65px;width:48px;height:42px;object-fit:contain;opacity:.55;z-index:4;pointer-events:none;rotate:-15deg}
+.small-letters details:nth-child(2n) .mini-flower{left:8px;right:auto;rotate:12deg}.small-letters details:nth-child(3n) .mini-envelope-front{background-color:#c9ccb1}.small-letters details:nth-child(5) .mini-wax{border-radius:50% 45% 52% 44%}
+.chapter .small-letters details[open] summary{margin-top:140px}.small-letters details[open] .mini-envelope-flap{transform:rotateX(165deg);z-index:0}.small-letters details[open] .mini-envelope-insert{transform:translateY(-25px)}.small-letters details[open] .mini-wax{opacity:0;transform:translateY(-10px)}
+.chapter .small-letters details[open]>p,.chapter .small-letters details[open] .little-letter-body{margin:0 8px;padding:25px 23px;background:linear-gradient(135deg,#eee8d5,#dfe0c6);border:1px solid #acaa80;color:#304936;border-radius:0 0 5px 5px;box-shadow:0 10px 22px #04170c40;animation:paperWithdrawal .65s .12s both;position:relative;overflow:visible;line-height:1.9;font:15px/1.9 Georgia}
+.chapter .small-letters .little-letter-body p{padding:0;color:#304936}.chapter .small-letters .little-letter-body .little-signature{padding:15px 0 0;color:#63734f}
+.chapter .small-letters details.is-closing .mini-envelope-flap{transform:rotateX(0)}.chapter .small-letters details.is-closing .mini-envelope-insert{transform:none}.chapter .small-letters details.is-closing .mini-wax{opacity:1;transform:none}.chapter .small-letters details.is-closing>p,.chapter .small-letters details.is-closing .little-letter-body{animation:paperReturn .25s both}
+/* Personagens reais e transparentes, em espaços reservados, sem cartões. */
+.chapter img.film-character{object-fit:contain;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;pointer-events:none;display:block;max-width:100%;height:auto;animation:characterFloat 11s -3s ease-in-out infinite alternate;filter:none}
+.convite-personagem{position:absolute;left:calc(100% + 18px);top:20px;width:88px}
+.welcome-character{width:80px;margin:22px 0 0 auto;max-height:170px}
+.chapter .chapter-heading{position:relative}.album-character{position:absolute;right:10px;bottom:0;width:130px}
+.chapter .letter-scene{flex-wrap:wrap;gap:24px}.letter-character{width:125px;margin:10px 0 25px;align-self:center}
+.jazz-character{width:110px;margin:20px 5px 0 auto;max-height:155px}
+.lovers-description{position:relative}.quiz-character{position:absolute;left:calc(100% + 18px);top:-35px;width:78px}
+.chapter .record-composition{position:relative}.music-character{position:absolute;left:5px;bottom:-5px;width:95px;z-index:2}
+.puzzle-character{width:125px}.notes-character{width:80px;max-height:170px}.final-character{width:95px}
+.vintage-object{width:min(260px,30vw);height:auto;pointer-events:none;rotate:var(--object-angle,-4deg);opacity:.88;align-self:center}
+.chapter .scene-keepsakes{flex-wrap:wrap;min-height:0;gap:22px;margin-top:30px;padding:12px 0}
+.chapter .illustration-credit{display:block;font:9px/1.6 Georgia;letter-spacing:0;margin-top:13px;color:#a4b29b}.illustration-credit a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.effects-paused .film-character,.film-character.out-of-view{animation-play-state:paused!important}
+@keyframes characterFloat{from{transform:translateY(0)}to{transform:translateY(-5px)}}
+@keyframes paperWithdrawal{from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:none}}
+@keyframes paperReturn{to{opacity:0;transform:translateY(-15px)}}
+@media(max-width:900px){.album-character{position:static;width:100px;margin:18px auto 0}.convite-personagem{width:70px;left:calc(100% + 8px)}.chapter .welcome-album{width:100%;padding:20px 8px 5px;gap:25px 18px}.quiz-character{left:calc(100% - 8px);width:55px;top:-50px}}
+@media(max-width:800px){.chapter .welcome-album{height:auto;min-height:0;max-width:450px}.chapter .welcome-scene{gap:20px}.chapter .welcome-character{width:65px;max-height:135px;margin:20px auto 0}.chapter .small-letters summary{height:238px;min-height:238px}.chapter .small-letters-grid{gap:30px}.chapter .small-letters details{width:100%;max-width:420px;justify-self:center}.chapter .small-letters details[open] summary{margin-top:140px}.convite-personagem{position:static;width:65px;margin:8px auto 0}.letter-character{width:80px;margin:5px auto 15px}.jazz-character{width:85px;margin:18px auto 0}.quiz-character{position:static;width:48px;margin:8px auto 0}.music-character{width:70px;left:0;bottom:0}.chapter .vintage-object{width:min(230px,60vw)}.chapter .scene-keepsakes{gap:12px;padding:0;margin-top:22px}.chapter .keepsake-verse{max-width:190px;margin:0}.puzzle-character{width:95px}.chapter .album-grid{padding:12px 8px 0}.chapter-2 .chapter-navigation{margin-top:24px}.chapter .film-character{animation:none}.chapter .notes-character{max-height:125px;width:65px}}
+@media(max-width:520px){.chapter .welcome-album{grid-template-columns:1fr;max-width:270px;gap:28px}.chapter .welcome-album .album-keepsake{font-size:20px}.chapter .album-grid:not(.masonry-ready){columns:1}.chapter .welcome-memory{--lean:0deg!important}.chapter .polaroid-card.new-memory{--lean:0deg}}
+@media(prefers-reduced-motion:reduce){.chapter .film-character,.chapter .small-letters details[open]>p,.chapter .small-letters details[open] .little-letter-body{animation:none!important}.mini-envelope-flap,.mini-envelope-insert,.mini-wax{transition:none!important}}
+.chapter .rail-ray{width:72px;max-height:90px}.chapter.secret-entry .scene-keepsakes{max-width:940px;justify-content:center;margin-top:12px}.chapter .scene-keepsakes .vintage-object{max-height:170px;object-fit:contain}.chapter .mini-envelope-flap{outline:0}.chapter .mini-flower{box-shadow:none!important;border:0!important}
+.chapter.secret-entry .scene-keepsakes{display:flex}.chapter .mini-flower{width:36px;height:30px;bottom:8px}

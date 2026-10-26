@@ -3,7 +3,7 @@
 function init(){
  if(document.querySelector('.ev-glitter-layer'))return;
  const layer=document.createElement('div');layer.className='ev-glitter-layer';layer.setAttribute('aria-hidden','true');
- const total=115;
+ const total=window.matchMedia('(max-width:700px)').matches?10:24;
  for(let i=0;i<total;i++){
   const p=document.createElement('span');p.className='ev-glitter'+(i%4===0?' tiny':'');
   // Quasi-random distribution avoids clustering and remains consistent between reloads.

@@ -1,0 +1,51 @@
+/* Recadinhos — cartões vintage, tipografia legível, botões elegantes e polaroids flutuantes (só bau.html) */
+html body.chapter .notes-editor{position:relative;background:linear-gradient(135deg,#f6f1df,#e3e8d0);border:1px solid #b6a16d;border-radius:6px;box-shadow:0 14px 34px #04140f55,inset 0 0 0 6px #0000,inset 0 0 0 7px #b39a6640}
+html body.chapter .notes-editor::before,html body.chapter .notes-editor::after{content:'❀';position:absolute;z-index:1;color:#a8905a;font:15px/1 Georgia,serif;opacity:.85;pointer-events:none}
+html body.chapter .notes-editor::before{left:11px;top:9px}
+html body.chapter .notes-editor::after{right:11px;bottom:9px}
+html body.chapter .notes-editor h2{font:34px/1.15 Evangeline,Georgia,serif;color:#3f5a3a}
+html body.chapter .notes-editor label{display:block;margin:14px 0 6px;font:600 13px/1.4 Georgia,serif;letter-spacing:.08em;text-transform:uppercase;color:#4c6545}
+html body.chapter .notes-editor input,html body.chapter .notes-editor textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #b6a16d;border-radius:8px;background:#fcf9ef;color:#2f4630;font:17px/1.6 Georgia,serif;box-shadow:inset 0 1px 3px #3b4a2a1a;transition:border-color .2s,box-shadow .2s}
+html body.chapter .notes-editor textarea{resize:vertical;min-height:120px}
+html body.chapter .notes-editor input::placeholder,html body.chapter .notes-editor textarea::placeholder{color:#7d8a70;font-style:italic}
+html body.chapter .notes-editor input:focus-visible,html body.chapter .notes-editor textarea:focus-visible{outline:none;border-color:#8f7a48;box-shadow:0 0 0 3px #c9ad6a55}
+html body.chapter .notes-counter{font:13px Georgia,serif;color:#5f6f55}
+html body.chapter #carinhoError{font:italic 14px Georgia,serif}
+html body.chapter #carinhoEditMode{font:italic 15px Georgia,serif;color:#6a5a2d}
+html body.chapter .notes-editor .notes-actions{gap:14px;margin-top:14px}
+html body.chapter .notes-editor .gold-button{margin-top:0;border-radius:999px;border-color:#d9c18a;background:linear-gradient(125deg,#4d6b52,#274a39);box-shadow:0 6px 16px #0a1f1650,inset 0 0 0 3px #0000,inset 0 0 0 4px #e0c98c40;letter-spacing:.04em;transition:transform .2s,box-shadow .2s,filter .2s}
+html body.chapter .notes-editor .gold-button:hover{transform:translateY(-2px);filter:brightness(1.1);box-shadow:0 10px 22px #0a1f1670,inset 0 0 0 3px #0000,inset 0 0 0 4px #e0c98c66}
+html body.chapter .notes-editor .text-button{border:1px solid #b6a16d;border-radius:999px;background:#fffdf4;color:#3f5a3a;text-decoration:none;min-height:44px;padding:8px 18px;font:15px Georgia,serif;transition:background .2s,border-color .2s}
+html body.chapter .notes-editor .text-button:hover{background:#eef0da;border-color:#8f7a48}
+html body.chapter .notes-editor .quiet{font:italic 14px/1.6 Georgia,serif;color:#55684c}
+html body.chapter .notes-editor #exportNotes{margin-top:10px}
+html body.chapter .notes-board>h2{font:36px/1.2 Evangeline,Georgia,serif;color:#e3cf94;text-shadow:0 2px 8px #04140f80}
+html body.chapter .notes-empty{padding:18px 20px;border:1px dashed #bea27099;border-radius:10px;background:#0f2a2166;color:#efe6cf;font:italic 17px/1.6 Georgia,serif;text-align:center}
+html body.chapter .notes-list{gap:20px}
+html body.chapter .note-card{position:relative;padding:24px 26px 20px;background:linear-gradient(135deg,#f6f1df,#e5ead2);border:1px solid #b6a16d;border-radius:6px;box-shadow:0 10px 26px #04140f50,inset 0 0 0 5px #0000,inset 0 0 0 6px #b39a6640;color:#2f4630}
+html body.chapter .note-card:before{content:'❧';right:16px;top:12px;color:#a8905a;font-size:22px;opacity:.75}
+html body.chapter .note-card::after{content:'❀';position:absolute;left:13px;bottom:9px;color:#a8905a;font:14px/1 Georgia,serif;opacity:.8;pointer-events:none}
+html body.chapter .note-card h3{margin:0 34px 8px 0;font:31px/1.15 Evangeline,Georgia,serif;color:#3f5a3a}
+html body.chapter .note-card p{font:18px/1.7 Georgia,serif;color:#2f4630}
+html body.chapter .note-card time{display:block;margin-top:10px;font:italic 14px Georgia,serif;color:#68775e}
+html body.chapter .note-card .note-actions{gap:10px;margin-top:14px}
+html body.chapter .note-card .note-actions button{min-height:40px;padding:7px 18px;border:1px solid #a68a56;border-radius:999px;background:#fffdf4;color:#3f5a3a;font:15px Georgia,serif;transition:background .2s,border-color .2s,transform .2s}
+html body.chapter .note-card .note-actions button:hover{background:#eef0da;border-color:#7d6a3a;transform:translateY(-1px)}
+html body.chapter .note-card .note-actions button:focus-visible,html body.chapter .notes-editor .text-button:focus-visible{outline:2px solid #8f7a48;outline-offset:3px}
+
+/* Moldura: polaroids ao redor da composição (linhas no topo/rodapé; laterais em telas largas) */
+.recados-moldura{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;max-width:100%}
+.recados-trilho{display:flex;justify-content:center;align-items:flex-start;gap:clamp(16px,4vw,40px);padding:10px 6px 14px;pointer-events:none}
+.nota-polaroid{position:relative;flex:none;width:var(--w,130px);margin:0;padding:8px 8px 24px;background:linear-gradient(130deg,#f7f0dc,#e2dbc4);border:1px solid #d0c49f;border-radius:3px;box-shadow:0 12px 26px #07150f55;rotate:var(--lean,-2deg);animation:seqIn .7s ease-out var(--seq,.4s) backwards,polaroidDrift var(--drift,11s) var(--phase,-2s) ease-in-out infinite alternate}
+.nota-polaroid::before{content:'';position:absolute;left:calc(50% - 25px);top:-10px;width:50px;height:20px;background:linear-gradient(135deg,#b5b18a99,#d8d0a588);border:1px solid #c8c09b55;rotate:-5deg}
+.nota-polaroid::after{content:'❀';position:absolute;left:0;right:0;bottom:5px;text-align:center;color:#a28d5c;font:13px/1 Georgia,serif}
+.nota-polaroid img{display:block;width:100%;height:auto;aspect-ratio:var(--r,.75);object-fit:cover;border-radius:1px}
+.nota-polaroid.paisagem{--w:176px}
+.effects-paused .nota-polaroid{animation-play-state:paused}
+@media(max-width:560px){.nota-polaroid{--w:104px;padding:6px 6px 19px}.nota-polaroid.paisagem{--w:140px}}
+@media(min-width:1480px){
+ .recados-moldura{grid-template-columns:minmax(0,170px) minmax(0,1fr) minmax(0,170px);align-items:center;gap:26px}
+ .recados-trilho{flex-direction:column;align-items:center;gap:34px;padding:0}
+ .nota-polaroid{--w:150px}.nota-polaroid.paisagem{--w:170px}
+}
+@media(prefers-reduced-motion:reduce){.nota-polaroid{animation:none}}

@@ -1,9 +1,65 @@
+/* Página da carta — fundo vintage (verde profundo + ouro envelhecido) como UMA camada isolada.
+   .carta-fundo é fixa, fica atrás de tudo, não ocupa espaço, não recebe cliques e não gera rolagem. */
+html body.chapter.chapter-3{--page-ground:#0b231a;--page-backdrop:none}
+html body.chapter.chapter-3::before,html body.chapter.chapter-3::after,html body.chapter.chapter-3 .antique-corners{display:none!important}
 
-.letter-page{padding:35px 14px 80px;min-height:85vh;background:radial-gradient(ellipse at center,rgba(91,46,22,.22),transparent 75%)}
-.letter-intro{text-align:center;max-width:780px;margin:0 auto 25px}.letter-intro .kicker{letter-spacing:.24em;color:#e8c88f;font-size:.75rem}.letter-intro h1{font:normal clamp(2rem,4.6vw,3.9rem)/1.13 Georgia,serif;color:#f8e3bc;margin:12px 0}.letter-intro p{color:#e5d6c2;line-height:1.6}.letter-intro .letter-hint{font-style:italic;color:#e7c58b}
-.vintage-stage{max-width:1160px;margin:0 auto}.vintage-scene{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:12px;box-shadow:0 25px 65px #0008;border:1px solid #8b5d3b66}.vintage-scene-image{width:100%;height:100%;object-fit:cover;display:block}
-.vintage-open{position:absolute;left:3%;top:19%;width:44%;height:57%;cursor:pointer;border:0;background:transparent;z-index:2;transition:filter .3s}.vintage-open:hover{filter:drop-shadow(0 0 12px #f7d28b)}.vintage-open:focus-visible{outline:3px solid #ffdfa0;outline-offset:3px;border-radius:10px}.vintage-open-label{position:absolute;left:4%;bottom:-14%;width:95%;text-align:center;font:italic clamp(.75rem,1.5vw,1.05rem) Georgia,serif;color:#ffe6b6;text-shadow:0 2px 5px #000,0 0 12px #000;background:#2010089c;border-radius:24px;padding:7px 10px}
-.vintage-letter{position:absolute;left:51%;top:10%;width:45%;height:80%;z-index:3;display:none;overflow:hidden;transform-origin:center top}.vintage-letter.is-open{display:block;animation:vintage-unroll 1.15s cubic-bezier(.22,.8,.24,1) both}.vintage-letter-scroll{height:100%;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#9b6a3c transparent;padding:4% 9% 7%;text-align:center;color:#58391f}.vintage-overline{font:700 clamp(.55rem,.95vw,.78rem) Georgia,serif;letter-spacing:.13em;color:#78522e}.vintage-letter h2{font:italic clamp(1.15rem,2.15vw,2.1rem) Georgia,serif;color:#69411e;margin:12px 0 18px}.vintage-letter-message{text-align:left}.vintage-letter-message p{font:clamp(.76rem,1.23vw,1.05rem)/1.58 Georgia,serif;margin:0 0 12px;color:#50351f}.vintage-signature{text-align:right;font:italic clamp(.75rem,1.2vw,1rem) Georgia,serif;color:#754b2a}.vintage-close{position:absolute;top:0;right:2%;width:30px;height:30px;border:1px solid #8b5732;background:#6e392b;color:#ffe9c1;border-radius:50%;font-size:22px;cursor:pointer;z-index:5}
-@keyframes vintage-unroll{0%{opacity:0;clip-path:inset(49% 0 49% 0);transform:scaleY(.1)}45%{opacity:1}100%{opacity:1;clip-path:inset(0 0 0 0);transform:scaleY(1)}}
-@media(max-width:700px){.letter-page{padding:30px 9px 60px}.vintage-scene{aspect-ratio:3/4}.vintage-scene-image{object-fit:cover;object-position:40% center}.vintage-open{left:0;top:13%;width:50%;height:57%}.vintage-open-label{bottom:-23%;font-size:.67rem}.vintage-letter{left:49%;top:10%;width:49%;height:80%}.vintage-letter-scroll{padding:7% 5%}.vintage-letter h2{font-size:clamp(.95rem,3vw,1.4rem);margin:8px 0}.vintage-letter-message p{font-size:clamp(.68rem,2.3vw,.85rem);line-height:1.42;margin-bottom:8px}.vintage-overline{font-size:.5rem}.vintage-close{right:0;top:0;width:24px;height:24px;font-size:18px}}
-@media(prefers-reduced-motion:reduce){.vintage-letter.is-open{animation:none}}
+.carta-fundo{position:fixed;inset:0;z-index:-1;overflow:hidden;contain:strict;pointer-events:none;user-select:none;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 42%,#1f5240e6 0,#17402f 45%,transparent 100%),
+    repeating-linear-gradient(45deg,#c9a9610a 0 1px,transparent 1px 26px),
+    repeating-linear-gradient(-45deg,#c9a9610a 0 1px,transparent 1px 26px),
+    radial-gradient(ellipse at 50% 50%,#12382b 0,#0b231a 100%)}
+.carta-fundo *{pointer-events:none}
+/* moldura dupla + selo de correio + lótus (tudo preso às bordas da camada) */
+.carta-fundo::before{content:'';position:absolute;inset:14px;border:1px solid #c9a96173;border-radius:4px;outline:1px solid #c9a96138;outline-offset:-7px;opacity:.9;
+  background:
+    url('../assets/cenarios-novos/carta-selo-correio.svg') right 12px top 146px/clamp(110px,9.5vw,150px) auto no-repeat,
+    url('../assets/cenarios-novos/carta-lotus-esquerda.svg') left -6px bottom -8px/clamp(240px,27vw,420px) auto no-repeat,
+    url('../assets/cenarios-novos/carta-lotus-direita.svg') right -6px bottom -8px/clamp(240px,27vw,420px) auto no-repeat}
+/* cantoneiras da própria camada */
+.carta-fundo span{position:absolute;width:clamp(95px,15vw,185px);aspect-ratio:1;background:url('../assets/images/cantoneira-carta-verde-ouro.svg') top left/contain no-repeat;opacity:.9}
+.carta-fundo span:nth-child(1){left:14px;top:14px}
+.carta-fundo span:nth-child(2){right:14px;top:14px;transform:scaleX(-1)}
+.carta-fundo span:nth-child(3){left:14px;bottom:14px;transform:scaleY(-1)}
+.carta-fundo span:nth-child(4){right:14px;bottom:14px;transform:scale(-1)}
+
+/* lacre e tinteiro: antes ocupavam espaço no fluxo; agora fazem parte do fundo (mesmo tamanho, giro e opacidade) */
+.carta-fundo i{position:absolute;right:3vw;top:50%;width:205px;aspect-ratio:520/300;margin-top:-60px;rotate:4deg;opacity:.85;background:url('../assets/objetos/lacre-e-tinteiro.svg') center/contain no-repeat}
+
+/* a carta continua opaca e separada do cenário */
+html body.chapter.chapter-3 .letter-paper{background-color:#f1ecd8;position:relative;z-index:2;isolation:isolate}
+html body.chapter.chapter-3 .chapter-main,html body.chapter.chapter-3 .chapter-header,html body.chapter.chapter-3 .chapter-footer{position:relative;z-index:1}
+
+@media(max-width:700px){
+  .carta-fundo::before{inset:8px;outline-offset:-5px;opacity:.5;
+    background:
+      url('../assets/cenarios-novos/carta-lotus-esquerda.svg') left -4px bottom -6px/min(44vw,180px) auto no-repeat,
+      url('../assets/cenarios-novos/carta-lotus-direita.svg') right -4px bottom -6px/min(44vw,180px) auto no-repeat}
+  .carta-fundo i{width:155px;right:auto;left:50%;margin:0 0 0 -77px;top:auto;bottom:22px;opacity:.7}
+  .carta-fundo span{width:100px;opacity:.75}
+  .carta-fundo span:nth-child(1){left:8px;top:8px}.carta-fundo span:nth-child(2){right:8px;top:8px}
+  .carta-fundo span:nth-child(3){left:8px;bottom:8px}.carta-fundo span:nth-child(4){right:8px;bottom:8px}}
+
+/* ===== Cartas menores (principal + seis bilhetes) ===== */
+html body.chapter.chapter-3 .envelope{width:min(340px,100%);height:226px}
+html body.chapter.chapter-3 .letter-paper{max-width:590px}
+html body.chapter.chapter-3 .letter-paper h2{font-size:36px}
+html body.chapter.chapter-3 .letter-paper .signature{font-size:28px}
+html body.chapter.chapter-3 :is(.letter-paper p:not(.signature),.little-letter-body p,.small-letters details p){font-size:18px!important;line-height:1.75}
+html body.chapter.chapter-3 .small-letters-grid{grid-template-columns:repeat(3,minmax(0,340px));justify-content:center;gap:22px}
+html body.chapter.chapter-3 .small-letters summary{height:216px;min-height:216px}
+html body.chapter.chapter-3 .small-letters .mini-letter-title{font-size:19.5px;line-height:1.4}
+@media(max-width:1000px){html body.chapter.chapter-3 .small-letters-grid{grid-template-columns:repeat(2,minmax(0,320px))}}
+@media(max-width:700px){
+  html body.chapter.chapter-3 .envelope{width:min(300px,100%);height:200px}
+  html body.chapter.chapter-3 .letter-paper{max-width:100%}
+  html body.chapter.chapter-3 .letter-paper h2{font-size:31px}
+  html body.chapter.chapter-3 :is(.letter-paper p:not(.signature),.little-letter-body p,.small-letters details p){font-size:16.5px!important}
+  html body.chapter.chapter-3 .small-letters-grid{grid-template-columns:minmax(0,300px);gap:18px}
+  html body.chapter.chapter-3 .small-letters summary{height:200px;min-height:200px}
+  html body.chapter.chapter-3 .small-letters .mini-letter-title{font-size:18px}}
+
+/* Envelope sempre centralizado: coluna única centralizada (o adesivo é absoluto e não ocupa lugar) */
+html body.chapter.chapter-3 .letter-scene{display:grid!important;grid-template-columns:minmax(0,1fr);justify-items:center;align-items:center;justify-content:center;margin-inline:auto;width:100%}
+html body.chapter.chapter-3 .letter-scene>.envelope{margin-left:auto;margin-right:auto;justify-self:center}
+html body.chapter.chapter-3 .letter-scene>.letter-paper{justify-self:center;width:min(590px,100%)}

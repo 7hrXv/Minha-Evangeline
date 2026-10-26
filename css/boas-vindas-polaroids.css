@@ -1,0 +1,17 @@
+/* Restore only the welcome album. Each paper follows its own photograph. */
+html body.chapter.chapter-1 .chapter-main{width:min(1100px,calc(100% - 48px));max-width:1100px}
+html body.chapter.chapter-1 .welcome-scene{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;min-height:0;max-width:1100px;margin:0 auto}
+html body.chapter.chapter-1 .welcome-copy{width:100%;max-width:500px;min-width:0}
+html body.chapter.chapter-1 .welcome-album,html body.chapter.chapter-1 .cast-welcome-album>.welcome-album{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;align-content:start;grid-auto-rows:auto;gap:25px 22px;width:100%;max-width:490px;min-width:0;height:auto!important;min-height:0!important;max-height:none;aspect-ratio:auto;margin:0 auto;padding:16px 5px 5px}
+html body.chapter.chapter-1 .welcome-album>.welcome-memory.polaroid-card{position:relative;inset:auto;align-self:start;justify-self:stretch;display:block;width:100%;max-width:none;min-width:0;height:fit-content!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important;flex:none;margin:0!important}
+html body.chapter.chapter-1 .welcome-memory>img{display:block;width:100%;height:auto!important;min-height:0;max-height:none!important;aspect-ratio:auto;object-fit:contain}
+html body.chapter.chapter-1 .welcome-memory .photo-frame{position:relative;display:block;width:100%;max-width:none;height:auto!important;min-height:0;aspect-ratio:auto!important;margin:0;container-type:normal}
+html body.chapter.chapter-1 .welcome-memory .photo-frame img{position:static;inset:auto;display:block;width:100%;height:auto!important;min-height:0;max-height:none!important;object-fit:contain}
+html body.chapter.chapter-1 .welcome-memory .photo-dedication{display:block!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none;padding-bottom:0!important}
+html body.chapter.chapter-1 .welcome-memory .dedication-text{font-size:22px!important;line-height:1.35!important}
+html body.chapter.chapter-1 .welcome-album>.album-keepsake{grid-column:1/-1;position:static;height:auto;min-height:0;margin:0}
+@media(max-width:900px){html body.chapter.chapter-1 .welcome-scene{grid-template-columns:minmax(0,1fr);gap:28px}html body.chapter.chapter-1 .welcome-copy{max-width:620px;margin:auto}html body.chapter.chapter-1 .welcome-album,html body.chapter.chapter-1 .cast-welcome-album>.welcome-album{max-width:450px}}
+@media(max-width:520px){html body.chapter.chapter-1 .chapter-main{width:calc(100% - 32px)}html body.chapter.chapter-1 .welcome-album,html body.chapter.chapter-1 .cast-welcome-album>.welcome-album{grid-template-columns:minmax(0,1fr);max-width:320px;gap:26px;padding:12px 5px 5px}html body.chapter.chapter-1 .welcome-memory .dedication-text{font-size:22px!important}}
+/* Título da apresentação ~20% menor (52→41.6px mín., 90→72px máx.; celular 38→30.4px, 52→41.6px) */
+html body.chapter.chapter-1 .welcome-copy h1{font-size:clamp(41.6px,4.72vw,72px)}
+@media(max-width:700px){html body.chapter.chapter-1 .welcome-copy h1{font-size:clamp(30.4px,7.2vw,41.6px)}}

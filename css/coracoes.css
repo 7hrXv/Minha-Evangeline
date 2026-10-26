@@ -1,0 +1,19 @@
+/* Junte nossos corações — quebra-cabeça deslizante */
+.cb{position:relative;width:min(100%,396px);aspect-ratio:1;margin:0 auto;border:2px solid #b8924a;border-radius:8px;overflow:hidden;touch-action:none;background:linear-gradient(#b8924a33 1px,transparent 1px) 0 0/100% calc(100%/6),linear-gradient(90deg,#b8924a33 1px,transparent 1px) 0 0/calc(100%/6) 100%,radial-gradient(circle at 50% 40%,#fffdf5,#e9e0c4)}
+.pc,.st,.hb,.ha{position:absolute;box-sizing:border-box;margin:0;padding:0}
+.pc{border:2px solid #b8924a;border-radius:9px;cursor:grab;color:#f8edcf;touch-action:none;box-shadow:0 3px 6px #0a2a1f66,inset 0 0 0 2px #173a2a;transition:left .18s,top .18s}
+.pc.k{background:repeating-linear-gradient(90deg,#2f5a41 0 6px,#3e6b4a 6px 10px)}.pc.v{background:repeating-linear-gradient(0deg,#2f5a41 0 6px,#3e6b4a 6px 10px)}
+.pc.k::after,.pc.v::after{content:"⋯";position:absolute;inset:0;display:grid;place-items:center;color:#e6cd8a;font-size:1.3rem;pointer-events:none}.pc.v::after{content:"⋮"}
+.pc.drag{transition:none;cursor:grabbing;z-index:5;filter:brightness(1.12)}
+.pc:focus-visible{outline:3px solid #e9c46a;outline-offset:1px}
+.st{border-radius:42% 58% 50% 50%;background:radial-gradient(circle at 35% 30%,#c4c9b0,#6f7a62);box-shadow:0 3px 5px #0006}
+.ha,.hb{display:grid;place-items:center;font-size:clamp(1.6rem,8vw,2.3rem);line-height:1;background:none;border:0}
+.ha{cursor:grab;touch-action:none;transition:left .18s;z-index:3}.ha.drag{transition:none;cursor:grabbing}.ha:focus-visible{outline:3px solid #e9c46a;outline-radius:50%;border-radius:12px}
+.hb{z-index:2}
+.cb.joined .ha,.cb.joined .hb{animation:beat .9s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.22)}}
+.cb.joined .pc{pointer-events:none}
+.cb-lvl{font:italic .95rem Georgia,serif;text-align:center;margin:0 0 8px;color:#5a5b3c}
+.cb-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.jg-btn.ghost{background:transparent;color:#123a2c}
+@media(prefers-reduced-motion:reduce){.pc,.ha{transition:none}.cb.joined .ha,.cb.joined .hb{animation:none}}

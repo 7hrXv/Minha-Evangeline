@@ -1,0 +1,146 @@
+/* Component sizes at native browser zoom. No document scaling. */
+html{font-size:22.5px;}
+html body.chapter{font-size:22.5px;line-height:1.75;}
+html body.chapter .chapter-main,html body.chapter.secret-entry .chapter-main{width:min(1280px,calc(100% - 48px));max-width:1600px;padding-top:32px;min-width:0;}
+html body.chapter .chapter-heading{max-width:1150px;}
+html body.chapter :is(.chapter-heading p,.welcome-copy>p:not(.signature),.entry-subtitle,.lovers-description,.love-reaction p,.love-celebration p,.experience-hint,.little-letter-body p,.letter-paper p:not(.signature),.note-card p,.love-message,.music-alternative>p){font-size:22.5px!important;line-height:1.8;}
+html body.chapter :is(.chapter-heading h1,.welcome-copy h1){font-size:clamp(52.5px,4.7vw,90px);}
+html body.chapter :is(.gold-button,.chapter-link,.entry-enter,.love-choices button,.love-replay,.romantic-next,.romantic-option,.skip-confirm-actions button,.sequence-sound button,.sequence-replay,.youtube-fallback,.final-nav a){font-size:21.2px!important;min-height:65px;padding:13px 24px;line-height:1.45;}
+html body.chapter :is(button,input,textarea,select,summary){min-height:55px;}
+html body.chapter :is(input,textarea,select){font-size:22.5px;padding:14px 18px;max-width:100%;box-sizing:border-box;}
+html body.chapter :is(.eyebrow,.kicker,.lovers-eyebrow,.experience-kicker,.lyric-reader-kicker){font-size:15px;line-height:1.6;}
+html body.chapter label{font-size:20px;}
+html body.chapter .chapter-navigation{width:min(1400px,100%);gap:20px;margin-top:32px;}
+html body.chapter .chapter-footer{font-size:16.2px;letter-spacing:.025em;}
+html body.chapter .correspondence-header{max-width:1600px;width:calc(100% - 48px);}
+html body.chapter .correspondence-header .chapter-brand{font-size:33.8px;}
+html body.chapter .correspondence-header .chapter-brand em{font-size:72.5px;}
+html body.chapter .correspondence-header .chapter-brand small{font-size:13.8px;}
+html body.chapter .chapter-current{font-size:23.8px;}
+html body.chapter .chapter-pagination{font-size:13.8px;}
+html body.chapter .chapter-exit{min-height:55px;width:55px;}
+/* Photos retain their intrinsic ratios. Masonry uses the available width. */
+html body.chapter .album-grid{max-width:1550px;width:100%;column-gap:30px;}
+html body.chapter .polaroid-card .dedication-text{font-size:32.5px!important;line-height:1.4!important;}
+html body.chapter .polaroid-card .dedication-signature{font-size:12.5px!important;}
+html body.chapter .welcome-scene{gap:40px;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);}
+html body.chapter .welcome-copy{max-width:750px;}
+html body.chapter .cast-welcome-album>.welcome-album{max-width:737.5px;}
+html body.chapter.secret-entry .entry-panel{max-width:587.5px;justify-self:center;}
+html body.chapter.secret-entry .entry-panel h1{font-size:clamp(45px,3.2vw,57.5px);}
+html body.chapter.secret-entry .entry-memory .dedication-text{font-size:26.2px!important;}
+html body.chapter .letter-scene{max-width:1400px;}
+html body.chapter .letter-paper{max-width:1025px;}
+html body.chapter .small-letters{max-width:1500px;}
+html body.chapter .small-letters summary{min-height:262.5px;height:auto;font-size:25px;}
+html body.chapter .mini-letter-title{font-size:25px;line-height:1.45;}
+html body.chapter .little-letter-body{font-size:22.5px;line-height:1.8;}
+html body.chapter .wheel-scene{max-width:1500px;gap:48px;}
+html body.chapter .wheel-mount{width:min(550px,100%);max-width:550px;}
+html body.chapter .wheel-result{font-size:22.5px;padding:28px;min-width:0;}
+/* Quiz sizes also feed the existing escape-button geometry calculations. */
+html body.chapter .cast-quiz-composition>.lovers-main,html body.chapter .lovers-story{max-width:875px;width:100%;}
+html body.chapter :is(.couple-quiz,.couple-skip-confirm){max-width:812.5px;width:100%;padding:30px 34px;}
+html body.chapter .couple-quiz h2{font-size:42.5px;line-height:1.35;}
+html body.chapter .romantic-option{width:100%;text-align:left;white-space:normal;}
+html body.chapter .bear-frame{width:min(350px,80%);max-width:350px;}
+html body.chapter .bear-frame img{height:281.2px;object-fit:contain;}
+html body.chapter .love-prompt h1{font-size:42.5px;line-height:1.35;}
+html body.chapter .love-prompt h1 em{font-size:48.8px;}
+html body.chapter .love-choices{width:min(512.5px,100%);}
+html body.chapter .love-choices :is(.love-yes,.love-no){width:181.2px;font-size:21.2px!important;}
+html body.chapter .romantic-heart{width:100px;height:96.2px;}
+html body.chapter .puzzle-atelier{max-width:1125px;grid-template-columns:minmax(0,562.5px) minmax(0,375px);gap:46px;}
+html body.chapter .puzzle-atelier .heart-piece{min-height:193.8px;}
+html body.chapter .heart-piece svg{height:125px;}
+html body.chapter .heart-piece>span{font-size:16.2px;}
+html body.chapter #puzzleStatus{font-size:20px;}
+html body.chapter .mural-experience :is(h1,h2){font-size:clamp(42.5px,3.8vw,65px);max-width:1125px;}
+html body.chapter .music-room{max-width:1500px;width:100%;min-width:0;}
+html body.chapter .lyric-reader{max-width:1162.5px;}
+html body.chapter .lyric-line{font-size:clamp(37.5px,3.8vw,55px);max-width:1000px;}
+html body.chapter .notes-composition{max-width:1550px;gap:32px;}
+html body.chapter .notes-editor{padding:30px;min-width:0;}
+html body.chapter .note-card{font-size:22.5px;min-width:0;}
+html body.chapter .final-wrap{max-width:1600px;padding:28px 0 20px;}
+html body.chapter .final-declaration{max-width:775px;}
+html body.chapter .tree-stage{max-width:775px;}
+html body.chapter .clock-grid strong{font-size:42.5px;}
+/* Narrow layouts grow vertically only as required by actual content. */
+@media(max-width:1000px){html body.chapter .welcome-scene{grid-template-columns:minmax(0,1fr);gap:25px;}html body.chapter .welcome-copy{max-width:850px;margin:auto;}html body.chapter .music-room{grid-template-columns:minmax(0,1fr);}html body.chapter .wheel-scene{gap:28px;}html body.chapter .compact-scenery{display:none!important;}}
+@media(max-width:700px){
+ html{font-size:17.9px;}html body.chapter{font-size:19px;}
+ html body.chapter .chapter-main,html body.chapter.secret-entry .chapter-main{width:calc(100% - 32px);padding-top:22px;}
+ html body.chapter .correspondence-header{width:calc(100% - 32px);gap:12px;}
+ html body.chapter .correspondence-header .chapter-brand{font-size:22.4px;}html body.chapter .correspondence-header .chapter-brand em{font-size:42.6px;}html body.chapter .correspondence-header .chapter-brand small{font-size:10.1px;letter-spacing:.02em;}html body.chapter .chapter-current{font-size:16.8px;}
+ html body.chapter :is(.chapter-heading p,.welcome-copy>p:not(.signature),.entry-subtitle,.lovers-description,.love-reaction p,.love-celebration p,.experience-hint,.little-letter-body p,.letter-paper p:not(.signature),.note-card p,.love-message,.music-alternative>p){font-size:19px!important;}
+ html body.chapter :is(.chapter-heading h1,.welcome-copy h1){font-size:clamp(38.1px,8vw,49.3px);}
+ html body.chapter :is(.gold-button,.chapter-link,.entry-enter,.love-choices button,.love-replay,.romantic-next,.romantic-option,.skip-confirm-actions button,.sequence-sound button,.sequence-replay,.youtube-fallback,.final-nav a){min-height:53.8px;font-size:17.9px!important;padding:12px 16px;}
+ html body.chapter .chapter-navigation{gap:12px;flex-wrap:wrap;margin-top:25px;}html body.chapter .chapter-navigation a{max-width:100%;white-space:normal;}
+ html body.chapter .album-grid{columns:1;column-gap:0;max-width:537.6px;}
+ html body.chapter .polaroid-card .dedication-text{font-size:26.9px!important;}
+ html body.chapter .welcome-album{max-width:548.8px!important;}
+ html body.chapter :is(.couple-quiz,.couple-skip-confirm){padding:25px 20px;}
+ html body.chapter .couple-quiz h2{font-size:31.4px;}html body.chapter .love-prompt h1{font-size:32.5px;}html body.chapter .love-prompt h1 em{font-size:38.1px;}
+ html body.chapter .bear-frame{width:min(291.2px,85%);}html body.chapter .bear-frame img{height:235.2px;}
+ html body.chapter .love-choices :is(.love-yes,.love-no){width:138.9px;padding:12px;}
+ html body.chapter .skip-confirm-actions{display:flex;flex-wrap:wrap;gap:12px;}html body.chapter .skip-confirm-actions button{flex:1 1 200px;}
+ html body.chapter .puzzle-atelier{grid-template-columns:minmax(0,1fr);max-width:470.4px;gap:18px;}
+ html body.chapter .puzzle-atelier .heart-board{width:min(414.4px,100%);}html body.chapter .puzzle-atelier .heart-tray{max-width:392px;}
+ html body.chapter .puzzle-atelier .heart-piece{min-height:147.8px;}html body.chapter .heart-piece svg{height:96.3px;}
+ html body.chapter .wheel-mount{width:min(425.6px,100%);max-width:425.6px;}
+ html body.chapter .notes-composition{grid-template-columns:minmax(0,1fr);}html body.chapter .notes-editor{padding:23px 19px;}
+ html body.chapter .small-letters summary{min-height:224px;}html body.chapter .letter-paper{padding-left:24px;padding-right:24px;}
+ html body.chapter .final-scene{grid-template-columns:minmax(0,1fr);gap:18px;min-height:0;}html body.chapter .tree-stage{max-width:515.2px;}html body.chapter .final-declaration{max-width:100%;padding:15px 0;}
+}
+@media(min-width:701px) and (max-width:1000px){html body.chapter .album-grid{columns:2;}html body.chapter .notes-composition{grid-template-columns:minmax(0,1fr);}}
+@media(max-width:380px){html body.chapter .correspondence-header{grid-template-columns:42.6px minmax(0,1fr) 49.3px;gap:8px;}html body.chapter .correspondence-header .chapter-brand em{font-size:35.8px;}html body.chapter .correspondence-header .chapter-brand small{font-size:9px;}html body.chapter .chapter-thread{width:35.8px;margin-left:6px;}}
+/* Keep the initial pair centered with a 20px gap after widening each button. */
+html body.chapter .love-choices .love-yes{left:calc(50% - 155px);}
+html body.chapter .love-choices .love-no{left:calc(50% + 10px);}
+html body.chapter.secret-entry #secretCode{font-size:40px;min-height:85px;width:min(400px,100%);max-width:100%;}
+@media(max-width:700px){html body.chapter .love-choices .love-yes{left:calc(50% - 134px);}html body.chapter.secret-entry #secretCode{font-size:33.6px;min-height:69.4px;}}
+/* Resolve the actual caps in the earlier invitation and album styles. */
+html body.chapter .chapter-main,html body.chapter.secret-entry .chapter-main{width:min(1600px,calc(100% - 40px));max-width:1600px}
+html body.chapter.secret-entry .entry-enter{width:min(350px,100%)!important;max-width:350px!important;min-height:64px!important;font-size:21px!important}
+html body.chapter.secret-entry #secretCode{height:85px;min-height:85px;font-size:40px}
+html body.chapter .chapter-heading h1,html body.chapter .welcome-copy h1{font-size:clamp(52px,5.9vw,90px)}
+html body.chapter .album-grid{max-width:1560px;--album-columns:3}
+html body.chapter .polaroid-card .photo-frame{--photo-max:440px}
+html body.chapter .sequence-photos{max-width:1160px;column-gap:30px}
+html body.chapter .sequence-image-frame{--photo-max:400px}
+html body.chapter .small-letters details{max-width:none;width:100%;min-width:0}
+html body.chapter .small-letters summary{height:285px;min-height:285px}
+html body.chapter .envelope{width:min(450px,100%);height:300px}
+html body.chapter .wheel-scene{grid-template-columns:minmax(0,550px) minmax(0,1fr)}
+html body.chapter .wheel-mount{width:min(550px,100%);max-width:550px}
+html body.chapter .music-room{max-width:1500px;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px}
+html body.chapter .record-composition{width:min(520px,100%);min-height:500px}
+html body.chapter .notes-composition{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+html body.chapter .love-choices .love-yes{left:calc(50% - 191px);height:64px}
+html body.chapter .love-choices .love-no{left:calc(50% + 10px);height:64px}
+/* Wide content takes precedence over decoration in the side gutters. */
+.compact-scenery{display:none!important}
+@media(max-width:1100px){html body.chapter .wheel-scene,html body.chapter .music-room,html body.chapter .notes-composition{grid-template-columns:minmax(0,1fr)}html body.chapter .wheel-mount{margin:auto}html body.chapter .album-grid{--album-columns:2}}
+@media(max-width:700px){
+ html{font-size:17px}html body.chapter{font-size:19px}
+ html body.chapter .chapter-main,html body.chapter.secret-entry .chapter-main{width:calc(100% - 28px)}
+ html body.chapter .correspondence-header{width:calc(100% - 28px);grid-template-columns:42px minmax(0,1fr) 44px;gap:8px}
+ html body.chapter .correspondence-header .chapter-brand{font-size:21px}html body.chapter .correspondence-header .chapter-brand em{font-size:40px}
+ html body.chapter .correspondence-header .chapter-brand small{font-size:9px;letter-spacing:0}
+ html body.chapter .chapter-heading h1,html body.chapter .welcome-copy h1{font-size:clamp(38px,9vw,52px)}
+ html body.chapter .album-grid{--album-columns:1}
+ html body.chapter.secret-entry .entry-memory .dedication-text{font-size:20px!important}
+ html body.chapter.secret-entry .entry-enter{min-height:56px!important;font-size:19px!important}
+ html body.chapter.secret-entry #secretCode{height:72px;min-height:72px;font-size:34px}
+ html body.chapter .love-choices .love-yes{left:calc(50% - 144px);width:134px;height:56px}
+ html body.chapter .love-choices .love-no{left:calc(50% + 10px);width:134px;height:56px}
+ html body.chapter .small-letters summary{height:265px;min-height:265px}
+ html body.chapter .record-composition{width:min(390px,100%);min-height:370px}
+ html body.chapter .puzzle-atelier .heart-board{width:min(415px,100%)}
+ html body.chapter .puzzle-atelier .heart-tray{max-width:100%}
+ html body.chapter .puzzle-atelier .heart-piece{min-height:145px}
+ html body.chapter .puzzle-atelier{max-width:100%}
+ html body.chapter .final-wrap{width:100%;padding-inline:0}
+}
+@media(max-width:380px){html body.chapter .correspondence-monogram{width:34px;height:34px;font-size:14px}html body.chapter .correspondence-header .chapter-brand em{font-size:32px}html body.chapter .love-choices .love-yes{left:calc(50% - 132px);width:122px}html body.chapter .love-choices .love-no{width:122px}html body.chapter .chapter-brand small{font-size:8px!important}}

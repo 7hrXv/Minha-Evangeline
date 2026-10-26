@@ -13,7 +13,7 @@ body.mural-carinho-page::before {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  background-image: url('../assets/tiana-mural-fundo-original.png');
+  background-image: url('../assets/tiana-mural-fundo-original.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

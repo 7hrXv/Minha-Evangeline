@@ -1,0 +1,25 @@
+/* Neutraliza sombras cianas que coloriam as imagens das bordas. Não muda geometria. */
+body.pagina-roleta .roleta-moldura-viva img.moldura-lateral-esq,
+body.pagina-roleta .roleta-moldura-viva img.moldura-lateral-dir,
+body.pagina-roleta .roleta-moldura-viva img.moldura-canto {
+  filter:drop-shadow(0 8px 14px rgba(6,18,9,.48)) drop-shadow(0 0 5px rgba(168,137,78,.10)) !important;
+  -webkit-filter:drop-shadow(0 8px 14px rgba(6,18,9,.48)) drop-shadow(0 0 5px rgba(168,137,78,.10)) !important;
+  mix-blend-mode:normal !important;
+}
+
+/* Novos ramos ilustrados, com margem interna e balanço discreto. */
+body.pagina-roleta .roleta-moldura-viva{overflow:clip!important}
+body.pagina-roleta .roleta-moldura-viva img.moldura-lateral{
+ width:clamp(95px,12vw,164px)!important;height:min(65vh,600px)!important;top:24%!important;
+ object-fit:contain!important;filter:drop-shadow(0 3px 5px #07160d33)!important;
+ opacity:.82!important;transform-origin:50% 88%;animation:roletaFolhaOrganica 12s ease-in-out infinite alternate!important;
+}
+body.pagina-roleta .moldura-lateral-esq{left:6px!important;right:auto!important}
+body.pagina-roleta .moldura-lateral-dir{right:6px!important;left:auto!important;animation-delay:-5s!important;animation-duration:15s!important}
+@keyframes roletaFolhaOrganica{from{transform:rotate(-.6deg)}to{transform:rotate(.6deg)}}
+@media(max-width:900px){body.pagina-roleta .roleta-moldura-viva img.moldura-lateral{width:clamp(66px,10vw,100px)!important;opacity:.7!important}}
+@media(max-width:600px){
+ body.pagina-roleta .roleta-moldura-viva img.moldura-lateral{width:clamp(28px,8vw,46px)!important;height:44vh!important;top:32%!important;opacity:.55!important}
+ body.pagina-roleta .moldura-lateral-esq{left:2px!important}body.pagina-roleta .moldura-lateral-dir{right:2px!important}
+}
+@media(prefers-reduced-motion:reduce){body.pagina-roleta .roleta-moldura-viva img.moldura-lateral{animation:none!important}}

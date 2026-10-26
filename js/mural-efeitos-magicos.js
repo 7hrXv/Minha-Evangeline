@@ -6,7 +6,7 @@
   root.dataset.initialized = 'true';
   const mobile = window.matchMedia('(max-width: 700px)').matches;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const counts = reduced ? { star: 18, petal: 0, firefly: 0 } : mobile ? { star: 25, petal: 9, firefly: 7 } : { star: 65, petal: 23, firefly: 18 };
+  const counts = reduced ? { star: 8, petal: 0, firefly: 0 } : mobile ? { star: 10, petal: 4, firefly: 3 } : { star: 24, petal: 9, firefly: 7 };
   // Gerador determinístico: não acumula nem reposiciona aleatoriamente ao rolar.
   let seed = 13245;
   const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);

@@ -1,0 +1,12 @@
+(()=>{'use strict';
+ const reduced=matchMedia('(prefers-reduced-motion:reduce)');
+ const burst=document.querySelector('.wheel-burst');let burstTimer;
+ if(burst)window.roletaCelebrar=()=>{if(reduced.matches)return;clearTimeout(burstTimer);burst.classList.remove('is-celebrating');void burst.offsetWidth;burst.classList.add('is-celebrating');burstTimer=setTimeout(()=>burst.classList.remove('is-celebrating'),1900);};
+ if(reduced.matches||!('IntersectionObserver' in window))return;
+ const targets=[...document.querySelectorAll('.chapter-heading,.welcome-copy,.polaroid-card,.envelope,.small-letters-heading,.small-letters details,.wheel-copy,.notes-editor,.notes-board,.scene-keepsakes')];
+ const timers=[];const reveal=new IntersectionObserver(entries=>{for(const entry of entries){if(!entry.isIntersecting)continue;const el=entry.target;el.classList.remove('reveal-pending');el.classList.add('reveal-entered');timers.push(setTimeout(()=>el.classList.remove('reveal-entered'),1400));reveal.unobserve(el);}},{threshold:.08});
+ targets.forEach((el,i)=>{el.style.setProperty('--reveal-delay',Math.min(i%4*90,270)+'ms');if(!el.classList.contains('polaroid-card'))el.classList.add('reveal-pending');reveal.observe(el);});
+ const floaters=new IntersectionObserver(entries=>{for(const entry of entries)entry.target.classList.toggle('out-of-view',!entry.isIntersecting);},{rootMargin:'40px'});
+ document.querySelectorAll('.polaroid-card,.scene-sticker').forEach(el=>floaters.observe(el));
+ window.addEventListener('pagehide',()=>{clearTimeout(burstTimer);timers.forEach(clearTimeout);reveal.disconnect();floaters.disconnect();});
+})();

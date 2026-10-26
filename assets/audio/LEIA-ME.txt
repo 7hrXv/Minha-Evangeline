@@ -1,0 +1,1 @@
+Opcional: adicionar arquivo autorizado de Oração, escolhido pelo Arthur, e configurar personalizacao/config-musica.js. Nenhum áudio foi baixado ou incluído.

@@ -1,0 +1,15 @@
+/* Entrada: portão de jardim encantado à noite. Substitui o fundo anterior sem sobrescritas por cima. */
+body.secret-entry,body.secret-entry::before{
+  background:
+    radial-gradient(ellipse 34% 40% at 50% 54%,#04120eb8 0,#04120e66 60%,transparent 100%),
+    url("../assets/cenarios/portao-jardim-noite.svg") center/cover no-repeat,
+    linear-gradient(#06130f55,#06130f88),
+    url("../assets/images/jardim-ilustrado-noite.webp") center/cover no-repeat #061611!important}
+body.secret-entry::before{position:fixed;inset:0;z-index:-1}
+body.secret-entry .entry-panel{position:relative}
+body.secret-entry .code-field{background:linear-gradient(#f6ecd2,#e7d6a8);border:1px solid #b8924a;border-radius:999px;box-shadow:0 0 0 3px #0a2a1f,0 0 22px #e9c46a55;padding:2px 18px}
+body.secret-entry #secretCode{background:transparent;border:0;color:#2a3a22;font:600 1.5rem Georgia,serif;letter-spacing:.5em;text-align:center;box-shadow:none;outline:0;width:100%}
+body.secret-entry #secretCode::placeholder{color:#8a7a52}
+body.secret-entry .code-field:focus-within{box-shadow:0 0 0 3px #0a2a1f,0 0 28px #f3d98a99}
+body.secret-entry .entry-enter{background:linear-gradient(135deg,#2f5a41,#173a2a);border:1px solid #c9a95e;border-radius:999px;color:#f7edd0;box-shadow:0 6px 18px #0008,inset 0 1px #ffffff22}
+@media(max-width:700px){body.secret-entry,body.secret-entry::before{background-position:center,62% center,center,62% center!important}}

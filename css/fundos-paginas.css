@@ -1,0 +1,15 @@
+/* Fundos próprios por capítulo. Capítulo 6 (sala de música) e .music-scenario NÃO são tocados aqui. */
+html body.chapter.chapter-1:not(.music-scenario){--page-ground:#0e2c22;--page-backdrop:radial-gradient(ellipse at 50% 18%,#e9d68a1f,transparent 55%),url('../assets/fundos/jardim-encantado.svg')}
+html body.chapter.chapter-2:not(.music-scenario){--page-ground:#2c4130;--page-backdrop:url('../assets/fundos/album-prensado.svg')}
+html body.chapter.chapter-3:not(.music-scenario){--page-ground:#1f3329;--page-backdrop:linear-gradient(#10261d99,#10261dcc),url('../assets/fundos/cartas-antigas.svg')}
+html body.chapter.chapter-4:not(.music-scenario){--page-ground:#0f2a2a;--page-backdrop:radial-gradient(ellipse at 50% 20%,#c9a5502a,transparent 55%),url('../assets/fundos/roleta-jazz.svg')}
+html body.chapter.chapter-5:not(.music-scenario){--page-ground:#123a2c;--page-backdrop:url('../assets/fundos/quiz-estrelas.svg')}
+html body.chapter.chapter-7:not(.music-scenario){--page-ground:#2d4637;--page-backdrop:url('../assets/fundos/mural-papeis.svg')}
+html body.chapter.chapter-8:not(.music-scenario){--page-ground:#0f2730;--page-backdrop:url('../assets/fundos/final-salgueiro.svg')}
+html body.chapter::before{background-repeat:no-repeat!important;background-size:cover!important}
+
+html body.chapter.exp-memoria{--page-ground:#2c4130;--page-backdrop:radial-gradient(ellipse at 50% 30%,#e9d68a22,transparent 60%),url('../assets/fundos/album-prensado.svg')}
+html body.chapter.exp-sonhos{--page-ground:#0f2730;--page-backdrop:radial-gradient(ellipse at 50% 100%,#3e6b4a55,transparent 60%),url('../assets/fundos/final-salgueiro.svg')}
+html body.chapter.exp-vagalumes{--page-ground:#0e2c22;--page-backdrop:radial-gradient(ellipse at 50% 20%,#c9a55033,transparent 55%),url('../assets/fundos/jardim-encantado.svg')}
+html body.chapter.exp-raspadinhas{--page-ground:#1f3329;--page-backdrop:linear-gradient(#0e2a1f66,#0e2a1fbb),url('../assets/fundos/cartas-antigas.svg')}
+html body.chapter.exp-coracoes{--page-ground:#123a2c;--page-backdrop:radial-gradient(ellipse at 50% 20%,#c9a55033,transparent 55%),url('../assets/fundos/quiz-estrelas.svg')}

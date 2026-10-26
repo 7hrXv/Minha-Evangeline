@@ -3,13 +3,13 @@
 html:has(.nova-carta-page){min-height:100%;background:#061524}
 body:has(.nova-carta-page){
  min-height:100vh;min-height:100dvh;margin:0!important;
- background:#061524 url('../assets/images/fundo-sapos-luar-hd.png') center center / cover no-repeat fixed!important;
+ background:#061524 url('../assets/images/fundo-sapos-luar-hd.webp') center center / cover no-repeat fixed!important;
  overflow-x:hidden;
 }
 body:has(.nova-carta-page)::before{
  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
  background:linear-gradient(180deg,rgba(2,15,24,.65),rgba(3,18,27,.42) 44%,rgba(2,12,20,.7)),
- url('../assets/images/fundo-sapos-luar-hd.png') center center / cover no-repeat;
+ url('../assets/images/fundo-sapos-luar-hd.webp') center center / cover no-repeat;
 }
 body:has(.nova-carta-page) .nova-carta-page{
  min-height:100vh;min-height:100dvh;

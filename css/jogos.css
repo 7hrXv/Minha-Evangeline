@@ -1,0 +1,78 @@
+/* Páginas de jogos — tema vintage de A Princesa e o Sapo */
+.game-page .game-card{position:relative;z-index:2;width:min(900px,100%);margin:6px auto 0;padding:22px 24px 20px;border:1px solid #bea27066;border-radius:18px;background:linear-gradient(160deg,#1f3d30dd,#12291fe6);box-shadow:0 18px 44px #02100a66,inset 0 0 0 5px #0000,inset 0 0 0 6px #bea27026;color:#f4ecd8}
+.game-page .game-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 18px;margin:0 0 16px}
+.game-page .game-stat{font:15px Georgia,serif;letter-spacing:.04em;color:#dcd2b4}
+.game-page .game-stat b{font:600 22px Georgia,serif;color:#e8cf8f;margin-left:4px}
+.game-page .game-btn{appearance:none;cursor:pointer;min-height:44px;padding:9px 20px;border:1px solid #bea270;border-radius:12px;background:linear-gradient(125deg,#4a6a53,#27483a);color:#f7f0e1;font:16px Georgia,serif;touch-action:manipulation;transition:transform .15s,filter .15s}
+.game-page .game-btn:hover{filter:brightness(1.12)}
+.game-page .game-btn:active{transform:scale(.97)}
+.game-page .game-btn:focus-visible,.game-page .mem-card:focus-visible,.game-page .pz-tile:focus-visible,.game-page .ff-bug:focus-visible{outline:3px solid #f1d98f;outline-offset:3px}
+.game-page .game-btn[aria-pressed="true"]{background:linear-gradient(125deg,#bea270,#8f7a48);color:#14281f}
+.game-page .game-status{min-height:1.7em;margin:14px 0 0;text-align:center;font:italic 18px Georgia,serif;color:#e8dfc3}
+.game-page .game-hint{margin:10px 0 0;text-align:center;font-size:14px;color:#b9c4ac}
+.game-page .chapter-navigation{position:relative;z-index:2}
+
+/* ---------- Memória ---------- */
+.game-page .memory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:600px;margin:0 auto}
+.game-page .mem-card{position:relative;appearance:none;padding:0;border:0;background:none;cursor:pointer;aspect-ratio:3/4;perspective:700px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.game-page .mem-inner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.3,.7,.3,1)}
+.game-page .mem-card.is-flipped .mem-inner,.game-page .mem-card.is-matched .mem-inner{transform:rotateY(180deg)}
+.game-page .mem-face{position:absolute;inset:0;border-radius:10px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;box-shadow:0 6px 14px #02100a66}
+.game-page .mem-back{display:grid;place-items:center;background:radial-gradient(circle at 50% 38%,#4f7459,#244636 70%);border:2px solid #bea270;color:#e2c98a;font-size:38px}
+.game-page .mem-back::after{content:"";position:absolute;inset:7px;border:1px solid #bea27088;border-radius:6px}
+.game-page .mem-front{transform:rotateY(180deg);background:#f3ead4;padding:6px 6px 22px;border:1px solid #d9cba3}
+.game-page .mem-front img{display:block;width:100%;height:100%;object-fit:cover;border-radius:3px;pointer-events:none}
+.game-page .mem-card.is-matched .mem-face{box-shadow:0 0 0 2px #e8cf8f,0 0 18px #e8cf8fa6}
+.game-page .mem-card.is-matched{cursor:default}
+@media(prefers-reduced-motion:reduce){.game-page .mem-inner{transition:none}}
+
+/* ---------- Vaga-lumes ---------- */
+.game-page .ff-star-row{display:grid;justify-items:center;gap:6px;margin:0 0 12px}
+.game-page .ff-star{width:96px;height:96px;--glow:0;filter:drop-shadow(0 0 calc(var(--glow)*26px) #ffe9a0) drop-shadow(0 0 calc(var(--glow)*60px) #f1d98f88)}
+.game-page .ff-star svg{width:100%;height:100%;overflow:visible}
+.game-page .ff-star path{fill:#e8cf8f;fill-opacity:calc(.12 + var(--glow)*.88);stroke:#e8cf8f;stroke-width:3;stroke-opacity:calc(.35 + var(--glow)*.65);transition:fill-opacity .35s,stroke-opacity .35s}
+.game-page .ff-star.is-full{animation:ffPulse 1.8s ease-in-out infinite}
+@keyframes ffPulse{50%{transform:scale(1.08)}}
+.game-page .ff-meter{width:min(340px,80%);height:10px;border-radius:99px;background:#0b1d15;border:1px solid #bea27088;overflow:hidden}
+.game-page .ff-meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,#b8963f,#ffe9a0);transition:width .3s}
+.game-page .ff-label{font-size:14px;letter-spacing:.08em;color:#cdbf95;text-transform:uppercase}
+.game-page .firefly-arena{position:relative;height:clamp(300px,50vh,420px);overflow:hidden;border-radius:14px;border:1px solid #bea27055;background:radial-gradient(ellipse at 50% 100%,#2c5a43 0,#173a2b 45%,#0a1d16 100%);touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.game-page .firefly-arena::before{content:"";position:absolute;inset:auto 0 0 0;height:34%;background:radial-gradient(ellipse at 20% 100%,#0b2217 0,transparent 60%),radial-gradient(ellipse at 80% 100%,#0b2217 0,transparent 55%);pointer-events:none}
+.game-page .ff-bug{position:absolute;width:68px;height:68px;margin:-34px 0 0 -34px;padding:0;border:0;background:none;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;animation:ffDrift var(--dur,2.2s) ease-in-out forwards}
+.game-page .ff-bug::before{content:"";position:absolute;inset:6px;border-radius:50%;background:radial-gradient(circle,#fff3b8cc 0,#f1d98f66 38%,transparent 70%);animation:ffBlink 1s ease-in-out infinite}
+.game-page .ff-bug img{position:absolute;inset:14px;width:calc(100% - 28px);height:calc(100% - 28px);pointer-events:none;filter:drop-shadow(0 0 6px #ffe9a0)}
+.game-page .ff-bug.is-gold::before{background:radial-gradient(circle,#ffffffee 0,#ffd45acc 40%,transparent 72%)}
+.game-page .ff-bug.is-gold img{filter:drop-shadow(0 0 10px #ffd45a) saturate(1.6)}
+.game-page .ff-bug.is-caught{animation:ffPop .28s ease-out forwards;pointer-events:none}
+.game-page .ff-bug.is-gone{opacity:0;transition:opacity .25s;pointer-events:none}
+@keyframes ffDrift{0%{transform:translate(0,0) scale(.4);opacity:0}15%{opacity:1;transform:translate(0,0) scale(1)}100%{transform:translate(var(--dx,20px),var(--dy,-20px)) scale(1)}}
+@keyframes ffBlink{50%{opacity:.45;transform:scale(.85)}}
+@keyframes ffPop{to{transform:scale(1.8);opacity:0}}
+.game-page .ff-plus{position:absolute;z-index:3;font:600 22px Georgia,serif;color:#ffe9a0;text-shadow:0 0 8px #000;pointer-events:none;animation:ffPlus .7s ease-out forwards}
+@keyframes ffPlus{to{transform:translateY(-34px);opacity:0}}
+.game-page .ff-overlay{position:absolute;inset:0;z-index:4;display:grid;place-content:center;justify-items:center;gap:14px;padding:20px;text-align:center;background:#07150fcc}
+.game-page .ff-overlay[hidden]{display:none}
+.game-page .ff-overlay p{margin:0;max-width:440px;font:19px/1.5 Georgia,serif;color:#f4ecd8}
+@media(prefers-reduced-motion:reduce){.game-page .ff-bug{animation:none;opacity:1}.game-page .ff-bug::before{animation:none}.game-page .ff-star.is-full{animation:none}}
+
+/* ---------- Quebra-cabeça ---------- */
+.game-page .puzzle-wrap{position:relative;width:min(440px,100%);margin:0 auto}
+.game-page .puzzle-board{position:relative;width:100%;aspect-ratio:1;border:8px solid #f3ead4;border-radius:6px;background:#0d2018;box-shadow:0 12px 28px #02100a88,0 0 0 1px #bea27088;touch-action:manipulation}
+.game-page .pz-tile{position:absolute;left:0;top:0;width:33.3333%;height:33.3333%;appearance:none;padding:0;margin:0;border:1px solid #f3ead4aa;background-color:#27483a;background-repeat:no-repeat;cursor:pointer;transition:transform .22s ease;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.game-page .pz-tile:hover{filter:brightness(1.1)}
+.game-page .pz-board-solved .pz-tile{cursor:default;border-color:transparent}
+.game-page .pz-tile.pz-last{opacity:0;pointer-events:none;transition:opacity .6s}
+.game-page .pz-board-solved .pz-tile.pz-last{opacity:1}
+.game-page .pz-peek{position:absolute;inset:0;z-index:5;border-radius:3px;background-repeat:no-repeat;background-color:#10271f;opacity:0;pointer-events:none;transition:opacity .25s}
+.game-page .pz-peek.is-on{opacity:1}
+@media(prefers-reduced-motion:reduce){.game-page .pz-tile,.game-page .pz-peek{transition:none}}
+
+@media(max-width:700px){
+ .game-page .game-card{padding:16px 12px 16px}
+ .game-page .memory-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+ .game-page .mem-back{font-size:30px}
+ .game-page .mem-front{padding:4px 4px 16px}
+ .game-page .game-status{font-size:16px}
+ .game-page .ff-star{width:76px;height:76px}
+ .game-page .firefly-arena{height:clamp(280px,46vh,380px)}
+}

@@ -1,0 +1,28 @@
+.chapter .puzzle-atelier{display:grid;grid-template-columns:minmax(0,370px) minmax(0,245px);gap:38px;align-items:center;justify-content:center;max-width:720px;margin:22px auto 20px}
+.chapter .puzzle-atelier .heart-board{width:100%;margin:0;aspect-ratio:1;isolation:isolate}
+.chapter .heart-board-art{overflow:visible}.chapter .heart-board-part{fill:url(#puzzleEmerald);fill-opacity:.14;stroke:#b7a070;stroke-opacity:.6;stroke-width:1.4;stroke-dasharray:none!important;stroke-linejoin:round;transform-box:fill-box;transform-origin:center;transition:fill-opacity .25s,stroke-opacity .3s}
+.chapter .heart-board-part.is-hint{fill-opacity:.45;stroke:#e1cb91;stroke-opacity:1;stroke-width:2}
+.chapter .heart-board-part.placed{fill:url(#puzzleEmerald);fill-opacity:1;stroke:#d3bb82;stroke-opacity:.8;stroke-dasharray:none!important}
+.chapter .heart-board-part.is-setting{animation:atelierSet .55s cubic-bezier(.2,.7,.2,1) both,atelierGlimmer .65s ease-out}
+.chapter .heart-textile{opacity:.7}.chapter .heart-unified{opacity:0;pointer-events:none;transition:none;transform-box:fill-box;transform-origin:center}
+.chapter .heart-board.is-complete .heart-unified{opacity:1;animation:atelierHeartReveal 1.2s .3s both}
+.chapter .heart-board.is-complete .heart-board-part{stroke-opacity:0}
+.chapter .heart-slot{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;outline:0!important;min-height:0;color:#ddcc9e}
+.chapter .heart-slot span{display:grid;place-items:center;width:25px;height:25px;left:calc(50% - 12px);top:calc(56% - 12px);padding:0;margin:0;border:1px solid #af9865;border-radius:50%;background:#14362cc9;font:12px/1 Georgia;color:#d8c797;opacity:.85;transition:opacity .25s,background .25s,box-shadow .25s}
+.chapter .slot-2 span,.chapter .slot-3 span{top:calc(35% - 12px)}
+.chapter .heart-slot.slot-hint span{width:25px;height:25px;background:#6c794c;border:1px solid #e6cf96;color:#fff1c9;box-shadow:0 0 12px #c8b16a33}
+.chapter .heart-slot:focus-visible span{outline:2px solid #e8d29b;outline-offset:5px}.chapter .heart-slot:disabled span{opacity:0}
+.chapter .puzzle-atelier .heart-tray{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;width:100%;max-width:none;margin:0;align-items:stretch}
+.chapter .puzzle-atelier .heart-piece{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:100%;max-width:none;min-height:128px;padding:12px 9px 10px;border:1px solid #a28d5e99;border-radius:13px;background:linear-gradient(145deg,#39523b,#1d3e30);box-shadow:0 5px 12px #05190f3d,inset 0 0 0 4px #d0bd7a09;color:#d5c296;transition:translate .22s,background .22s,border-color .22s,box-shadow .22s;touch-action:none}
+.chapter .heart-piece svg{height:82px;width:100%;overflow:visible;filter:drop-shadow(1px 3px 2px #031a1455)}.chapter .heart-piece .puzzle-fragment{stroke-width:3;stroke-linejoin:round}
+.chapter .heart-piece>span{font:10px/1.4 Georgia;color:#d9c99d;letter-spacing:.06em}
+.chapter .heart-piece:hover:not(:disabled){border-color:#d2ba81;translate:0 -3px;background:linear-gradient(145deg,#435e43,#294b36)}
+.chapter .heart-piece[aria-pressed=true]{border-color:#ead49a;translate:0 -4px;box-shadow:0 5px 16px #05180f55,inset 0 0 0 3px #c7ac6133;background:linear-gradient(145deg,#516c49,#31563c)}
+.chapter .heart-piece:focus-visible{outline:2px solid #e7ce92;outline-offset:4px}.chapter .heart-piece:disabled{opacity:.2;translate:none;box-shadow:none}.chapter .heart-piece.is-dragging{opacity:.3}
+.chapter .heart-progress{width:150px;height:4px;border-radius:6px;overflow:hidden;background:#a08d5a38;margin:0 auto 12px}.heart-progress>span{display:block;width:var(--completion,0%);height:100%;border-radius:inherit;background:linear-gradient(90deg,#8a9d65,#d6c088);transition:width .45s ease}
+.chapter #puzzleStatus{max-width:650px;min-height:24px;margin:0 auto 15px;text-align:center;font:13px/1.65 Georgia;color:#d3c699}
+@keyframes atelierSet{from{opacity:.12;transform:translate(var(--fit-x,0px),var(--fit-y,25px)) scale(.98)}to{opacity:1;transform:translate(0,0) scale(1)}}
+@keyframes atelierGlimmer{0%{stroke:#f8e4af;stroke-width:3}100%{stroke:#d3bb82;stroke-width:1.4}}
+@keyframes atelierHeartReveal{0%{opacity:0;transform:scale(.985)}35%{opacity:1;transform:scale(1)}65%{opacity:1;transform:scale(1.025)}100%{opacity:1;transform:scale(1)}}
+@media(max-width:700px){.chapter .puzzle-atelier{grid-template-columns:minmax(0,1fr);max-width:380px;gap:14px;margin-top:15px}.chapter .puzzle-atelier .heart-board{width:min(330px,100%);margin:auto}.chapter .puzzle-atelier .heart-tray{max-width:310px;gap:12px;margin:auto}.chapter .puzzle-atelier .heart-piece{min-height:114px;padding:9px}.chapter .heart-piece svg{height:73px}.chapter .heart-slot span{width:24px;height:24px;font-size:11px}.chapter #puzzleStatus{font-size:12px;padding:0 12px}}
+@media(prefers-reduced-motion:reduce){.chapter .heart-board-part.is-setting,.chapter .heart-board.is-complete .heart-unified{animation:none!important}.chapter .heart-piece,.heart-progress>span{transition:none!important}.chapter .heart-piece svg{filter:none}}

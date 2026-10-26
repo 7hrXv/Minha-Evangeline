@@ -1,0 +1,335 @@
+{
+  "nota": "Cascata CSS resolvida por seletor, especificidade, ordem, !important e media queries. Não é medição de renderização em navegador; limites min/max adaptam-se à largura disponível.",
+  "antes": {
+    "1440": {
+      "entrada.html .entry-enter": {
+        "font-size": "17px",
+        "width": "100%",
+        "height": "inherited/auto",
+        "min-height": "49px",
+        "max-width": "280px",
+        "--photo-max": "inherited/auto"
+      },
+      "entrada.html #secretCode": {
+        "font-size": "32px",
+        "width": "min(320px,100%)",
+        "height": "59px",
+        "min-height": "68px",
+        "max-width": "100%",
+        "--photo-max": "inherited/auto"
+      },
+      "boas-vindas.html .chapter-brand em": {
+        "font-size": "58px",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "inherited/auto",
+        "--photo-max": "inherited/auto"
+      },
+      "boas-vindas.html .welcome-copy p": {
+        "font-size": "18px",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "65ch",
+        "--photo-max": "inherited/auto"
+      },
+      "historia.html .wheel-mount": {
+        "font-size": "inherited/auto",
+        "width": "min(440px,100%)",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "440px",
+        "--photo-max": "inherited/auto"
+      },
+      "contador.html .couple-quiz": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "650px",
+        "--photo-max": "inherited/auto"
+      },
+      "contador.html .bear-frame img": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "225px",
+        "min-height": "inherited/auto",
+        "max-width": "100%",
+        "--photo-max": "inherited/auto"
+      },
+      "mural.html .puzzle-atelier": {
+        "font-size": "inherited/auto",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "900px",
+        "--photo-max": "inherited/auto"
+      },
+      "mural.html .heart-piece": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "inherited/auto",
+        "min-height": "155px",
+        "max-width": "none",
+        "--photo-max": "inherited/auto"
+      },
+      "retrospectiva.html .photo-frame": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "auto",
+        "min-height": "inherited/auto",
+        "max-width": "none",
+        "--photo-max": "350px"
+      }
+    },
+    "390": {
+      "entrada.html .entry-enter": {
+        "font-size": "16px",
+        "width": "100%",
+        "height": "inherited/auto",
+        "min-height": "49px",
+        "max-width": "280px",
+        "--photo-max": "inherited/auto"
+      },
+      "entrada.html #secretCode": {
+        "font-size": "30px",
+        "width": "min(320px,100%)",
+        "height": "59px",
+        "min-height": "62px",
+        "max-width": "100%",
+        "--photo-max": "inherited/auto"
+      },
+      "boas-vindas.html .chapter-brand em": {
+        "font-size": "38px",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "inherited/auto",
+        "--photo-max": "inherited/auto"
+      },
+      "boas-vindas.html .welcome-copy p": {
+        "font-size": "17px",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "65ch",
+        "--photo-max": "inherited/auto"
+      },
+      "historia.html .wheel-mount": {
+        "font-size": "inherited/auto",
+        "width": "min(380px,100%)",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "380px",
+        "--photo-max": "inherited/auto"
+      },
+      "contador.html .couple-quiz": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "650px",
+        "--photo-max": "inherited/auto"
+      },
+      "contador.html .bear-frame img": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "210px",
+        "min-height": "inherited/auto",
+        "max-width": "100%",
+        "--photo-max": "inherited/auto"
+      },
+      "mural.html .puzzle-atelier": {
+        "font-size": "inherited/auto",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "420px",
+        "--photo-max": "inherited/auto"
+      },
+      "mural.html .heart-piece": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "inherited/auto",
+        "min-height": "132px",
+        "max-width": "none",
+        "--photo-max": "inherited/auto"
+      },
+      "retrospectiva.html .photo-frame": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "auto",
+        "min-height": "inherited/auto",
+        "max-width": "none",
+        "--photo-max": "350px"
+      }
+    }
+  },
+  "depois": {
+    "1440": {
+      "entrada.html .entry-enter": {
+        "font-size": "21px",
+        "width": "min(350px,100%)",
+        "height": "inherited/auto",
+        "min-height": "64px",
+        "max-width": "350px",
+        "--photo-max": "inherited/auto"
+      },
+      "entrada.html #secretCode": {
+        "font-size": "40px",
+        "width": "min(400px,100%)",
+        "height": "85px",
+        "min-height": "85px",
+        "max-width": "100%",
+        "--photo-max": "inherited/auto"
+      },
+      "boas-vindas.html .chapter-brand em": {
+        "font-size": "72.5px",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "inherited/auto",
+        "--photo-max": "inherited/auto"
+      },
+      "boas-vindas.html .welcome-copy p": {
+        "font-size": "22.5px",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "65ch",
+        "--photo-max": "inherited/auto"
+      },
+      "historia.html .wheel-mount": {
+        "font-size": "inherited/auto",
+        "width": "min(550px,100%)",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "550px",
+        "--photo-max": "inherited/auto"
+      },
+      "contador.html .couple-quiz": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "812.5px",
+        "--photo-max": "inherited/auto"
+      },
+      "contador.html .bear-frame img": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "281.2px",
+        "min-height": "inherited/auto",
+        "max-width": "100%",
+        "--photo-max": "inherited/auto"
+      },
+      "mural.html .puzzle-atelier": {
+        "font-size": "inherited/auto",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "1125px",
+        "--photo-max": "inherited/auto"
+      },
+      "mural.html .heart-piece": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "inherited/auto",
+        "min-height": "193.8px",
+        "max-width": "none",
+        "--photo-max": "inherited/auto"
+      },
+      "retrospectiva.html .photo-frame": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "auto",
+        "min-height": "inherited/auto",
+        "max-width": "none",
+        "--photo-max": "440px"
+      }
+    },
+    "390": {
+      "entrada.html .entry-enter": {
+        "font-size": "19px",
+        "width": "min(350px,100%)",
+        "height": "inherited/auto",
+        "min-height": "56px",
+        "max-width": "350px",
+        "--photo-max": "inherited/auto"
+      },
+      "entrada.html #secretCode": {
+        "font-size": "34px",
+        "width": "min(400px,100%)",
+        "height": "72px",
+        "min-height": "72px",
+        "max-width": "100%",
+        "--photo-max": "inherited/auto"
+      },
+      "boas-vindas.html .chapter-brand em": {
+        "font-size": "40px",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "inherited/auto",
+        "--photo-max": "inherited/auto"
+      },
+      "boas-vindas.html .welcome-copy p": {
+        "font-size": "19px",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "65ch",
+        "--photo-max": "inherited/auto"
+      },
+      "historia.html .wheel-mount": {
+        "font-size": "inherited/auto",
+        "width": "min(550px,100%)",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "550px",
+        "--photo-max": "inherited/auto"
+      },
+      "contador.html .couple-quiz": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "812.5px",
+        "--photo-max": "inherited/auto"
+      },
+      "contador.html .bear-frame img": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "235.2px",
+        "min-height": "inherited/auto",
+        "max-width": "100%",
+        "--photo-max": "inherited/auto"
+      },
+      "mural.html .puzzle-atelier": {
+        "font-size": "inherited/auto",
+        "width": "inherited/auto",
+        "height": "inherited/auto",
+        "min-height": "inherited/auto",
+        "max-width": "100%",
+        "--photo-max": "inherited/auto"
+      },
+      "mural.html .heart-piece": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "inherited/auto",
+        "min-height": "145px",
+        "max-width": "none",
+        "--photo-max": "inherited/auto"
+      },
+      "retrospectiva.html .photo-frame": {
+        "font-size": "inherited/auto",
+        "width": "100%",
+        "height": "auto",
+        "min-height": "inherited/auto",
+        "max-width": "none",
+        "--photo-max": "440px"
+      }
+    }
+  }
+}

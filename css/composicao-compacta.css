@@ -1,0 +1,18 @@
+/* Decoration owns no document space. The fixed clipped layer cannot add scroll. */
+html body.chapter{overflow-x:clip!important}
+.compact-scenery{position:fixed;inset:0;overflow:hidden;contain:strict;pointer-events:none!important;z-index:0}
+.compact-scenery img{position:absolute;display:block;max-width:none;object-fit:contain;pointer-events:none!important;background:none;border:0;box-shadow:none;filter:drop-shadow(1px 4px 3px #03150d44)}
+.compact-character{width:72px;height:120px}.compact-character.character-0{left:16px;top:22%}.compact-character.character-1{right:15px;top:42%;width:76px}.compact-character.character-2{left:18px;top:66%;width:62px;height:90px}
+.compact-branch{right:14px;top:130px;width:58px;height:100px;opacity:.42;rotate:12deg}.compact-object{right:8px;top:72%;width:85px;height:75px;opacity:.7;rotate:-5deg}
+/* Former decorative columns collapse along with their empty wrappers. */
+.chapter .cast-chapter-heading,.chapter .cast-welcome-heading,.chapter .cast-invitation-heading,.chapter .cast-invitation-note,.chapter .cast-welcome-album,.chapter .cast-album-display,.chapter .cast-small-letters-heading,.chapter .cast-quiz-composition,.chapter .cast-quiz-heading,.chapter .cast-puzzle-heading,.chapter .cast-photo-heading,.chapter .cast-note-editor-heading,.chapter .cast-final-heading,.chapter .cast-declaration-keepsake{display:contents!important}
+.chapter .cast-wheel-row{display:block!important;margin:0 0 18px;max-width:none}.chapter .cast-wheel-action:empty{display:none!important}
+.chapter .chapter-heading{margin-left:auto;margin-right:auto}.chapter .small-letters-heading{margin:0 auto 24px}.chapter .cast-album-display>.album-grid{width:100%;margin-left:auto;margin-right:auto}
+.chapter .cast-welcome-album>.welcome-album{max-width:490px;width:100%;margin-left:auto;margin-right:auto}
+.chapter .cast-quiz-composition>.lovers-main{max-width:580px;width:100%;margin:0 auto}
+.chapter .chapter-main{padding-bottom:24px!important}.chapter .chapter-navigation{margin-bottom:0!important}.chapter .chapter-footer{margin-top:0!important;padding-top:16px!important;padding-bottom:18px!important;min-height:0!important}
+/* No substitute decoration sections, even when legacy styles are loaded. */
+.chapter .scene-keepsakes,.chapter .atelier-interlude,.chapter .album-extra-cast,.chapter .pressed-decoration,.chapter .chapter-flora{display:none!important;margin:0!important;padding:0!important;height:0!important;min-height:0!important}
+/* Side gutters are unavailable on smaller screens: keep all content unobstructed. */
+@media(max-width:1439px){.compact-scenery{display:none!important}}
+@media(prefers-reduced-motion:reduce){.compact-scenery *{animation:none!important;transition:none!important}}

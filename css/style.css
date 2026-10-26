@@ -27,7 +27,7 @@ body.home-page .feature-row{padding-top:8px}
 
 /* Abertura da página inicial inspirada em uma carta romântica; sem rodapé */
 body.home-page{background:#08130d;min-height:100vh}
-body.home-page::before{background:linear-gradient(90deg,rgba(4,15,9,.86),rgba(5,20,12,.68) 52%,rgba(4,15,9,.48)),url("../assets/images/fundo-tiana-naveen-hd.png") center 42%/cover no-repeat;transform:none}
+body.home-page::before{background:linear-gradient(90deg,rgba(4,15,9,.86),rgba(5,20,12,.68) 52%,rgba(4,15,9,.48)),url("../assets/images/fundo-tiana-naveen-hd.webp") center 42%/cover no-repeat;transform:none}
 body.home-page::after{background:linear-gradient(180deg,rgba(4,15,9,.10),rgba(4,15,9,.70));}
 body.home-page footer{display:none}
 body.home-page main.home-main{padding:56px 0 28px}
@@ -53,7 +53,7 @@ body { padding-top: 0 !important; }
 
 /* Retrospectiva interativa: cenário bayou, etapas, fotos e surpresa final */
 body.retrospective-page{min-height:100vh;background:#06130d;color:#f8fff7;position:relative;isolation:isolate;overflow-x:hidden}
-.retrospective-bg{position:fixed;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(3,14,9,.92),rgba(4,19,12,.78) 52%,rgba(4,17,11,.58)),url('../assets/images/fundo-tiana-naveen-hd.png') center/cover no-repeat;transform:scale(1.02)}
+.retrospective-bg{position:fixed;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(3,14,9,.92),rgba(4,19,12,.78) 52%,rgba(4,17,11,.58)),url('../assets/images/fundo-tiana-naveen-hd.webp') center/cover no-repeat;transform:scale(1.02)}
 body.retrospective-page::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 78% 18%,rgba(189,211,149,.10),transparent 28%),linear-gradient(180deg,rgba(2,12,7,.08),rgba(2,12,7,.72))}
 .retrospective-main{width:min(1120px,calc(100% - 36px));margin:0 auto;padding:24px 0 38px}
 .back-home{display:inline-flex;text-decoration:none;color:#d9e9ce;border:1px solid rgba(189,211,149,.3);background:rgba(5,23,13,.68);padding:9px 15px;border-radius:999px;font-size:13px;backdrop-filter:blur(10px);transition:transform .2s,background .2s}
@@ -267,7 +267,7 @@ body.polaroid-retro{margin:0;min-height:100vh;background:radial-gradient(ellipse
 }
 
 /* Retrospectiva: cenário azul do bayou, imagem local em alta resolução */
-body.polaroid-retro{background:#03132d url('../assets/images/bayou-tiana-azul-hd.png') center center / cover fixed no-repeat!important;color:#f8fbff!important}
+body.polaroid-retro{background:#03132d url('../assets/images/bayou-tiana-azul-hd.webp') center center / cover fixed no-repeat!important;color:#f8fbff!important}
 body.polaroid-retro::before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,8,29,.62),rgba(0,19,48,.34) 58%,rgba(0,10,32,.08)),linear-gradient(180deg,rgba(0,8,25,.18),rgba(0,6,22,.34));z-index:0}
 .polaroid-retro .retro-wrap{z-index:1;max-width:1100px}
 .polaroid-retro .retro-back{color:#f3f9ff;text-shadow:0 2px 12px #001027}

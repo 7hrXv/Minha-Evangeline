@@ -1,0 +1,13 @@
+/* Elenco e objetos posicionados em vãos reais do conteúdo (js/elenco-central.js). Sem altura extra. */
+.compact-scenery{display:none!important}
+html body.chapter .chapter-main{position:relative;overflow-x:clip}.elenco{width:0;height:0}
+.elenco{position:absolute;left:0;top:0;z-index:1;display:block;max-width:none;pointer-events:none;user-select:none;opacity:0;transform:translate3d(0,8px,0) scale(.96);transition:opacity .9s ease,transform .9s ease;filter:drop-shadow(1px 4px 4px rgba(2,12,8,.5));background:none;border:0}
+.elenco.on{opacity:1;transform:none}.elenco.obj{filter:drop-shadow(1px 3px 3px rgba(2,12,8,.4))}
+.elenco.on.flutua{animation:ev-flutua 7s ease-in-out infinite}
+@keyframes ev-flutua{50%{transform:translate3d(0,-6px,0)}}
+html.pausa .elenco{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.elenco{transition:none;animation:none!important}}
+/* acabamento comum */
+body.chapter :is(.chapter-link,.entry-enter,.gold-button){border-radius:999px;transition:transform .2s,box-shadow .2s}
+body.chapter :is(.chapter-link,.entry-enter,.gold-button):hover{transform:translateY(-1px);box-shadow:0 6px 16px #02100a66}
+body.chapter :is(a,button,input,textarea):focus-visible{outline:2px solid #e6cd8a;outline-offset:3px}

@@ -1,0 +1,146 @@
+@font-face{font-family:QuizDancing;src:url('../assets/fonts/dancing-script-600.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap}
+body.bear-states-page{background:#ecf0e5;color:#294b3e;isolation:isolate}
+body.bear-states-page::before{background:radial-gradient(ellipse at 8% 15%,#bed0ae66,transparent 48%),radial-gradient(ellipse at 92% 85%,#e2cf9b40,transparent 40%),linear-gradient(135deg,#f8f5e9,#e6eddf 60%,#f3efe1)}
+body.bear-states-page .topbar{background:#f9f6ebaa;border-color:#c4b78b55;box-shadow:none}
+body.bear-states-page .brand,body.bear-states-page .brand span{color:#3f624d}
+body.bear-states-page .topbar nav a{color:#566852}body.bear-states-page .topbar nav a.active{color:#8b703c;text-shadow:none}
+body.bear-states-page .menu-toggle{color:#3f624d;border-color:#a0b391}
+body.bear-states-page .lovers-main{max-width:1200px;padding:35px 28px 40px;min-height:calc(100svh - 80px)}
+body.bear-states-page .lovers-story{max-width:850px;margin:auto;padding:5px 18px;transition:opacity .14s ease}
+body.bear-states-page .lovers-story.is-switching{opacity:0;pointer-events:none}
+body.bear-states-page .lovers-eyebrow{color:#8e794b;letter-spacing:.2em;font-size:10px}
+body.bear-states-page .lovers-star{color:#b49b5d;font-size:24px;margin-bottom:20px}
+body.bear-states-page .bear-frame{width:min(330px,100%);margin:0 auto 30px;padding:12px 12px 33px;border-radius:28px;background:#fffcf4;border:1px solid #c7b68277;box-shadow:0 12px 32px #4b643417}
+body.bear-states-page .bear-frame picture{border-radius:20px;background:#fff}
+body.bear-states-page .bear-frame img{width:100%;height:255px;object-fit:contain;background:#fff;border-radius:20px}
+body.bear-states-page .bear-caption{color:#687553;font-size:13px;bottom:10px}
+body.bear-states-page .bear-frame::before,body.bear-states-page .bear-frame::after{width:75px;height:80px;opacity:.85}
+body.bear-states-page .lovers-story h1,body.bear-states-page .lovers-story h2{color:#315642;font-size:clamp(30px,3.2vw,43px);line-height:1.3}
+body.bear-states-page .lovers-story h1 em,body.bear-states-page .lovers-story h2 em{color:#6b805b}
+body.bear-states-page .lovers-description{color:#67765e;font-size:17px;max-width:510px;line-height:1.7}
+body.bear-states-page .love-choices{position:relative;display:block;width:min(100%,420px);height:164px;margin:28px auto 0}
+body.bear-states-page .love-choices button{position:absolute;top:0;min-width:145px;min-height:56px;padding:15px 24px;font-size:17px;border-radius:32px;transition:left .18s ease-out,top .18s ease-out,background-color .18s;transform:none}
+body.bear-states-page .love-yes{left:calc(50% - 157px);background:#64845b;color:#fffdf4;border:1px solid #69885e;box-shadow:0 6px 16px #63805a25}
+body.bear-states-page .love-yes:hover{background:#53774b;transform:none}
+body.bear-states-page .love-no{left:calc(50% + 12px);background:#f9f6eb;color:#6b7b58;border:1px solid #a3b48d}
+body.bear-states-page .love-no:hover{background:#e3ead8}
+body.bear-states-page .love-choices button:focus-visible,body.bear-states-page .love-replay:focus-visible,body.bear-states-page .romantic-option:focus-visible,body.bear-states-page .romantic-next:focus-visible{outline:2px solid #887138;outline-offset:4px}
+body.bear-states-page .escape-hint{font:12px/1.6 Georgia,serif;color:#7e886f;margin:0 auto 14px;max-width:420px}
+body.bear-states-page .love-answer{display:none}
+body.bear-states-page .love-reaction[hidden],body.bear-states-page .love-celebration[hidden],body.bear-states-page .couple-quiz[hidden],body.bear-states-page .bear-frame[hidden],body.bear-states-page .lovers-navigation[hidden],body.bear-states-page .love-floating[hidden]{display:none!important}
+body.bear-states-page .love-reaction>p:not(.lovers-eyebrow),body.bear-states-page .love-celebration>p{color:#607357;font-size:17px;line-height:1.7;max-width:480px;margin:0 auto 22px}
+body.bear-states-page .love-replay{color:#657b53;border-color:#b3a16c}
+body.bear-states-page .love-reaction h2:focus{outline:none}
+body.bear-states-page .lovers-corner{width:clamp(85px,15vw,180px);opacity:.38;bottom:20px}
+body.bear-states-page .lovers-sky i{background:#a68e53;opacity:.5}
+body.bear-states-page .couple-quiz{width:min(100%,620px);margin:18px auto 0;padding:28px 32px 26px;border:1px solid #c2aa706e;border-bottom:2px solid #bba066;border-radius:20px;background:#fffcf3;box-shadow:0 18px 50px #40552f16;text-align:center}
+body.bear-states-page .couple-quiz .quiz-ornament,body.bear-states-page .couple-quiz>.kicker:not(#romanticProgress),body.bear-states-page .quiz-divider{display:none}
+body.bear-states-page #romanticProgress{font:11px/1.6 Georgia,serif;letter-spacing:.17em;text-transform:uppercase;color:#9b824b;margin:0 0 12px}
+body.bear-states-page .couple-progress{height:5px;border-radius:5px;background:#e2e8d6;overflow:hidden;margin:0 0 20px}
+body.bear-states-page #coupleProgressFill{display:block;width:0;height:100%;background:linear-gradient(90deg,#93a87e,#bdab6e);border-radius:inherit;transition:width .35s ease}
+body.bear-states-page .romantic-score{display:flex;justify-content:center;align-items:center;gap:16px;margin:10px 0 18px}
+body.bear-states-page .romantic-heart{width:66px;flex:none;position:relative}body.bear-states-page .romantic-heart svg{display:block;width:100%;height:auto}
+body.bear-states-page #romanticHeart svg>path:first-of-type{fill:#e8eddd}
+body.bear-states-page #romanticHeartFill{transition:y .45s ease}
+body.bear-states-page .heart-sparks{display:none}
+body.bear-states-page .romantic-score-text{display:flex;flex-direction:column;gap:4px;text-align:left}
+body.bear-states-page .romantic-score-text strong{font:25px Georgia,serif;color:#8a713c;font-variant-numeric:tabular-nums}
+body.bear-states-page .romantic-score-text span{font:10px Arial,sans-serif;color:#829070}
+body.bear-states-page .couple-quiz h2{font:600 clamp(28px,3vw,36px)/1.35 QuizDancing,'Segoe Print','Comic Sans MS',cursive;color:#52724b;letter-spacing:0;margin:18px 0 25px;outline:none;text-wrap:balance}
+body.bear-states-page .romantic-options{display:grid;gap:11px}
+body.bear-states-page .romantic-option{display:block;width:100%;min-height:51px;padding:12px 16px;border:1px solid #b5c4a3;border-radius:13px;background:#fffffc;color:#3e5842;font:16px/1.5 Georgia,serif;text-align:center;cursor:pointer;overflow-wrap:anywhere;transition:background .18s,border-color .18s}
+body.bear-states-page .romantic-option:hover:not(:disabled){background:#edf3e5;border-color:#718d5f}
+body.bear-states-page .romantic-option:disabled{cursor:default;opacity:.82}
+body.bear-states-page .romantic-option.correct{background:#dce8ce;border-color:#6e8b58;color:#36532e;opacity:1}
+body.bear-states-page .romantic-option.wrong{background:#f0e3d8;border-color:#b89d84;color:#775a43;opacity:1}
+body.bear-states-page .romantic-option[aria-pressed=true]{border-width:2px;padding:11px 15px}
+body.bear-states-page .romantic-feedback{min-height:43px;margin:16px 0 14px;color:#78815e;font:14px/1.6 Georgia,serif}
+body.bear-states-page .romantic-next{min-height:48px;padding:12px 25px;border:1px solid #728b5d;border-radius:27px;background:#6e875b;color:#fff9e9;font:600 14px/1.5 Arial,sans-serif;cursor:pointer}
+body.bear-states-page .romantic-next:disabled{opacity:.4;cursor:not-allowed}
+body.bear-states-page .lovers-navigation{max-width:620px;margin-top:24px}
+body.bear-states-page .lovers-navigation a{color:#506644;background:linear-gradient(#bba16f,#bba16f) center bottom 5px/100% 1px no-repeat}
+body.bear-states-page .love-floating{z-index:1}
+body.bear-states-page .love-floating .celebration-word{bottom:15%;color:#819364;font-style:italic;animation:loveFloat var(--duration) ease-out var(--delay) both}
+body.bear-states-page .love-floating .celebration-confetti{bottom:5%;width:6px;height:10px;border-radius:2px;background:var(--tone);animation:sageConfetti var(--duration) ease-out var(--delay) both}
+@keyframes sageConfetti{0%{opacity:0;transform:translateY(0) rotate(0)}15%,65%{opacity:.65}100%{opacity:0;transform:translateY(-320px) rotate(190deg)}}
+@media(max-width:700px){body.bear-states-page .lovers-main{padding:25px 16px 30px}body.bear-states-page .lovers-story{padding:0 8px}body.bear-states-page .bear-frame{width:min(285px,calc(100% - 30px));margin-bottom:25px}body.bear-states-page .bear-frame img{height:220px}body.bear-states-page .bear-frame::before{left:-25px}body.bear-states-page .bear-frame::after{right:-25px}body.bear-states-page .lovers-story h1{font-size:29px}body.bear-states-page .lovers-description{font-size:16px}body.bear-states-page .love-choices{height:152px}body.bear-states-page .love-choices button{min-width:110px;min-height:52px;font-size:16px;padding:14px 20px;max-width:none;flex:none}body.bear-states-page .love-yes{left:calc(50% - 120px)}body.bear-states-page .love-no{left:calc(50% + 10px)}body.bear-states-page .couple-quiz{padding:24px 17px;border-radius:17px}body.bear-states-page .couple-quiz h2{font-size:29px}body.bear-states-page .lovers-corner{width:75px;opacity:.25}body.bear-states-page .love-floating span:nth-child(n+5){display:block}body.bear-states-page .love-floating span[hidden]{display:none}}
+@media(prefers-reduced-motion:reduce){body.bear-states-page .lovers-story,body.bear-states-page .love-choices button,body.bear-states-page #romanticHeartFill,body.bear-states-page #coupleProgressFill{transition:none}body.bear-states-page .love-floating{display:none}}
+
+@media(max-width:700px){body.bear-states-page .topbar nav.open{background:#f8f6ec;border-color:#becba9}}
+/* Composição compacta; alvos de toque permanecem com pelo menos 44 px. */
+body.bear-states-page .lovers-main{padding:25px 24px 28px}
+body.bear-states-page .lovers-story{max-width:680px}
+body.bear-states-page .lovers-eyebrow{font-size:9px;margin-bottom:7px}
+body.bear-states-page .lovers-star{font-size:19px;margin:4px 0 13px}
+body.bear-states-page .bear-frame{width:min(255px,100%);padding:9px 9px 26px;margin-bottom:22px;border-radius:23px}
+body.bear-states-page .bear-frame img{height:199px;border-radius:16px}
+body.bear-states-page .bear-frame picture{border-radius:16px}
+body.bear-states-page .bear-caption{font-size:11px;bottom:7px}
+body.bear-states-page .bear-frame::before,body.bear-states-page .bear-frame::after{width:60px;height:64px;bottom:-11px}
+body.bear-states-page .lovers-story h1,body.bear-states-page .lovers-story h2{font-size:clamp(25px,2.5vw,34px);margin-bottom:12px}
+body.bear-states-page .lovers-description{font-size:14px;max-width:410px;margin-bottom:15px}
+body.bear-states-page .love-choices{width:min(100%,340px);height:177px;margin-top:21px}
+body.bear-states-page .love-choices button{min-width:112px;min-height:44px;padding:12px 18px;font-size:14px;transition:left .17s cubic-bezier(.2,.7,.3,1),top .17s cubic-bezier(.2,.7,.3,1),background-color .18s}
+body.bear-states-page .love-yes{left:calc(50% - 124px)}body.bear-states-page .love-no{left:calc(50% + 12px)}
+body.bear-states-page .escape-hint{font-size:11px;margin-bottom:8px}
+body.bear-states-page .couple-quiz{max-width:490px;margin:12px auto 0;padding:22px 25px 21px;border-radius:17px}
+body.bear-states-page .couple-quiz h2{font-size:28px;margin:14px 0 19px}
+body.bear-states-page .romantic-score{gap:13px;margin:8px 0 13px}
+body.bear-states-page .romantic-heart{width:52px}
+body.bear-states-page .romantic-score-text strong{font-size:21px}
+body.bear-states-page .romantic-option{min-height:44px;padding:10px 13px;font-size:14px;border-radius:11px}
+body.bear-states-page .romantic-option[aria-pressed=true]{padding:9px 12px}
+body.bear-states-page .romantic-options{gap:9px}
+body.bear-states-page .romantic-feedback{font-size:12px;min-height:38px;margin:12px 0}
+body.bear-states-page .romantic-next{min-height:44px;padding:10px 20px;font-size:13px}
+body.bear-states-page .couple-progress{margin-bottom:15px;height:4px}
+body.bear-states-page #romanticProgress{font-size:10px}
+body.bear-states-page .love-reaction>p:not(.lovers-eyebrow),body.bear-states-page .love-celebration>p{font-size:14px}
+body.bear-states-page .lovers-navigation{max-width:490px}
+body.bear-states-page .lovers-story:not(.is-switching)>:not([hidden]){animation:quizGentleEntry .45s ease both}
+body.bear-states-page .romantic-option:active:not(:disabled),body.bear-states-page .romantic-next:active:not(:disabled){transform:translateY(1px)}
+.quiz-garden{position:absolute;inset:0;z-index:0;overflow:clip;pointer-events:none;contain:layout paint}
+.garden-top{position:absolute;top:18px;width:clamp(70px,12vw,145px);opacity:.47;transform-origin:50% 80%;animation:gardenSway 11s ease-in-out infinite alternate;pointer-events:none}
+.garden-top-left{left:6px;rotate:140deg}.garden-top-right{right:6px;rotate:215deg;animation-delay:-6s}
+.garden-arabesque{position:absolute;top:43%;color:#b7a16c;opacity:.35;font:65px Georgia,serif}
+.arabesque-left{left:14px;rotate:-65deg}.arabesque-right{right:14px;rotate:65deg;scale:-1 1}
+.garden-star{position:absolute;color:#b29b62;font:normal 17px Georgia,serif;animation:gardenTwinkle 6s ease-in-out infinite alternate;opacity:.3}
+.star-one{left:12%;top:28%}.star-two{right:10%;top:63%;animation-delay:-3s}
+.garden-firefly{position:absolute;width:3px;height:3px;border-radius:50%;background:#b6a46a;box-shadow:0 0 5px #b6a46a55;animation:gardenFirefly 10s ease-in-out infinite alternate}
+.fly-one{left:5%;top:63%}.fly-two{right:5%;top:30%;animation-delay:-5s}
+.garden-petal{position:absolute;top:-18px;width:6px;height:10px;background:#c8d3b4;border-radius:80% 15% 70% 25%;opacity:0;animation:gardenPetal 24s linear infinite}
+.petal-one{left:3%;animation-delay:-5s}.petal-two{right:3%;animation-delay:-15s;animation-duration:29s}.petal-three{left:8%;animation-delay:-20s;animation-duration:33s}.petal-four{right:8%;animation-delay:-10s;animation-duration:27s}
+body.effects-paused .quiz-garden *{animation-play-state:paused}
+@keyframes quizGentleEntry{from{opacity:.1;translate:0 6px}to{opacity:1;translate:0 0}}
+@keyframes gardenSway{to{transform:rotate(1deg) translateY(-3px)}}
+@keyframes gardenTwinkle{to{opacity:.7;transform:scale(1.08)}}
+@keyframes gardenFirefly{0%{opacity:.2}60%{opacity:.7}100%{opacity:.3;transform:translate(8px,-18px)}}
+@keyframes gardenPetal{0%{opacity:0;transform:translate(0,0) rotate(0)}12%,80%{opacity:.4}100%{opacity:0;transform:translate(7px,760px) rotate(80deg)}}
+@media(max-width:700px){body.bear-states-page .lovers-main{padding:22px 16px}body.bear-states-page .bear-frame{width:min(222px,calc(100% - 28px))}body.bear-states-page .bear-frame img{height:171px}body.bear-states-page .lovers-story h1,body.bear-states-page .lovers-story h2{font-size:25px}body.bear-states-page .love-choices{height:163px}body.bear-states-page .love-choices button{min-width:104px;padding:12px 15px}body.bear-states-page .love-yes{left:calc(50% - 116px)}body.bear-states-page .love-no{left:calc(50% + 12px)}body.bear-states-page .couple-quiz{padding:21px 16px}body.bear-states-page .couple-quiz h2{font-size:26px}body.bear-states-page .romantic-option{font-size:15px;min-height:46px}.garden-top{width:65px;animation:none;opacity:.3}.garden-arabesque{font-size:40px;opacity:.2}.arabesque-left{left:2px}.arabesque-right{right:2px}.garden-star{font-size:12px}.petal-three,.petal-four,.fly-two{display:none}.garden-petal{width:4px;height:7px}}
+@media(prefers-reduced-motion:reduce){.quiz-garden *{animation:none!important}.garden-petal{display:none}body.bear-states-page .lovers-story:not(.is-switching)>:not([hidden]){animation:none}body.bear-states-page .love-choices button{transition:none}}
+/* Centraliza cada estado na altura disponível, sem ampliar seus elementos. */
+body.bear-states-page{display:flex;flex-direction:column;min-height:100vh;min-height:100svh}
+body.bear-states-page .topbar{flex:none}
+body.bear-states-page .lovers-main{width:100%;flex:1;display:flex;flex-direction:column;justify-content:center;min-height:calc(100svh - 80px);padding-block:28px}
+body.bear-states-page .lovers-story{width:100%;margin:0 auto;flex:none}
+body.bear-states-page .couple-quiz{margin:0 auto}
+body.bear-states-page .lovers-navigation{width:min(100%,490px);flex:none;margin:24px auto 0}
+body.bear-states-page .love-choices{height:159px;margin-bottom:0}
+body.bear-states-page #lovePrompt>.love-answer{display:none}
+@media(max-width:700px){body.bear-states-page .lovers-main{padding:22px 16px;min-height:calc(100svh - 76px)}body.bear-states-page .love-choices{height:149px}}
+@media(max-height:650px){body.bear-states-page .lovers-main{justify-content:flex-start;padding-block:22px}}
+body.bear-states-page .quiz-skip{display:block;margin:12px auto 0;padding:8px 6px;min-height:44px;background:transparent;border:0;border-bottom:1px solid #b6a27266;color:#7b866b;font:12px/1.5 Georgia,serif;cursor:pointer}
+body.bear-states-page .quiz-skip:hover{color:#59734d;border-bottom-color:#b39a60}
+body.bear-states-page .quiz-skip[hidden],body.bear-states-page .couple-skip-confirm[hidden]{display:none!important}
+body.bear-states-page .couple-skip-confirm{width:min(100%,490px);margin:0 auto;padding:24px 25px;background:#fffcf3;border:1px solid #c2aa706e;border-radius:17px;box-shadow:0 18px 50px #40552f16;text-align:center;animation:quizGentleEntry .3s ease both}
+body.bear-states-page .couple-skip-confirm picture{display:block;margin:0 auto 14px;width:116px;height:116px}
+body.bear-states-page .couple-skip-confirm img{display:block;width:100%;height:100%;object-fit:contain}
+body.bear-states-page .couple-skip-confirm h2{font:600 28px/1.3 QuizDancing,'Segoe Print',cursive;color:#5b754d;margin:12px 0;outline:none}
+body.bear-states-page .couple-skip-confirm p{font:15px/1.8 Georgia,serif;color:#68755b;margin:0 auto 22px;max-width:360px}
+body.bear-states-page .skip-confirm-actions{display:flex;flex-direction:column;align-items:center;gap:10px}
+body.bear-states-page .skip-confirm-actions button{max-width:100%;min-height:44px;padding:12px 17px;border-radius:24px;font:13px/1.5 Arial,sans-serif;cursor:pointer}
+body.bear-states-page #quizResume{background:#6e875b;color:#fff9e9;border:1px solid #728b5d}
+body.bear-states-page #quizSkipAnyway{background:transparent;color:#7c816b;border:1px solid #c4b58d80}
+body.bear-states-page .quiz-skip:focus-visible,body.bear-states-page .skip-confirm-actions button:focus-visible{outline:2px solid #887138;outline-offset:4px}
+@media(max-width:700px){body.bear-states-page .couple-skip-confirm{padding:22px 17px}body.bear-states-page .couple-skip-confirm p{font-size:14px}}
+@media(prefers-reduced-motion:reduce){body.bear-states-page .couple-skip-confirm{animation:none}}

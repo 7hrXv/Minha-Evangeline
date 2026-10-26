@@ -1,0 +1,31 @@
+/* Motivos (envelopes) e Raspadinhas — verde e dourado vintage */
+.mr-count{margin:0 0 14px;text-align:center;font-style:italic;color:#123a2c}
+.env-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:540px;margin:0 auto 16px;padding:0;list-style:none}
+.env{position:relative;display:block;width:100%;aspect-ratio:4/3;padding:0;border:1px solid #b8924a;border-radius:4px;cursor:pointer;color:#f8edcf;font:700 1.05rem Georgia,serif;background:linear-gradient(160deg,#2f5a41,#173a2a);box-shadow:0 5px 10px #0a2a1f44,inset 0 0 0 3px #173a2a,inset 0 0 0 4px #b8924a88;transition:transform .2s,box-shadow .2s;overflow:hidden}
+.env::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom right,transparent 49.4%,#b8924a88 50%,transparent 50.8%) 0 0/100% 62% no-repeat,linear-gradient(to bottom left,transparent 49.4%,#b8924a88 50%,transparent 50.8%) 0 0/100% 62% no-repeat;pointer-events:none}
+.env-seal{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f1d98f,#b8924a);color:#173a2a;font-size:.95rem;box-shadow:0 2px 5px #0006}
+.env-num{position:absolute;right:7px;bottom:4px;font-size:.78rem;color:#e6cd8a}
+.env:hover{transform:translateY(-3px) rotate(-1deg);box-shadow:0 10px 18px #0a2a1f66,inset 0 0 0 3px #173a2a,inset 0 0 0 4px #b8924a88}
+.env.sel{outline:2px solid #e9c46a;outline-offset:2px}
+.env.read{background:linear-gradient(160deg,#e9dfc0,#d6c8a0);color:#173a2a}.env.read .env-seal{background:#fffbee;color:#b8924a;border:1px solid #b8924a}.env.read .env-num{color:#5a5b3c}
+.env:focus-visible,.scratch-reveal:focus-visible{outline:2px solid #123a2c;outline-offset:3px}
+.letter{max-width:540px;margin:0 auto;padding:20px 22px;border:1px dashed #b8924a;border-radius:6px;background:#fffbee;text-align:center;animation:reveal .5s cubic-bezier(.2,.7,.2,1) both}
+.letter[hidden]{display:none}.letter small{display:block;letter-spacing:.2em;color:#8a6a2c}.letter p{margin:.5em 0 0;font:italic 1.2rem/1.6 Georgia,serif;color:#123a2c;overflow-wrap:anywhere}
+.scratch-list{display:grid;gap:16px;max-width:520px;margin:0 auto}
+.scratch-item{padding:12px;border:1px solid #b8924a;border-radius:6px;background:#fffbee;box-shadow:inset 0 0 0 3px #fffbee,inset 0 0 0 4px #b8924a66}
+.scratch-card{position:relative;height:130px;border-radius:4px;overflow:hidden;display:grid;place-items:center;padding:12px 18px;text-align:center;background:radial-gradient(circle at 50% 30%,#fffdf5,#f3e8cb)}
+.scratch-card .msg{margin:0;font:italic 1.15rem/1.5 Georgia,serif;color:#123a2c}
+.scratch-card canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity .6s}
+.scratch-card.done canvas{opacity:0;pointer-events:none}
+.scratch-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+.scratch-bar span{font-size:.85rem;color:#5a5b3c;font-style:italic}
+.scratch-reveal{font:600 .85rem Georgia,serif;min-height:36px;padding:6px 16px;border-radius:999px;cursor:pointer;background:transparent;color:#123a2c;border:1px solid #b8924a}
+.scratch-reveal:disabled{opacity:.5;cursor:default}
+@media(max-width:560px){.env-grid{grid-template-columns:repeat(3,1fr);gap:9px}.letter p{font-size:1.08rem}}
+@media(prefers-reduced-motion:reduce){.env,.scratch-card canvas{transition:none}.letter{animation:none}}
+/* Quiz: botão único */
+body.bear-states-page .love-choices{height:auto!important;display:flex!important;justify-content:center;margin-top:24px}
+body.bear-states-page .love-choices .love-yes{position:static!important;width:auto!important;min-width:220px;height:auto!important;min-height:52px;padding:13px 30px;font-size:17px;left:auto!important}
+.exp-panel .env-num{color:#e6cd8a}.exp-panel .env-seal{color:#173a2a}
+.exp-panel .env.read .env-num{color:#5a5b3c}.exp-panel .env.read .env-seal{color:#b8924a}
+.exp-panel .scratch-bar span{color:#5a5b3c}

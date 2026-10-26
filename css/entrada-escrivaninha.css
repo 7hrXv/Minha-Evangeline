@@ -1,0 +1,10 @@
+/* Entrada: pequena escrivaninha de lembranças no vazio entre as polaroids.
+   Só decoração: posição absoluta, sem cliques e fora do fluxo (não move fotos, não cobre o botão, não aumenta a altura). */
+.entry-desk{position:absolute;z-index:1;left:0;right:0;margin:0 auto;pointer-events:none;filter:drop-shadow(0 9px 11px #04140f66)}
+.entry-desk>svg{display:block;width:100%;height:auto;overflow:visible}
+.entry-desk>.desk-defs{position:absolute;width:0;height:0;overflow:hidden}
+.entry-desk .desk-compact{display:none}
+/* Computador: ocupa a faixa central livre, abaixo do formulário e acima do selo de data. */
+@media(min-width:1101px){.entry-desk{bottom:112px;width:min(var(--entry-panel),440px)}}
+/* Tablet e celular: as fotos empilham quase sem vão, então a versão compacta usa a faixa livre entre o fim do formulário e a 1ª foto. */
+@media(max-width:1100px){.entry-desk{top:-63px;width:min(100%,348px)}.entry-desk .desk-wide{display:none}.entry-desk .desk-compact{display:block}}

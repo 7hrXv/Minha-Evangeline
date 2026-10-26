@@ -1,0 +1,54 @@
+/* Fundo de ponta a ponta; a largura de leitura pertence somente ao conteúdo. */
+html{width:100%;min-height:100%;margin:0;background:#10271f;color-scheme:dark}
+body.chapter{position:relative;isolation:isolate;width:100%;max-width:none!important;min-height:100svh;margin:0!important;padding:0!important;background:#10271f!important;overflow-x:clip}
+body.chapter::before{content:'';position:fixed!important;inset:0!important;width:100%;height:100%;background-image:var(--scene)!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;z-index:-2;pointer-events:none}
+body.chapter::after{display:none!important}.chapter .chapter-main,.chapter .chapter-header,.chapter .chapter-footer{background:transparent!important;box-shadow:none}
+.chapter .chapter-main{position:relative;z-index:1}.chapter .chapter-header,.chapter .chapter-footer{position:relative;z-index:1}
+.chapter .chapter-flora{display:none!important}.chapter .antique-corners{opacity:.3}
+/* A dedicatória é a base do mesmo papel da fotografia. */
+.chapter .album-grid .album-photo.polaroid-card,.chapter .entry-memory.polaroid-card,.chapter .sequence-photos figure.polaroid-card,.chapter .welcome-memory.polaroid-card{background:linear-gradient(135deg,#f4efde,#e2dcc5)!important;border:1px solid #bfb18a!important;color:#3d513b!important;padding:12px 12px 16px!important;min-height:0!important;height:auto!important;border-radius:3px!important;box-shadow:0 11px 25px #051a1540!important}
+.chapter .polaroid-card .photo-dedication{position:relative!important;inset:auto!important;display:block!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:15px 4px 0!important;background:transparent!important;border:0!important;box-shadow:none!important;color:#465a3f!important;text-align:center;line-height:1.4!important}
+.chapter .polaroid-card .photo-dedication::before{content:'';display:block;width:60%;height:9px;margin:0 auto 5px;background:linear-gradient(#b7a17066,#b7a17066) center/100% 1px no-repeat}
+.chapter .polaroid-card .photo-dedication::after{content:'❧';display:block;position:static;margin:5px auto 0;color:#a28d5c;font:15px Georgia;line-height:1;opacity:.8}
+.chapter .polaroid-card .dedication-text{display:block!important;padding:0!important;margin:0!important;background:transparent!important;font:22px/1.35 Evangeline,Georgia,serif!important;color:#45573d!important;letter-spacing:0!important;text-transform:none!important}
+.chapter .polaroid-card .dedication-signature{display:block;margin:9px 0 0;padding:0;color:#8b7d55;font:8px/1.4 Georgia,serif;letter-spacing:.09em}
+.chapter .entry-memory .dedication-text{font-size:17px!important}.chapter .entry-memory .dedication-signature{font-size:7px}
+.chapter .polaroid-card.reveal-entered .photo-dedication,.chapter .sequence-photos .photo-dedication{animation:dedicationArrive .6s .28s both}
+.chapter .photo-viewer{background:linear-gradient(135deg,#eee8d5,#dcd9bf);color:#40513a;min-height:0}.chapter .photo-viewer>p{margin:12px auto 0;padding:0 8px;height:auto;min-height:0;font:25px/1.4 Evangeline;color:#4b5c40;max-width:600px}
+/* Each silhouette has a support and contact shadow; only Ray floats. */
+.chapter .character-vignette{position:relative;display:inline-block;flex:0 0 auto;width:var(--character-width,120px);max-width:100%;height:auto;max-height:none;margin:12px;vertical-align:bottom;isolation:isolate;pointer-events:none;padding:0 0 12px}
+.chapter .character-vignette .film-character{position:relative;inset:auto!important;width:100%!important;height:auto!important;max-height:none;display:block;background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;margin:0!important;box-shadow:none!important;animation:none!important;filter:drop-shadow(2px 5px 3px #02120d55)!important}
+.character-vignette.grounded::before{content:'';position:absolute;left:15%;right:15%;bottom:9px;height:10px;background:radial-gradient(ellipse,#03150bb3,transparent 70%);z-index:-1}
+.character-vignette.grounded::after{content:'';position:absolute;left:4%;right:4%;bottom:0;height:12px;border-radius:3px;background:linear-gradient(#a28d61 0 12%,#465d3a 15% 45%,#c9c7a1 48% 70%,#324e34 72%);box-shadow:0 4px 8px #03140b45;z-index:-2;rotate:-2deg}
+.character-vignette[data-surface="letter"]::after{height:8px;background:linear-gradient(#e4dcc1 0 40%,#afaa84 45% 60%,#ece4ce 65%);rotate:4deg;left:-3%;right:-3%}
+.character-vignette[data-surface="leaf"]::after{height:15px;border-radius:90% 10% 80% 15%;background:linear-gradient(170deg,#7d8d5c,#345a3b);border-bottom:1px solid #a99a65;rotate:-4deg;left:-6%;right:-6%}
+.chapter .character-vignette.flying{padding:0;animation:rayInAir 12s -5s ease-in-out infinite alternate}
+.chapter .character-vignette.flying .film-character{filter:drop-shadow(0 0 5px #d6bd6a55)!important}
+.chapter .convite-personagem{position:absolute;left:calc(100% + 12px);top:5px;margin:0}.chapter .welcome-character{display:block;margin:25px 0 0 auto}.chapter .album-character{position:absolute;right:0;bottom:0;margin:0}.chapter .letter-character{align-self:center;margin:25px 5px}.chapter .jazz-character{display:block;margin:25px 0 0 auto}.chapter .quiz-character{position:absolute;left:calc(100% + 18px);top:-25px;margin:0}.chapter .music-character{position:absolute;left:0;bottom:0;margin:0}.chapter .notes-character,.chapter .final-character,.chapter .rail-character{position:relative;inset:auto}
+.chapter .scene-keepsakes{display:flex;align-items:flex-end;justify-content:space-evenly;gap:22px;min-height:0;padding:20px 0 5px;flex-wrap:wrap;max-width:100%;margin:25px auto 0}
+.chapter-3 .scene-keepsakes{flex-direction:row-reverse}.chapter-4 .scene-keepsakes{justify-content:space-between}.chapter-7 .scene-keepsakes{justify-content:flex-end}.chapter-8 .scene-keepsakes{justify-content:space-around}
+.chapter .keepsake-object{position:relative;width:min(320px,40%);display:block;rotate:-3deg;margin:0 12px}.chapter .keepsake-object .vintage-object{width:100%;height:auto;max-height:none;display:block;rotate:0;opacity:.95;filter:drop-shadow(0 5px 5px #02150c33)}
+.chapter .keepsake-object .keepsake-verse{display:block;max-width:100%;padding:0;margin:5px 10px 0;font:19px/1.4 Evangeline;color:#c1bc96;text-align:center}
+.chapter .pressed-decoration{position:absolute;pointer-events:none;width:95px;height:auto;opacity:.65;transform-origin:bottom;animation:pressedLeaf 15s ease-in-out infinite alternate}
+.chapter .scene-keepsakes .pressed-decoration{right:0;top:-15px;width:55px;animation:none}
+.effects-paused .character-vignette,.character-vignette.out-of-view,.effects-paused .pressed-decoration,.pressed-decoration.out-of-view{animation-play-state:paused!important}
+/* A dedicated, compact reader follows the real media clock. No invented lyrics. */
+.chapter .lyric-reader{position:relative;max-width:760px;margin:30px auto 20px;padding:20px clamp(18px,4vw,45px) 12px;text-align:center;border-top:1px solid #bea36a66;border-bottom:1px solid #bea36a33;background:linear-gradient(90deg,transparent,#20382c55,transparent)}
+.lyric-reader-kicker{font:9px/1.6 Georgia;color:#baac7a;letter-spacing:.17em;margin:0 0 15px}
+.chapter .lyric-line{font:clamp(25px,3.5vw,37px)/1.45 Evangeline,Georgia;color:#eee5cf;min-height:85px;height:auto;max-width:660px;padding:0;margin:0 auto;display:grid;place-items:center;opacity:1;transform:none;transition:opacity .12s,transform .16s;animation:none!important;text-wrap:balance}
+.chapter .lyric-line.line-changing{opacity:0;transform:translateY(-5px)}.lyric-reader-ornament{display:block;color:#b7a16b;font:22px Georgia;margin-top:8px}
+@keyframes dedicationArrive{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@keyframes rayInAir{0%{transform:translate(0,0) rotate(-1deg)}100%{transform:translate(5px,-7px) rotate(1deg)}}
+@keyframes pressedLeaf{to{transform:rotate(2deg)}}
+@media(max-width:900px){.chapter .album-character{position:static;display:block;width:120px;margin:15px auto 0}.chapter .convite-personagem{--character-width:100px!important}.chapter .quiz-character{left:calc(100% + 3px);width:48px}}
+@media(max-width:800px){.chapter .character-vignette{width:min(var(--character-width),110px);margin:10px}.chapter .convite-personagem{position:static;display:block;width:82px;margin:12px auto 0}.chapter .welcome-character{width:85px;margin:18px auto 0}.chapter .letter-character{width:90px}.chapter .jazz-character{width:120px;margin:20px auto 0}.chapter .quiz-character{position:static;width:46px;margin:10px auto 0}.chapter .music-character{position:absolute;width:75px;margin:0}.chapter .keepsake-object{width:min(270px,65%);margin:0}.chapter .scene-keepsakes{gap:15px;padding-top:15px}.chapter .polaroid-card .dedication-text{font-size:20px!important}.chapter .entry-memory .dedication-text{font-size:16px!important}.chapter .polaroid-card .dedication-signature{font-size:7px}.chapter .lyric-reader{padding:18px 15px 10px;margin-top:22px}.chapter .lyric-line{min-height:85px}.chapter .keepsake-object .keepsake-verse{font-size:18px}.chapter .character-vignette.flying{animation-duration:16s}}
+@media(prefers-reduced-motion:reduce){.chapter .polaroid-card .photo-dedication,.chapter .character-vignette,.chapter .pressed-decoration{animation:none!important;transition:none!important}.chapter .lyric-line{transition:none;transform:none}.chapter .lyric-line.line-changing{opacity:1}}
+.correspondence-divider{position:relative;display:flex;align-items:center;justify-content:center;margin:10px auto -15px;max-width:500px;pointer-events:none}.correspondence-divider>img:first-child{width:205px;height:auto;rotate:4deg;opacity:.85}.correspondence-divider>.pressed-decoration{width:85px;position:relative;right:auto;top:auto;margin-left:25px;rotate:-12deg}
+@media(max-width:600px){.correspondence-divider>img:first-child{width:155px}.correspondence-divider>.pressed-decoration{width:60px;margin-left:10px}.chapter .scene-keepsakes{justify-content:center}}
+/* Reservar a legenda da capa: Louis ocupa apenas a margem livre do toca-discos. */
+.chapter .music-character{width:70px}
+@media(max-width:800px){.chapter .music-character{width:55px}}
+@media(max-width:700px) and (orientation:portrait){body.chapter::before{background-image:var(--scene-mobile,var(--scene))!important}}
+/* A personagem do convite tem espaço próprio, sem alcançar as fotografias laterais. */
+.chapter .convite-personagem{position:relative;left:auto;top:auto;display:block;width:105px;margin:15px auto 0}
+@media(max-width:800px){.chapter .convite-personagem{width:82px}}

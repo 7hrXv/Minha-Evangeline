@@ -7,7 +7,7 @@
   const count = $('carinhoCount'), error = $('carinhoError'), status = $('carinhoStatus');
   const list = $('carinhoList'), empty = $('carinhoEmpty'), submit = $('carinhoSubmit');
   const cancel = $('carinhoCancel'), mode = $('carinhoEditMode');
-  let notes = [], editingId = null, pendingDelete = null;
+  let notes = [], editingId = null, pendingDelete = null, justAdded = null;
   const uid = () => (globalThis.crypto && crypto.randomUUID) ? crypto.randomUUID() : `recado-${Date.now()}-${Math.random().toString(36).slice(2)}`;
   try {
     const raw = JSON.parse(localStorage.getItem(key) || '[]');
@@ -38,12 +38,35 @@
     el.type = 'button'; el.textContent = text; el.className = className;
     el.addEventListener('click', onClick); return el;
   }
+  const toast = document.createElement('div'); toast.className = 'carinho-toast'; toast.setAttribute('aria-hidden', 'true'); document.body.append(toast);
+  let toastTimer = 0;
+  function flash(text) { toast.textContent = text; toast.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 2200); }
+  const dlg = document.createElement('div'); dlg.className = 'carinho-modal'; dlg.hidden = true;
+  dlg.innerHTML = '<div class="carinho-modal-card" role="alertdialog" aria-modal="true" aria-labelledby="cmTitle"><h3 id="cmTitle">Apagar este recado?</h3><p class="carinho-modal-text"></p><div class="carinho-modal-actions"><button type="button" class="carinho-confirm-no">Manter</button><button type="button" class="carinho-confirm-yes">Sim, apagar</button></div></div>';
+  document.body.append(dlg);
+  const dlgText = dlg.querySelector('.carinho-modal-text'), dlgYes = dlg.querySelector('.carinho-confirm-yes'), dlgNo = dlg.querySelector('.carinho-confirm-no');
+  let lastFocus = null;
+  function closeDlg() { dlg.hidden = true; pendingDelete = null; if (lastFocus && lastFocus.isConnected) lastFocus.focus(); }
+  function askDelete(note, trigger) {
+    pendingDelete = note.id; lastFocus = trigger; dlgText.textContent = `O recado de ${note.name} será removido deste navegador.`;
+    dlg.hidden = false; dlgNo.focus();
+  }
+  dlgNo.addEventListener('click', closeDlg);
+  dlg.addEventListener('click', e => { if (e.target === dlg) closeDlg(); });
+  dlg.addEventListener('keydown', e => { if (e.key === 'Escape') closeDlg(); if (e.key === 'Tab') { const f = [dlgNo, dlgYes]; const i = f.indexOf(document.activeElement); e.preventDefault(); f[(i + (e.shiftKey ? -1 : 1) + 2) % 2].focus(); } });
+  dlgYes.addEventListener('click', () => {
+    const id = pendingDelete; if (!id) return;
+    const next = notes.filter(x => x.id !== id);
+    if (!persist(next)) { closeDlg(); return; }
+    notes = next; if (editingId === id) { form.reset(); setMode(); updateCount(); }
+    pendingDelete = null; dlg.hidden = true; announce('Recadinho apagado.'); flash('Recadinho apagado'); render();
+  });
   function render() {
     list.replaceChildren();
     const ordered = [...notes].sort((a, b) => (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0));
     empty.hidden = ordered.length > 0;
     for (const note of ordered) {
-      const article = document.createElement('article'); article.className = 'carinho-note';
+      const article = document.createElement('article'); article.className = 'carinho-note' + (justAdded === note.id ? ' is-new' : '');
       article.dataset.noteId = note.id;
       const tape = document.createElement('span'); tape.className = 'carinho-note-tape'; tape.setAttribute('aria-hidden', 'true'); article.append(tape);
       const stamp = document.createElement('span'); stamp.className = 'carinho-note-stamp'; stamp.setAttribute('aria-hidden', 'true'); stamp.textContent = '✦'; article.append(stamp);
@@ -61,27 +84,11 @@
         form.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'center' });
         name.focus({ preventScroll: true });
       }));
-      const remove = button('×  Apagar', 'carinho-delete', () => {
-        pendingDelete = note.id;
-        confirmRow.hidden = false;
-        confirmRow.querySelector('.carinho-confirm-text').textContent = `Apagar o recado de ${note.name}?`;
-        confirmRow.querySelector('.carinho-confirm-yes').focus();
-      });
+      const remove = button('×  Apagar', 'carinho-delete', () => askDelete(note, remove));
       actions.append(remove);
-      const confirmRow = document.createElement('div'); confirmRow.className = 'carinho-confirm'; confirmRow.hidden = true;
-      const question = document.createElement('span'); question.className = 'carinho-confirm-text';
-      const yes = button('Sim, apagar', 'carinho-confirm-yes', () => {
-        if (pendingDelete !== note.id) return;
-        const next = notes.filter(x => x.id !== note.id);
-        if (!persist(next)) { confirmRow.hidden = true; return; }
-        notes = next; pendingDelete = null;
-        if (editingId === note.id) { form.reset(); setMode(); updateCount(); }
-        announce('Recadinho apagado.'); render();
-      });
-      const no = button('Cancelar', 'carinho-confirm-no', () => { pendingDelete = null; confirmRow.hidden = true; remove.focus(); });
-      confirmRow.append(question, yes, no);
-      head.append(who, date); article.append(head, body, actions, confirmRow); list.append(article);
+      head.append(who, date); article.append(head, body, actions); list.append(article);
     }
+    justAdded = null;
   }
   name.addEventListener('input', () => { error.textContent = ''; });
   message.addEventListener('input', () => { updateCount(); error.textContent = ''; });
@@ -96,12 +103,13 @@
       if (!notes.some(x => x.id === editingId)) { error.textContent = 'Este recado não está mais disponível.'; return; }
       next = notes.map(x => x.id === editingId ? { ...x, name: n, message: m } : x);
     } else {
-      next = [{ id: uid(), name: n, message: m, date: new Date().toISOString() }, ...notes].slice(0, 300);
+      const created = { id: uid(), name: n, message: m, date: new Date().toISOString() }; justAdded = created.id;
+      next = [created, ...notes].slice(0, 300);
     }
     if (!persist(next)) return; // do not erase typed text if saving fails
     const wasEditing = !!editingId;
     notes = next; form.reset(); setMode(); updateCount();
-    announce(wasEditing ? 'Alterações salvas com carinho!' : 'Recadinho guardado com carinho!');
+    announce(wasEditing ? 'Alterações salvas com carinho!' : 'Recadinho guardado com carinho!'); flash(wasEditing ? 'Alterações salvas ✦' : 'Guardado no mural ✦');
     render();
   });
   setMode(); updateCount(); render();

@@ -3,7 +3,7 @@ const old=document.querySelector('.contador-particles');if(old)old.remove();
 const layer=document.createElement('div');layer.className='contador-particles';layer.setAttribute('aria-hidden','true');document.body.appendChild(layer);
 const mobile=matchMedia('(max-width:640px)').matches;
 const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
-const count=reduced?(mobile?8:14):(mobile?30:76);
+const count=reduced?(mobile?4:8):(mobile?12:28);
 for(let i=0;i<count;i++){
  const el=document.createElement('i');const kind=i%7===0?'petal':i%4===0?'firefly':'star';el.className='contador-particle '+kind;
  const x=Math.random()*100;const y=Math.random()*100;const side=x<27||x>73;

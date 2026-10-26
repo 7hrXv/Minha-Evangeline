@@ -1,0 +1,15 @@
+/* Final scene authority: full-bleed backgrounds, independent from content widths. */
+html{background:#142b23}html body.chapter{background:var(--page-ground,#142b23)!important}
+html body.chapter::before{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;background:var(--page-backdrop)!important;background-size:cover!important;background-position:center!important;pointer-events:none;z-index:-2}
+html body.chapter::after{display:none!important}
+html body.chapter.chapter-0{--page-ground:#112d26;--page-backdrop:linear-gradient(90deg,#09251c44,#09251c22),url('../assets/images/jardim-ilustrado-noite.webp')}
+html body.chapter.welcome-page,html body.chapter.chapter-1{--page-ground:#10261f;--page-backdrop:radial-gradient(ellipse at 50% 30%,#8f995014,transparent 65%),url('../assets/cenarios-novos/jardim.svg?v=20261026-bg')}
+html body.chapter.chapter-2{--page-ground:#303d2e;--page-backdrop:radial-gradient(ellipse at 50% 40%,#b3a3720c,transparent 65%),url('../assets/cenarios-novos/album.svg')}
+html body.chapter.chapter-3{--page-ground:#24352c;--page-backdrop:linear-gradient(90deg,#142d28a8,#112c26c7 40%,#142c25a8),url('../assets/images/carta-antiga-cenario.webp')}
+html body.chapter.chapter-4{--page-ground:#101d19;--page-backdrop:radial-gradient(ellipse at 50% 25%,#b4934915,transparent 58%),url('../assets/cenarios-novos/jazz.svg?v=20261026-bg')}
+html body.chapter.chapter-5{--page-ground:#153d30;--page-backdrop:url('../assets/cenarios-novos/quiz.svg?v=20261026-bg')}
+html body.chapter.chapter-6{--page-ground:#163633;--page-backdrop:url('../assets/cenarios-novos/lago.svg?v=20261026-bg')}
+html body.chapter.chapter-7{--page-ground:#30483b;--page-backdrop:url('../assets/cenarios-novos/mural.svg?v=20261026-bg')}
+html body.chapter.chapter-8{--page-ground:#102733;--page-backdrop:url('../assets/cenarios-novos/final.svg')}
+html body.chapter.music-scenario{--page-ground:#251f19;--page-backdrop:radial-gradient(ellipse at 50% 35%,#ad895614,transparent 65%),url('../assets/cenarios-novos/musica.svg')}
+@media(max-width:700px){html body.chapter.chapter-0{--page-backdrop:linear-gradient(#102c2638,#102c2666),url('../assets/images/jardim-ilustrado-noite.webp')}html body.chapter.chapter-3{--page-backdrop:linear-gradient(#142c25c4,#142c25ce),url('../assets/images/carta-antiga-cenario.webp')}html body.chapter::before{background-position:center!important}}

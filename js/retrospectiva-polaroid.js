@@ -93,7 +93,7 @@ const photos=[
     "caption": "Nossos sorrisos ♡"
   },
   {
-    "src": "assets/images/caretas-juntos.jpg",
+    "src": "assets/images/caretas-juntos.webp",
     "alt": "Lembrança especial do casal",
     "caption": "Nosso jeitinho ♡"
   },

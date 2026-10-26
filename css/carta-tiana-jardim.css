@@ -1,7 +1,7 @@
 
 /* Jardim da Tiana: referência reinterpretada como carta real com elementos separados */
 .nova-carta-page{
- background:linear-gradient(90deg,#0e241bde,#10281cba),url('../assets/images/fundo-tiana-naveen-hd.png') center/cover fixed!important;
+ background:linear-gradient(90deg,#0e241bde,#10281cba),url('../assets/images/fundo-tiana-naveen-hd.webp') center/cover fixed!important;
 }
 .nova-carta-page:before{background:linear-gradient(180deg,#06190d77,#102c1a55 60%,#06180d88)!important}
 .nova-carta-intro h1{color:#fff7e7}

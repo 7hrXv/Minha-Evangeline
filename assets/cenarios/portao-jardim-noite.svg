@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0d99a"/><stop offset=".5" stop-color="#b8924a"/><stop offset="1" stop-color="#7a5a26"/></linearGradient>
+<radialGradient id="l"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".9"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
+<g id="bar"><path d="M0 1000V120" stroke="url(#g)" stroke-width="9"/><path d="M0 120l-9-26 9-28 9 28z" fill="url(#g)"/><circle cx="0" cy="62" r="5" fill="#f6e3a6"/></g>
+<g id="scroll" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round"><path d="M0 300c40-60 90-20 60 25s-70 5-40-25"/><path d="M0 360c44 20 70 70 30 110"/></g>
+<g id="lotus"><path d="M0 0Q-30-30 0-70Q30-30 0 0Z" fill="#f2e6c9"/><path d="M0 0Q-60-10-62-58Q-14-48 0 0ZM0 0Q60-10 62-58Q14-48 0 0Z" fill="#e8d7b0"/><circle cy="-6" r="6" fill="#d9b25a"/></g>
+</defs>
+<rect width="1600" height="1000" fill="none"/>
+<g opacity=".92">
+<g transform="translate(70 0)"><use href="#bar"/><use href="#bar" x="52"/><use href="#bar" x="104"/><use href="#scroll" x="20"/></g>
+<g transform="translate(1426 0)"><use href="#bar"/><use href="#bar" x="52"/><use href="#bar" x="104"/><use href="#scroll" x="130" transform="scale(-1 1)"/></g>
+<path d="M60 130C60 -40 1540 -40 1540 130" fill="none" stroke="url(#g)" stroke-width="10"/>
+<path d="M120 150C150 20 1450 20 1480 150" fill="none" stroke="url(#g)" stroke-width="4" opacity=".6"/>
+<g fill="none" stroke="url(#g)" stroke-width="4" opacity=".7"><path d="M800 -10v70M730 0q70 80 140 0"/></g>
+</g>
+<g id="lights"><circle cx="150" cy="130" r="46" fill="url(#l)"/><circle cx="1450" cy="130" r="46" fill="url(#l)"/><circle cx="800" cy="26" r="52" fill="url(#l)"/><circle cx="330" cy="60" r="30" fill="url(#l)"/><circle cx="1270" cy="60" r="30" fill="url(#l)"/><circle cx="540" cy="22" r="26" fill="url(#l)"/><circle cx="1060" cy="22" r="26" fill="url(#l)"/></g>
+<use href="#lotus" transform="translate(160 960) scale(1.5)"/><use href="#lotus" transform="translate(290 985)"/><use href="#lotus" transform="translate(1440 965) scale(1.4)"/><use href="#lotus" transform="translate(1310 990) scale(.8)"/>
+<g fill="#ffe9a8"><circle cx="230" cy="420" r="3"/><circle cx="1380" cy="520" r="3"/><circle cx="330" cy="700" r="2.5"/><circle cx="1250" cy="760" r="2.5"/></g>
+</svg>

@@ -9,7 +9,7 @@
 @keyframes antique-open{0%{transform:scale(1);opacity:1}45%{transform:scale(1.08) rotate(-2deg);opacity:1}100%{transform:translateY(-75px) scale(.88);opacity:0}}
 .nova-open-caption{font-family:Georgia,serif;color:#d1ac72;font-size:1.08rem;font-style:italic;letter-spacing:.02em;border-top:1px solid #856a416b;border-bottom:1px solid #856a416b;padding:13px 38px}
 .nova-letter{width:min(96vw,760px)}
-.nova-letter-inner{background:#d9b67d url('../assets/images/pergaminho-artesanal.png') center / 100% 100% no-repeat!important;border:0!important;box-shadow:0 27px 55px #0009!important;clip-path:none!important;padding:clamp(65px,10vw,105px) clamp(50px,11vw,110px)!important;min-height:760px;transform:rotate(-.6deg);color:#35241a!important}
+.nova-letter-inner{background:#d9b67d url('../assets/images/pergaminho-artesanal.webp') center / 100% 100% no-repeat!important;border:0!important;box-shadow:0 27px 55px #0009!important;clip-path:none!important;padding:clamp(65px,10vw,105px) clamp(50px,11vw,110px)!important;min-height:760px;transform:rotate(-.6deg);color:#35241a!important}
 .nova-letter h2{color:#402619!important;text-align:left!important;font-size:clamp(1.9rem,4vw,2.65rem)!important;margin:18px 0 29px!important}
 .nova-letter-text p{color:#352419!important;line-height:1.85!important;font-size:clamp(1rem,1.75vw,1.15rem)!important}
 .nova-letter-kicker{color:#624026!important;text-align:left!important;font:500 .85rem Georgia,serif!important;letter-spacing:.21em!important;margin:5px 0 10px!important}

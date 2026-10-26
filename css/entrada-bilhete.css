@@ -1,0 +1,12 @@
+/* Positioned in measured existing space; it never participates in layout. */
+html body.chapter.secret-entry .entry-layout{position:relative}
+html body.chapter.secret-entry .entry-keepsake{position:absolute;inset:auto;left:0;top:0;width:var(--keepsake-width,300px);height:auto;aspect-ratio:2;pointer-events:none!important;z-index:2;visibility:hidden;filter:drop-shadow(1px 5px 4px #061e1644)}
+html body.chapter.secret-entry .entry-keepsake.is-placed{visibility:visible;animation:keepsakeArrive .8s ease-out both}
+.entry-keepsake>img{display:block;width:100%;height:auto;pointer-events:none}
+.entry-keepsake .keepsake-glimmer{position:absolute;color:#c9ae72;font-size:12px;left:7%;top:20%;animation:keepsakeGlint 5.5s -2s ease-in-out infinite;opacity:.4}
+.entry-keepsake .keepsake-glimmer:nth-of-type(2){left:85%;top:68%;font-size:9px;animation-delay:-4s}
+@keyframes keepsakeArrive{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@keyframes keepsakeGlint{0%,100%{opacity:.15}50%{opacity:.75}}
+@media(max-width:700px){.entry-keepsake .keepsake-glimmer{display:none}}
+@media(prefers-reduced-motion:reduce){html body.chapter.secret-entry .entry-keepsake.is-placed,.entry-keepsake .keepsake-glimmer{animation:none!important}}
+html.effects-paused .entry-keepsake .keepsake-glimmer{animation-play-state:paused}

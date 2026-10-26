@@ -1,0 +1,10 @@
+/* Entradas suaves únicas (transform/opacity), executadas uma vez no carregamento. */
+@keyframes es-up{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
+@keyframes es-pop{from{opacity:0;transform:translate3d(0,12px,0) scale(.97)}to{opacity:1;transform:none}}
+body.chapter .chapter-heading>*,body.chapter h1{animation:es-up .7s cubic-bezier(.2,.7,.2,1) both}
+body.chapter .chapter-heading>*:nth-child(2){animation-delay:.08s}body.chapter .chapter-heading>*:nth-child(3){animation-delay:.16s}
+body.chapter :is(.polaroid-card,.notes-editor,.notes-board,.entry-panel,.letter-paper){animation:es-pop .75s .12s cubic-bezier(.2,.7,.2,1) both}
+body.chapter .polaroid-card:nth-child(2){animation-delay:.2s}body.chapter .polaroid-card:nth-child(3){animation-delay:.28s}body.chapter .polaroid-card:nth-child(4){animation-delay:.36s}
+body.chapter .notes-board{animation-delay:.22s}
+@media(max-width:700px){body.chapter :is(.polaroid-card,.notes-editor,.notes-board){animation-duration:.5s}}
+@media(prefers-reduced-motion:reduce){body.chapter *{animation:none!important;transition:none!important}}

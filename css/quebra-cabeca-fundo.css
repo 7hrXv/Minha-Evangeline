@@ -1,0 +1,16 @@
+/* Fundo exclusivo do quebra-cabeça: verde esmeralda, luz suave e detalhes dourados. */
+html body.chapter.puzzle-refined-bg {
+  --page-ground:#102820;
+  --page-backdrop: radial-gradient(ellipse at 50% 28%,rgba(75,115,87,.36),transparent 57%), radial-gradient(circle at 12% 78%,rgba(190,151,83,.10),transparent 30%),radial-gradient(circle at 88% 17%,rgba(190,151,83,.09),transparent 28%),linear-gradient(145deg,#0b211d 0%,#19392c 48%,#0b201b 100%);
+}
+html body.chapter.puzzle-refined-bg::after {
+ content:"";position:fixed;inset:17px;pointer-events:none;z-index:-1;
+ border:1px solid rgba(201,169,103,.24);border-radius:18px;
+ box-shadow:inset 0 0 0 5px rgba(14,36,29,.12),inset 0 0 65px rgba(201,169,103,.035);
+}
+html body.chapter.puzzle-refined-bg .game-card {
+ background:linear-gradient(155deg,rgba(24,57,43,.95),rgba(11,35,29,.96));
+ border:1px solid rgba(207,175,110,.45);
+ box-shadow:0 20px 65px rgba(0,0,0,.28),inset 0 0 0 4px rgba(202,171,107,.07);
+}
+@media(max-width:700px){html body.chapter.puzzle-refined-bg::after{inset:8px;border-radius:12px}html body.chapter.puzzle-refined-bg .game-card{box-shadow:0 12px 35px rgba(0,0,0,.24)}}

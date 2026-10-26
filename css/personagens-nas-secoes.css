@@ -1,0 +1,9 @@
+/* Only position existing cutouts: no wrappers, padding or document height added. */
+html body.chapter .character-anchor{position:relative}
+html body.chapter img.section-character{position:absolute;display:block;--cast-min:80px;width:var(--cast-size,150px);height:auto;max-height:230px;object-fit:contain;inset:auto;left:0;top:0;margin:0;padding:0;border:0;background:none;box-shadow:none;filter:drop-shadow(0 0 9px #e2c98a8c) drop-shadow(2px 7px 6px #03150d73);animation:adesivoFlutua 5.5s ease-in-out infinite;pointer-events:none!important;z-index:3;visibility:hidden}
+html body.chapter img.section-character-1{--cast-min:65px;--cast-size:128px;max-height:200px;animation-delay:-1.8s}
+html body.chapter img.section-character-2{--cast-min:56px;--cast-size:112px;max-height:175px;animation-delay:-3.4s}
+html body.chapter img.section-character.is-placed{visibility:visible}
+@keyframes adesivoFlutua{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@media(prefers-reduced-motion:reduce){html body.chapter img.section-character{animation:none}}
+@media(max-width:700px){html body.chapter img.section-character{--cast-min:46px;--cast-size:84px;max-height:130px}html body.chapter img.section-character-1{--cast-min:40px;--cast-size:72px;max-height:115px}html body.chapter img.section-character-2{--cast-min:40px;--cast-size:64px;max-height:100px;display:block!important}}
