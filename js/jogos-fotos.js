@@ -2,7 +2,6 @@
 window.EvangelineFotos=[
 {src:'assets/images/nos-dois.webp',r:720/1280,f:.4,alt:'Arthur e Mirella juntos'},
 {src:'assets/images/beijo-carinho.webp',r:720/1280,f:.4,alt:'Um beijo carinhoso'},
-{src:'assets/images/foto-quebra-cabeca-nova.jpg',r:158/338,f:.5,alt:'Arthur e Mirella juntos'},
 {src:'assets/images/abraco-juntos.webp',r:1280/720,f:.3,alt:'Um abraço apertado'},
 {src:'assets/images/caretas-juntos.webp',r:1200/900,f:.3,alt:'Caretas de Arthur e Mirella'},
 {src:'assets/images/sorrisos-juntos.webp',r:1280/720,f:.3,alt:'Sorrisos juntos'},

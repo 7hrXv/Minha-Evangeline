@@ -3,9 +3,15 @@
 .pages-menu-button:hover{filter:brightness(1.12)}
 .pages-menu-button[hidden],.pages-menu[hidden],.pages-menu-backdrop[hidden]{display:none}
 .pages-menu-backdrop{position:fixed;inset:0;z-index:58;background:#02100a55}
-.pages-menu{position:fixed;left:16px;bottom:70px;z-index:59;width:min(340px,calc(100vw - 32px));max-height:min(72dvh,640px);display:flex;flex-direction:column;border:1px solid #bea270;border-radius:16px;background:linear-gradient(165deg,#1f3d30,#10271e);color:#f4ecd8;box-shadow:0 18px 44px #02100acc;overflow:hidden}
+.pages-menu{position:fixed;right:16px;left:auto;top:86px;bottom:auto;z-index:59;width:min(340px,calc(100vw - 32px));max-height:min(72dvh,640px);display:flex;flex-direction:column;border:1px solid #bea270;border-radius:16px;background:linear-gradient(165deg,#1f3d30,#10271e);color:#f4ecd8;box-shadow:0 18px 44px #02100acc;overflow:hidden}
 .pages-menu h2{margin:0;padding:14px 18px 10px;font:italic 20px Georgia,serif;color:#e8cf8f;border-bottom:1px solid #bea27044}
-.pages-menu ol{list-style:none;margin:0;padding:6px;overflow-y:auto;overscroll-behavior:contain}
+.pages-menu ol{list-style:none;margin:0;padding:6px;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain}
+/* Barra de rolagem discreta, integrada à paleta vintage */
+.pages-menu ol{scrollbar-width:thin;scrollbar-color:#bba16b #19382c;scrollbar-gutter:stable}
+.pages-menu ol::-webkit-scrollbar{width:9px}
+.pages-menu ol::-webkit-scrollbar-track{background:#19382c;border-radius:10px;margin:7px 2px}
+.pages-menu ol::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#cdb77d,#8e7849);border:2px solid #19382c;border-radius:10px}
+.pages-menu ol::-webkit-scrollbar-thumb:hover{background:#e1cb92}
 .pages-menu a{display:flex;align-items:center;gap:12px;min-height:46px;padding:8px 12px;border-radius:10px;color:#f4ecd8;text-decoration:none;font:16px Georgia,serif}
 .pages-menu a:hover,.pages-menu a:focus-visible{background:#ffffff14;outline:none}
 .pages-menu a:focus-visible{box-shadow:inset 0 0 0 2px #f1d98f}
@@ -16,6 +22,6 @@
 .pages-menu-button:focus-visible{outline:3px solid #f1d98f;outline-offset:3px}
 @media(max-width:700px){
  .pages-menu-button{left:10px;bottom:10px;padding:9px 14px;font-size:14px}
- .pages-menu{left:10px;right:10px;bottom:64px;width:auto;max-height:calc(100dvh - 150px);border-radius:16px}
+ .pages-menu{left:10px;right:10px;top:118px;bottom:auto;width:auto;max-height:calc(100dvh - 135px);border-radius:16px}
  .pages-menu a{min-height:50px;font-size:17px}
 }

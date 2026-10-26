@@ -45,7 +45,7 @@ function marcar(){
  const f=atual(),ok=liberado()&&f!=='entrada.html';btn.hidden=!ok;if(!ok)fechar(false);
  menu.querySelectorAll('a').forEach(a=>{if(a.dataset.file===f)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
 }
-function abrir(){marcar();menu.hidden=false;back.hidden=false;btn.setAttribute('aria-expanded','true');const c=menu.querySelector('[aria-current="page"]')||menu.querySelector('a');c.scrollIntoView({block:'center'});c.focus({preventScroll:true})}
+function abrir(){marcar();menu.hidden=false;back.hidden=false;btn.setAttribute('aria-expanded','true');const c=menu.querySelector('[aria-current="page"]')||menu.querySelector('a');const list=menu.querySelector('ol');if(c&&list){list.scrollTop=Math.max(0,c.offsetTop-list.offsetTop-(list.clientHeight-c.offsetHeight)/2)}if(c)c.focus({preventScroll:true})}
 function fechar(foco=true){if(menu.hidden)return;menu.hidden=true;back.hidden=true;btn.setAttribute('aria-expanded','false');if(foco)btn.focus({preventScroll:true})}
 back.addEventListener('pointerdown',e=>{e.preventDefault();fechar(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')fechar()});

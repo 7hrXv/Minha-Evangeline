@@ -56,6 +56,6 @@ board.addEventListener('keydown',e=>{
 reset.addEventListener('click',()=>novo(false));
 other.addEventListener('click',()=>novo(true));
 show.addEventListener('click',()=>{const on=!peek.classList.contains('is-on');peek.classList.toggle('is-on',on);show.setAttribute('aria-pressed',String(on))});
-foto=window.EvangelineFotos.find(f=>f.src.includes('foto-quebra-cabeca-nova.jpg'));
+foto=window.EvangelineFotos.find(f=>f.src.includes('nos-dois.webp'));
 novo(false);
 })();
