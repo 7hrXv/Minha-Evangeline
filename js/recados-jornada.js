@@ -1,1 +1,124 @@
-(()=>{'use strict';const primary='minha-evangeline-mural-carinho-v1',legacy='evangelineMessages',get=id=>document.getElementById(id),form=get('carinhoForm'),name=get('carinhoName'),message=get('carinhoMessage'),list=get('carinhoList');let edit=null,stores={},unreadable=new Set();function read(){for(const key of [primary,legacy]){try{unreadable.delete(key);const parsed=JSON.parse(localStorage.getItem(key)||'[]');if(!Array.isArray(parsed))throw new Error('Formato inválido');stores[key]=parsed}catch(e){unreadable.add(key);stores[key]=[];get('carinhoStatus').textContent='Não foi possível ler um dos arquivos de recados. Os dados originais foram preservados.'}}}function save(key,items){if(unreadable.has(key)){get('carinhoError').textContent='Os dados anteriores não puderam ser lidos. Não foram sobrescritos.';return false}try{localStorage.setItem(key,JSON.stringify(items));stores[key]=items;return true}catch(e){get('carinhoError').textContent='Não foi possível salvar neste navegador. Exporte seus recados para guardá-los.';return false}}function reset(){edit=null;form.reset();get('carinhoEditMode').hidden=true;get('carinhoCancel').hidden=true;get('carinhoSubmit').textContent='Guardar recadinho';get('carinhoCount').textContent='0 / 500';get('carinhoError').textContent=''}function render(){list.replaceChildren();let total=0;for(const key of [primary,legacy])stores[key].forEach((note,index)=>{total++;const card=document.createElement('article');card.className='note-card';const title=document.createElement('h3');title.textContent=note.name||'Um carinho';const text=document.createElement('p');text.textContent=note.message||note.text||'';const date=document.createElement('time');if(note.date){const d=new Date(note.date);if(!Number.isNaN(d.getTime())){date.dateTime=d.toISOString();date.textContent=d.toLocaleDateString('pt-BR')}}const actions=document.createElement('div');actions.className='note-actions';const change=document.createElement('button'),remove=document.createElement('button');change.type=remove.type='button';change.textContent='Editar';remove.textContent='Apagar';change.addEventListener('click',()=>{edit={key,index};name.value=note.name||'';message.value=note.message||note.text||'';get('carinhoEditMode').hidden=false;get('carinhoCancel').hidden=false;get('carinhoSubmit').textContent='Salvar alteração';message.dispatchEvent(new Event('input'));name.focus();form.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'})});remove.addEventListener('click',()=>{if(!window.confirm('Apagar este recadinho?'))return;const items=stores[key].filter((_,i)=>i!==index);if(save(key,items)){reset();render();get('carinhoStatus').textContent='Recadinho apagado.'}});actions.append(change,remove);card.append(title,text,date,actions);list.append(card)});get('carinhoEmpty').hidden=total>0}message.addEventListener('input',()=>get('carinhoCount').textContent=message.value.length+' / 500');get('carinhoCancel').addEventListener('click',reset);form.addEventListener('submit',event=>{event.preventDefault();const n=name.value.trim(),m=message.value.trim();if(!n||!m){get('carinhoError').textContent='Preencha seu nome e o recadinho.';return}const key=edit?edit.key:primary,items=stores[key].map(x=>({...x}));if(edit){const item=items[edit.index];item.name=n;if(key===legacy)item.text=m;else item.message=m}else items.unshift({id:Date.now().toString(36)+Math.random().toString(36).slice(2),name:n,message:m,date:new Date().toISOString()});if(save(key,items)){reset();render();get('carinhoStatus').textContent='Seu carinho está guardado neste navegador.'}});get('exportNotes').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(stores,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='nossos-recadinhos.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});window.addEventListener('storage',e=>{if([primary,legacy].includes(e.key)){read();render()}});read();render()})();
+// Mural público: os recados são sincronizados pelo Cloud Firestore.
+// Configuração web é pública; o controle de acesso está nas regras do Firestore.
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
+import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, limit, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyC6yM_qgj_8lZIZAefGyeu-UU8qb4QBzxI',
+  authDomain: 'arthur-2538d.firebaseapp.com',
+  projectId: 'arthur-2538d',
+  storageBucket: 'arthur-2538d.firebasestorage.app',
+  messagingSenderId: '365819689906',
+  appId: '1:365819689906:web:f87b0b5bfe56e6dab882ab'
+};
+const $ = id => document.getElementById(id);
+const form = $('carinhoForm'), name = $('carinhoName'), message = $('carinhoMessage');
+const list = $('carinhoList'), status = $('carinhoStatus'), error = $('carinhoError');
+const submit = $('carinhoSubmit');
+let notes = [];
+let lastSend = 0;
+const localKeys = ['minha-evangeline-mural-carinho-v1', 'evangelineMessages'];
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+function render() {
+  list.replaceChildren();
+  for (const note of notes) {
+    const card = document.createElement('article');
+    card.className = 'note-card';
+    const title = document.createElement('h3');
+    title.textContent = note.nome || 'Um carinho';
+    const body = document.createElement('p');
+    body.textContent = note.mensagem || '';
+    const date = document.createElement('time');
+    if (note.criadoEm?.toDate) {
+      const d = note.criadoEm.toDate();
+      date.dateTime = d.toISOString();
+      date.textContent = d.toLocaleDateString('pt-BR');
+    }
+    card.append(title, body, date);
+    list.append(card);
+  }
+  $('carinhoEmpty').hidden = notes.length > 0;
+}
+
+message.addEventListener('input', () => {
+  $('carinhoCount').textContent = `${message.value.length} / 500`;
+});
+$('carinhoCancel').hidden = true;
+$('carinhoEditMode').hidden = true;
+submit.textContent = 'Publicar recadinho';
+
+const feed = query(collection(db, 'recadinhos'), orderBy('criadoEm', 'desc'), limit(100));
+onSnapshot(feed, snapshot => {
+  notes = snapshot.docs.map(doc => doc.data());
+  render();
+  status.textContent = 'Mural atualizado para todos os visitantes. 💚';
+  error.textContent = '';
+}, e => {
+  console.error('Erro ao carregar recadinhos:', e);
+  status.textContent = '';
+  error.textContent = 'Não foi possível carregar os recadinhos. Confira a conexão e as regras do Firestore.';
+});
+
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  const nome = name.value.trim(), mensagem = message.value.trim();
+  error.textContent = '';
+  if (!nome || !mensagem || nome.length > 40 || mensagem.length > 500) {
+    error.textContent = 'Preencha seu nome (até 40 caracteres) e sua mensagem (até 500).';
+    return;
+  }
+  if (Date.now() - lastSend < 15000) {
+    error.textContent = 'Aguarde alguns segundos antes de enviar outro recadinho.';
+    return;
+  }
+  submit.disabled = true;
+  status.textContent = 'Publicando seu carinho…';
+  try {
+    await addDoc(collection(db, 'recadinhos'), { nome, mensagem, criadoEm: serverTimestamp() });
+    lastSend = Date.now();
+    form.reset();
+    $('carinhoCount').textContent = '0 / 500';
+    status.textContent = 'Recadinho publicado para todos! 💚';
+  } catch (e) {
+    console.error('Erro ao publicar:', e);
+    error.textContent = 'Não foi possível publicar. Confira a conexão e as regras do Firestore.';
+    status.textContent = '';
+  } finally {
+    submit.disabled = false;
+  }
+});
+
+// Exporta as mensagens visíveis e uma cópia dos recados antigos deste navegador.
+$('exportNotes').addEventListener('click', () => {
+  const antigos = {};
+  for (const key of localKeys) {
+    const raw = localStorage.getItem(key);
+    if (raw !== null) {
+      try { antigos[key] = JSON.parse(raw); } catch { antigos[key] = raw; }
+    }
+  }
+  const data = { recadinhosPublicos: notes.map(n => ({
+    nome: n.nome, mensagem: n.mensagem,
+    criadoEm: n.criadoEm?.toDate?.()?.toISOString() || null
+  })), recadinhosAntigosDesteNavegador: antigos };
+  const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'recadinhos-arthur-mirella.json';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+
+// Recados antigos não são enviados automaticamente para um mural público.
+const oldCount = localKeys.reduce((sum, key) => {
+  try { const v = JSON.parse(localStorage.getItem(key) || '[]'); return sum + (Array.isArray(v) ? v.length : 0); }
+  catch { return sum; }
+}, 0);
+if (oldCount) {
+  const hint = document.createElement('p');
+  hint.className = 'quiet';
+  hint.textContent = `Você tem ${oldCount} recadinho(s) antigo(s) salvo(s) neste navegador. Use “Guardar uma cópia dos recados” para preservá-los; eles não foram publicados automaticamente.`;
+  $('exportNotes').after(hint);
+}
