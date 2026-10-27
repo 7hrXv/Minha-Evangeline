@@ -47,3 +47,23 @@ html body.chapter.chapter-7 .recado-action:hover{background:#35644d}
 html body.chapter.chapter-7 .recado-delete{background:#65402f;border-color:#a88365}
 html body.chapter.chapter-7 .recado-delete:hover{background:#8a4739}
 html body.chapter.chapter-7 .recado-action:disabled{opacity:.5;cursor:wait}
+
+/* Cartinhas clicáveis com leitura e gerenciamento em janela vintage */
+html body.chapter.chapter-7 .recado-clickable{cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}
+html body.chapter.chapter-7 .recado-clickable:hover{transform:translateY(-3px);box-shadow:0 10px 22px #0003}
+html body.chapter.chapter-7 .recado-clickable:focus-visible{outline:3px solid #d5b76d;outline-offset:4px}
+html body.chapter.chapter-7 .recado-dialog{border:2px solid #bba16c;border-radius:18px;background:#f7f1df;color:#284a39;padding:0;width:min(92vw,550px);max-height:88vh;box-shadow:0 24px 90px #0008;overflow:auto}
+html body.chapter.chapter-7 .recado-dialog::backdrop{background:#071c17b8;backdrop-filter:blur(5px)}
+html body.chapter.chapter-7 .recado-dialog-inner{position:relative;padding:34px clamp(22px,5vw,42px);background:linear-gradient(145deg,#fbf6e8,#eee9d1)}
+html body.chapter.chapter-7 .recado-dialog-kicker{font-size:.75rem;letter-spacing:.16em;color:#a58751}
+html body.chapter.chapter-7 .recado-dialog h2{font-family:inherit;color:#315b45;font-size:1.8rem;margin:16px 35px 12px 0;overflow-wrap:anywhere}
+html body.chapter.chapter-7 .recado-dialog-text{font-size:1.08rem;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;margin:10px 0 20px}
+html body.chapter.chapter-7 .recado-dialog-date{display:block;font-size:.8rem;color:#746b52;margin-bottom:14px}
+html body.chapter.chapter-7 .recado-dialog-close{position:absolute;top:15px;right:16px;border:1px solid #c2ad7b;border-radius:50%;width:34px;height:34px;background:#fff8e9;color:#284a39;cursor:pointer}
+html body.chapter.chapter-7 .recado-dialog-buttons{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+html body.chapter.chapter-7 .recado-dialog label{display:block;margin:12px 0 6px;font-weight:600}
+html body.chapter.chapter-7 .recado-dialog input,html body.chapter.chapter-7 .recado-dialog textarea{display:block;box-sizing:border-box;width:100%;padding:11px;border:1px solid #bba16c;border-radius:8px;background:#fffcf5;color:#244435;font:inherit}
+html body.chapter.chapter-7 .recado-dialog textarea{resize:vertical}
+html body.chapter.chapter-7 .recado-dialog [hidden]{display:none!important}
+html body.chapter.chapter-7 #recadoDialogError{color:#a32f25}
+@media(prefers-reduced-motion:reduce){html body.chapter.chapter-7 .recado-clickable{transition:none}}

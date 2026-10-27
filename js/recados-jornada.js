@@ -43,11 +43,84 @@ function exitEdit() {
 cancel.addEventListener('click', exitEdit);
 
 
+const dialog = $('recadoDialog');
+const dialogForm = $('recadoDialogForm');
+const dialogActions = $('recadoDialogActions');
+let selectedId = null;
+const selectedNote = () => notes.find(n => n.id === selectedId);
+const isOwner = n => Boolean(currentUser && n && n.autorUid === currentUser.uid);
+function dialogView() {
+  const n = selectedNote();
+  if (!n) { dialog.close(); return; }
+  $('recadoDialogTitle').textContent = n.nome || 'Um carinho';
+  $('recadoDialogText').textContent = n.mensagem || '';
+  const d = n.criadoEm?.toDate?.();
+  $('recadoDialogDate').textContent = d ? d.toLocaleDateString('pt-BR') : '';
+  $('recadoDialogDate').dateTime = d ? d.toISOString() : '';
+  dialogForm.hidden = true;
+  $('recadoDialogText').hidden = false;
+  dialogActions.hidden = !isOwner(n);
+  $('recadoDialogHint').textContent = isOwner(n) ? 'Esta cartinha é sua. Você pode editar ou excluir.' : 'Uma mensagem para guardar com carinho. ♡';
+  $('recadoDialogError').textContent = '';
+}
+function openNote(n) {
+  selectedId = n.id;
+  dialogView();
+  if (!dialog.open) dialog.showModal();
+}
+$('recadoDialogClose').addEventListener('click', () => dialog.close());
+dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+dialog.addEventListener('close', () => { selectedId = null; dialogForm.reset(); });
+$('recadoDialogEdit').addEventListener('click', () => {
+  const n = selectedNote(); if (!isOwner(n)) return;
+  $('recadoDialogName').value = n.nome;
+  $('recadoDialogMessage').value = n.mensagem;
+  dialogForm.hidden = false;
+  dialogActions.hidden = true;
+  $('recadoDialogText').hidden = true;
+  $('recadoDialogName').focus();
+});
+$('recadoDialogCancel').addEventListener('click', dialogView);
+dialogForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const n = selectedNote(); if (!isOwner(n)) return;
+  const nome = $('recadoDialogName').value.trim();
+  const mensagem = $('recadoDialogMessage').value.trim();
+  if (!nome || !mensagem || nome.length > 40 || mensagem.length > 500) {
+    $('recadoDialogError').textContent = 'Preencha nome e mensagem (máximo 40 e 500 caracteres).'; return;
+  }
+  const save = $('recadoDialogSave'); save.disabled = true;
+  $('recadoDialogError').textContent = '';
+  try {
+    await updateDoc(doc(db, 'recadinhos', n.id), { nome, mensagem });
+    $('recadoDialogTitle').textContent = nome;
+    $('recadoDialogText').textContent = mensagem;
+    dialogForm.hidden = true;
+    $('recadoDialogText').hidden = false;
+    dialogActions.hidden = false;
+    status.textContent = 'Cartinha atualizada para todos! 💚';
+  } catch (err) { console.error(err); $('recadoDialogError').textContent = 'Não foi possível salvar. Confira as regras do Firebase.'; }
+  finally { save.disabled = false; }
+});
+$('recadoDialogDelete').addEventListener('click', async () => {
+  const n = selectedNote(); if (!isOwner(n)) return;
+  if (!confirm('Excluir esta cartinha para todos? Essa ação não pode ser desfeita.')) return;
+  const btn = $('recadoDialogDelete'); btn.disabled = true;
+  try {
+    await deleteDoc(doc(db, 'recadinhos', n.id));
+    dialog.close();
+    status.textContent = 'Cartinha excluída. 💚';
+  } catch (err) { console.error(err); $('recadoDialogError').textContent = 'Não foi possível excluir. Confira as regras do Firebase.'; }
+  finally { btn.disabled = false; }
+});
 function render() {
   list.replaceChildren();
   for (const note of notes) {
     const card = document.createElement('article');
-    card.className = 'note-card';
+    card.className = 'note-card recado-clickable';
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `Abrir cartinha de ${note.nome || 'um visitante'}`);
     const title = document.createElement('h3');
     title.textContent = note.nome || 'Um carinho';
     const body = document.createElement('p');
@@ -59,44 +132,17 @@ function render() {
       date.textContent = d.toLocaleDateString('pt-BR');
     }
     card.append(title, body, date);
-    if (currentUser && note.autorUid === currentUser.uid) {
-      const actions = document.createElement('div');
-      actions.className = 'recado-actions';
-      const edit = document.createElement('button');
-      edit.type = 'button'; edit.textContent = '✏️ Editar'; edit.className = 'recado-action';
-      edit.addEventListener('click', () => {
-        editingId = note.id;
-        name.value = note.nome;
-        message.value = note.mensagem;
-        $('carinhoCount').textContent = `${message.value.length} / 500`;
-        submit.textContent = '💾 Salvar alterações';
-        cancel.hidden = false;
-        editMode.hidden = false;
-        editMode.textContent = 'Editando seu recadinho';
-        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        name.focus();
-      });
-      const remove = document.createElement('button');
-      remove.type = 'button'; remove.textContent = '🗑️ Excluir'; remove.className = 'recado-action recado-delete';
-      remove.addEventListener('click', async () => {
-        if (!confirm('Deseja excluir seu recadinho? Essa ação não pode ser desfeita.')) return;
-        remove.disabled = true;
-        try {
-          await deleteDoc(doc(db, 'recadinhos', note.id));
-          if (editingId === note.id) exitEdit();
-          status.textContent = 'Recadinho excluído. 💚';
-        } catch (e) {
-          console.error(e);
-          error.textContent = 'Não foi possível excluir este recadinho.';
-          remove.disabled = false;
-        }
-      });
-      actions.append(edit, remove);
-      card.append(actions);
-    }
+    card.addEventListener('click', () => openNote(note));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openNote(note); }
+    });
     list.append(card);
   }
   $('carinhoEmpty').hidden = notes.length > 0;
+  if (dialog.open && selectedId) {
+    if (!selectedNote()) dialog.close();
+    else if (dialogForm.hidden) dialogView();
+  }
 }
 
 message.addEventListener('input', () => {
