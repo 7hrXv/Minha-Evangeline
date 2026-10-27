@@ -39,3 +39,11 @@ html body.chapter.chapter-7 .ambient b{display:none!important}
 @keyframes recadoBrilho{0%,100%{opacity:.35;transform:scale(.85)}50%{opacity:1;transform:scale(1.13)}}
 @media(max-width:760px){html body.chapter.chapter-7 .notes-composition::before{left:45%;top:-15px}html body.chapter.chapter-7 .notes-composition::after{right:5%;bottom:-14px}}
 @media(prefers-reduced-motion:reduce){html body.chapter.chapter-7 .notes-composition::before,html body.chapter.chapter-7 .notes-composition::after{animation:none;will-change:auto}}
+
+/* Ações de cada recadinho, visíveis apenas ao autor autenticado */
+html body.chapter.chapter-7 .recado-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
+html body.chapter.chapter-7 .recado-action{cursor:pointer;border:1px solid #b99b60;background:#214737;color:#fff5dc;border-radius:8px;padding:8px 12px;font:inherit;font-size:.88rem;transition:background .2s}
+html body.chapter.chapter-7 .recado-action:hover{background:#35644d}
+html body.chapter.chapter-7 .recado-delete{background:#65402f;border-color:#a88365}
+html body.chapter.chapter-7 .recado-delete:hover{background:#8a4739}
+html body.chapter.chapter-7 .recado-action:disabled{opacity:.5;cursor:wait}

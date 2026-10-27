@@ -1,7 +1,9 @@
 // Mural público: os recados são sincronizados pelo Cloud Firestore.
 // Configuração web é pública; o controle de acesso está nas regras do Firestore.
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
-import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, limit, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
+import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, limit, serverTimestamp, updateDoc, deleteDoc, doc } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
+
+import { getAuth, signInAnonymously, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyC6yM_qgj_8lZIZAefGyeu-UU8qb4QBzxI',
@@ -16,10 +18,30 @@ const form = $('carinhoForm'), name = $('carinhoName'), message = $('carinhoMess
 const list = $('carinhoList'), status = $('carinhoStatus'), error = $('carinhoError');
 const submit = $('carinhoSubmit');
 let notes = [];
+let currentUser = null;
+let editingId = null;
 let lastSend = 0;
 const localKeys = ['minha-evangeline-mural-carinho-v1', 'evangelineMessages'];
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
+onAuthStateChanged(auth, user => { currentUser = user; render(); });
+signInAnonymously(auth).catch(e => {
+  console.error('Falha ao identificar visitante:', e);
+  error.textContent = 'Não foi possível ativar a edição. Ative a autenticação anônima no Firebase Authentication.';
+});
+const cancel = $('carinhoCancel');
+const editMode = $('carinhoEditMode');
+function exitEdit() {
+  editingId = null;
+  form.reset();
+  $('carinhoCount').textContent = '0 / 500';
+  submit.textContent = 'Publicar recadinho';
+  cancel.hidden = true;
+  editMode.hidden = true;
+}
+cancel.addEventListener('click', exitEdit);
+
 
 function render() {
   list.replaceChildren();
@@ -37,6 +59,41 @@ function render() {
       date.textContent = d.toLocaleDateString('pt-BR');
     }
     card.append(title, body, date);
+    if (currentUser && note.autorUid === currentUser.uid) {
+      const actions = document.createElement('div');
+      actions.className = 'recado-actions';
+      const edit = document.createElement('button');
+      edit.type = 'button'; edit.textContent = '✏️ Editar'; edit.className = 'recado-action';
+      edit.addEventListener('click', () => {
+        editingId = note.id;
+        name.value = note.nome;
+        message.value = note.mensagem;
+        $('carinhoCount').textContent = `${message.value.length} / 500`;
+        submit.textContent = '💾 Salvar alterações';
+        cancel.hidden = false;
+        editMode.hidden = false;
+        editMode.textContent = 'Editando seu recadinho';
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        name.focus();
+      });
+      const remove = document.createElement('button');
+      remove.type = 'button'; remove.textContent = '🗑️ Excluir'; remove.className = 'recado-action recado-delete';
+      remove.addEventListener('click', async () => {
+        if (!confirm('Deseja excluir seu recadinho? Essa ação não pode ser desfeita.')) return;
+        remove.disabled = true;
+        try {
+          await deleteDoc(doc(db, 'recadinhos', note.id));
+          if (editingId === note.id) exitEdit();
+          status.textContent = 'Recadinho excluído. 💚';
+        } catch (e) {
+          console.error(e);
+          error.textContent = 'Não foi possível excluir este recadinho.';
+          remove.disabled = false;
+        }
+      });
+      actions.append(edit, remove);
+      card.append(actions);
+    }
     list.append(card);
   }
   $('carinhoEmpty').hidden = notes.length > 0;
@@ -45,13 +102,11 @@ function render() {
 message.addEventListener('input', () => {
   $('carinhoCount').textContent = `${message.value.length} / 500`;
 });
-$('carinhoCancel').hidden = true;
-$('carinhoEditMode').hidden = true;
 submit.textContent = 'Publicar recadinho';
 
 const feed = query(collection(db, 'recadinhos'), orderBy('criadoEm', 'desc'), limit(100));
 onSnapshot(feed, snapshot => {
-  notes = snapshot.docs.map(doc => doc.data());
+  notes = snapshot.docs.map(item => ({ id: item.id, ...item.data() }));
   render();
   status.textContent = 'Mural atualizado para todos os visitantes. 💚';
   error.textContent = '';
@@ -73,17 +128,22 @@ form.addEventListener('submit', async event => {
     error.textContent = 'Aguarde alguns segundos antes de enviar outro recadinho.';
     return;
   }
+  if (!currentUser) { error.textContent = 'Aguarde a conexão com o Firebase antes de salvar.'; return; }
   submit.disabled = true;
-  status.textContent = 'Publicando seu carinho…';
+  status.textContent = editingId ? 'Salvando alterações…' : 'Publicando seu carinho…';
   try {
-    await addDoc(collection(db, 'recadinhos'), { nome, mensagem, criadoEm: serverTimestamp() });
-    lastSend = Date.now();
-    form.reset();
-    $('carinhoCount').textContent = '0 / 500';
-    status.textContent = 'Recadinho publicado para todos! 💚';
+    if (editingId) {
+      await updateDoc(doc(db, 'recadinhos', editingId), { nome, mensagem });
+      status.textContent = 'Alterações salvas para todos! 💚';
+    } else {
+      await addDoc(collection(db, 'recadinhos'), { nome, mensagem, criadoEm: serverTimestamp(), autorUid: currentUser.uid });
+      lastSend = Date.now();
+      status.textContent = 'Recadinho publicado para todos! 💚';
+    }
+    exitEdit();
   } catch (e) {
     console.error('Erro ao publicar:', e);
-    error.textContent = 'Não foi possível publicar. Confira a conexão e as regras do Firestore.';
+    error.textContent = 'Não foi possível salvar. Confira a autenticação e as regras do Firestore.';
     status.textContent = '';
   } finally {
     submit.disabled = false;

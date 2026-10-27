@@ -1,0 +1,39 @@
+INSTRUÇÕES IMPORTANTES — MURAL ARTHUR & MIRELLA
+
+1. Firebase Console > Authentication > Começar > Sign-in method > Anônimo > Ativar > Salvar.
+2. Firestore > Regras: substitua pelas regras abaixo e clique em Publicar.
+3. Publique os arquivos deste ZIP no GitHub Pages.
+4. Novos recadinhos poderão ser editados/excluídos SOMENTE no navegador que os criou, enquanto a identidade anônima persistir.
+5. Recadinhos antigos, criados antes desta versão sem autorUid, continuam visíveis, mas não têm edição/exclusão pelo site. Você pode excluí-los pelo console Firestore.
+6. Autenticação anônima não é conta permanente: limpar dados do navegador, trocar de navegador ou dispositivo pode perder o acesso de edição aos próprios recados.
+7. A autenticação anônima e as regras abaixo NÃO impedem spam ou abuso. Antes de divulgar, configure App Check e uma solução de limitação de envios no servidor.
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /recadinhos/{recadoId} {
+      allow read: if true;
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['nome','mensagem','criadoEm','autorUid'])
+        && request.resource.data.keys().hasAll(['nome','mensagem','criadoEm','autorUid'])
+        && request.resource.data.autorUid == request.auth.uid
+        && request.resource.data.nome is string
+        && request.resource.data.nome.size() >= 1
+        && request.resource.data.nome.size() <= 40
+        && request.resource.data.mensagem is string
+        && request.resource.data.mensagem.size() >= 1
+        && request.resource.data.mensagem.size() <= 500
+        && request.resource.data.criadoEm == request.time;
+      allow update: if request.auth != null
+        && resource.data.autorUid == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['nome','mensagem'])
+        && request.resource.data.nome is string
+        && request.resource.data.nome.size() >= 1
+        && request.resource.data.nome.size() <= 40
+        && request.resource.data.mensagem is string
+        && request.resource.data.mensagem.size() >= 1
+        && request.resource.data.mensagem.size() <= 500;
+      allow delete: if request.auth != null && resource.data.autorUid == request.auth.uid;
+    }
+  }
+}
